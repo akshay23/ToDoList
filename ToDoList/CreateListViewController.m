@@ -46,4 +46,20 @@
 }
 */
 
+- (IBAction)addList:(id)sender
+{
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"List Name" message:@"Please enter list name" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
+    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    NSString *listName = [[alert textFieldAtIndex:0] text];
+    ListItem *item = [[ListItem alloc] initWithName:listName];
+    [alert show];
+    
+    //ToDoListTableViewController *todoList = [[ToDoListTableViewController alloc] initWithDelegateAndListItem:item theDelegate:self];
+    //[self.navigationController pushViewController:todoList animated:YES];
+}
+
+- (IBAction)editList:(id)sender
+{
+}
+
 @end

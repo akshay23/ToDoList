@@ -10,4 +10,12 @@
 
 @implementation ListItem
 
+- (id)initWithName:(NSString *)name
+{
+    self.name = name;
+    self.toDoItems = [[NSMutableArray alloc] init];
+    
+    return self;
+}
+
 @end

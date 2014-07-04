@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ToDoListTableViewController.h"
+#import "ListItem.h"
 
-@interface CreateListViewController : UIViewController
+@interface CreateListViewController : UITableViewController
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *addB;
+@property (weak, nonatomic) IBOutlet UINavigationItem *editB;
+@property (strong, nonatomic) NSMutableArray *myLists;
+@property NSMutableArray *lists;
+
+- (IBAction)addList:(id)sender;
+- (IBAction)editList:(id)sender;
 
 @end

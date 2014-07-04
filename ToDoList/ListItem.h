@@ -7,7 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ToDoItem.h"
 
 @interface ListItem : NSObject
+
+@property NSString *name;
+@property NSMutableArray *toDoItems;
+
+- (id)initWithName:(NSString *)name;
 
 @end
