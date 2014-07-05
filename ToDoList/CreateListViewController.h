@@ -11,10 +11,11 @@
 #import "ListItem.h"
 
 @interface CreateListViewController : UITableViewController
+
+@property (strong, nonatomic) NSMutableArray *lists;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addB;
 @property (weak, nonatomic) IBOutlet UINavigationItem *editB;
 @property (strong, nonatomic) NSMutableArray *myLists;
-@property NSMutableArray *lists;
 
 - (IBAction)addList:(id)sender;
 - (IBAction)editList:(id)sender;
