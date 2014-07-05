@@ -136,11 +136,11 @@
 				1964B8CA193E207D000C48E9 /* ToDoItem.h */,
 				1964B8CB193E207D000C48E9 /* ToDoItem.m */,
 				198933EA193D1B320018C167 /* Images.xcassets */,
-				198933DF193D1B320018C167 /* Supporting Files */,
 				1923AA7C1964DAFC0034C05B /* CreateListViewController.h */,
 				1923AA7D1964DAFC0034C05B /* CreateListViewController.m */,
 				19B8BAF71967330E00827AFB /* ListItem.h */,
 				19B8BAF81967330E00827AFB /* ListItem.m */,
+				198933DF193D1B320018C167 /* Supporting Files */,
 			);
 			path = ToDoList;
 			sourceTree = "<group>";

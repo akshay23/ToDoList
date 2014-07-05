@@ -15,7 +15,6 @@
 @property (strong, nonatomic) NSMutableArray *lists;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addB;
 @property (weak, nonatomic) IBOutlet UINavigationItem *editB;
-@property (strong, nonatomic) NSMutableArray *myLists;
 
 - (IBAction)addList:(id)sender;
 - (IBAction)editList:(id)sender;
