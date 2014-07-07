@@ -54,16 +54,19 @@
     }
 }
 
-// TODO
 - (IBAction)editList:(id)sender
 {
     if (![self.tableView isEditing])
     {
         [self.tableView setEditing:YES animated:YES];
+        [[self.navigationItem leftBarButtonItem] setTitle:@"Cancel"];
+        [[self.navigationItem rightBarButtonItem] setEnabled:NO];
     }
     else
     {
         [self.tableView setEditing:NO animated:YES];
+        [[self.navigationItem leftBarButtonItem] setTitle:@"Edit"];
+        [[self.navigationItem rightBarButtonItem] setEnabled:YES];
     }
 }
 
@@ -101,13 +104,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-
-    //TODO
+    //UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    //[tableView deselectRowAtIndexPath:indexPath animated:YES];
+    //[tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     
-    [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-    [cell setBackgroundColor:[UIColor clearColor]];
+    ListItem *item = [self.lists objectAtIndex:indexPath.row];
+    ToDoListTableViewController *todoList = [[ToDoListTableViewController alloc] initWithDelegateAndListItem:item theDelegate:self];
+    [self.navigationController pushViewController:todoList animated:YES];
 }
 
 // Override to support conditional editing of the table view.
@@ -138,6 +141,5 @@
     // Return NO if you do not want the item to be re-orderable.
     return YES;
 }
-
 
 @end

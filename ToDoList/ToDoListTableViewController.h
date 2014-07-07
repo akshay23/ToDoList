@@ -17,7 +17,5 @@
 
 @property ListItem *item;
 
-- (id)initWithDelegateAndTitle:(NSString *)title theDelegate:(CreateListViewController *)delegate;
 - (id)initWithDelegateAndListItem:(ListItem *)list theDelegate:(CreateListViewController *)delegate;
-- (IBAction)unwindToList:(UIStoryboardSegue *)segue;
 @end

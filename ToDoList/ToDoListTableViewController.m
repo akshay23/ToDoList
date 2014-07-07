@@ -12,32 +12,28 @@
 
 @interface ToDoListTableViewController ()
 
+@property NSMutableArray *toDoItems;
+@property CreateListViewController *delegate;
+@property NSString *title;
+@property (strong, nonatomic) AddToDoItemViewController *dest;
+
 - (void)loadList;
 - (NSMutableArray *)decodeMyArray:(NSMutableArray *)encodedArray;
 - (void)saveList;
 - (void)refreshData;
 
-@property NSMutableArray *toDoItems;
-@property CreateListViewController *delegate;
-@property NSString *title;
-
 @end
 
 @implementation ToDoListTableViewController
-
-- (id)initWithDelegateAndTitle:(NSString *)title theDelegate:(CreateListViewController *)delegate
-{
-    self.delegate = delegate;
-    self.title = title;
-    
-    return self;
-}
 
 - (id)initWithDelegateAndListItem:(ListItem *)list theDelegate:(CreateListViewController *)delegate
 {
     self.delegate = delegate;
     self.item = list;
     self.title = list.name;
+    
+    // Create new instance of AddToDoItem VC
+    self.dest = [[AddToDoItemViewController alloc] init];
     
     return self;
 }
@@ -48,7 +44,7 @@
     
     UIBarButtonItem *add = [[UIBarButtonItem alloc] initWithTitle:@"Add"
                                                             style:UIBarButtonItemStylePlain
-                                                           target:self action:@selector(addItem:)];
+                                                           target:self action:@selector(addToDoItem:)];
     
     [self.navigationItem setRightBarButtonItem:add];
     
@@ -64,6 +60,11 @@
     [self.navigationController setTitle:self.title];
 }
 
+- (void)addToDoItem:(id)sender
+{
+    [self.navigationController pushViewController:self.dest animated:YES];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -74,7 +75,7 @@
 {
     // Get the stored data before the view loads
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSMutableArray *list = [self decodeMyArray:[defaults objectForKey:@"UnsavedItems"]];
+    NSMutableArray *list = [self decodeMyArray:[defaults objectForKey:self.title]];
     
     if (list && list.count > 0)
     {
@@ -116,7 +117,7 @@
     
     // Step 2: Actually save the new array
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:archiveArray forKey:@"UnsavedItems"];
+    [defaults setObject:archiveArray forKey:self.title];
     [defaults synchronize];
     
     NSLog(@"List saved");
@@ -130,22 +131,22 @@
     [self.refreshControl endRefreshing];
 }
 
-- (IBAction)unwindToList:(UIStoryboardSegue *)segue
-{
-    AddToDoItemViewController *source = [segue sourceViewController];
-    ToDoItem *todoItem = source.toDoItem;
-    
-    if (todoItem != nil)
-    {
-        [self.toDoItems addObject:todoItem];
-        [self.tableView reloadData];
-        
-        NSLog(@"List size is: %d", (int) self.toDoItems.count);
-        
-        // Save list
-        [self saveList];
-    }
-}
+//- (IBAction)unwindToList:(UIStoryboardSegue *)segue
+//{
+//    AddToDoItemViewController *source = [segue sourceViewController];
+//    ToDoItem *todoItem = source.toDoItem;
+//    
+//    if (todoItem != nil)
+//    {
+//        [self.toDoItems addObject:todoItem];
+//        [self.tableView reloadData];
+//        
+//        NSLog(@"List size is: %d", (int) self.toDoItems.count);
+//        
+//        // Save list
+//        [self saveList];
+//    }
+//}
 
 #pragma mark - Table view data source
 
@@ -259,16 +260,5 @@
     // Return NO if you do not want the item to be re-orderable.
     return YES;
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
