@@ -29,11 +29,12 @@
 - (id)initWithDelegateAndListItem:(ListItem *)list theDelegate:(CreateListViewController *)delegate
 {
     self.delegate = delegate;
-    self.item = list;
+    self.list = list;
     self.title = list.name;
     
     // Create new instance of AddToDoItem VC
-    self.dest = [[AddToDoItemViewController alloc] init];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+    self.dest = [storyboard instantiateViewControllerWithIdentifier:@"addItemController1"];
     
     return self;
 }

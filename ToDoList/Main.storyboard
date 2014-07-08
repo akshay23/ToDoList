@@ -305,7 +305,7 @@
         <!--Add To Do Item View Controller-->
         <scene sceneID="8Mh-12-Kfd">
             <objects>
-                <viewController restorationIdentifier="addItemController1" id="BfM-G2-48V" customClass="AddToDoItemViewController" sceneMemberID="viewController">
+                <viewController restorationIdentifier="addItemController1" storyboardIdentifier="addItemController1" id="BfM-G2-48V" customClass="AddToDoItemViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BFi-zn-Va5"/>
                         <viewControllerLayoutGuide type="bottom" id="X65-C5-d1C"/>
@@ -314,8 +314,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New to-do item" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ygq-bT-7C3">
-                                <rect key="frame" x="20" y="134" width="280" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New to-do item" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ygq-bT-7C3">
+                                <rect key="frame" x="20" y="90" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
