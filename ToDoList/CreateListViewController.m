@@ -17,7 +17,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"Create view loaded");
+    
+    if (![GlobalData getInstance].mainStoryboard)
+    {
+        // Instantiate new main storyboard instance
+        [GlobalData getInstance].mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+        NSLog(@"mainStoryboard instantiated");
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -59,7 +65,7 @@
     if (![self.tableView isEditing])
     {
         [self.tableView setEditing:YES animated:YES];
-        [[self.navigationItem leftBarButtonItem] setTitle:@"Cancel"];
+        [[self.navigationItem leftBarButtonItem] setTitle:@"Done"];
         [[self.navigationItem rightBarButtonItem] setEnabled:NO];
     }
     else

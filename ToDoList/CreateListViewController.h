@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GlobalData.h"
 #import "ToDoListTableViewController.h"
 #import "ListItem.h"
 

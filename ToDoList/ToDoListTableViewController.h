@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
+#import "GlobalData.h"
 #import "CreateListViewController.h"
 #import "ListItem.h"
 

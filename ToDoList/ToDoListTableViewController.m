@@ -15,7 +15,7 @@
 @property NSMutableArray *toDoItems;
 @property CreateListViewController *delegate;
 @property NSString *title;
-@property (strong, nonatomic) AddToDoItemViewController *dest;
+@property (strong, nonatomic) AddToDoItemViewController *addToDoItemVC;
 
 - (void)loadList;
 - (NSMutableArray *)decodeMyArray:(NSMutableArray *)encodedArray;
@@ -31,10 +31,9 @@
     self.delegate = delegate;
     self.list = list;
     self.title = list.name;
-    
-    // Create new instance of AddToDoItem VC
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-    self.dest = [storyboard instantiateViewControllerWithIdentifier:@"addItemController1"];
+
+    // Create new add item VC using main storyboard
+    self.addToDoItemVC = [[GlobalData getInstance].mainStoryboard instantiateViewControllerWithIdentifier:@"addItemVC"];
     
     return self;
 }
@@ -58,12 +57,17 @@
     [refreshControl addTarget:self action:@selector(refreshData) forControlEvents:UIControlEventValueChanged];
     self.refreshControl = refreshControl;
     
+    // Set the title to the list name
     [self.navigationController setTitle:self.title];
+    
+    // refresh table and save list
+    [self.tableView reloadData];
+    [self saveList];
 }
 
 - (void)addToDoItem:(id)sender
 {
-    [self.navigationController pushViewController:self.dest animated:YES];
+    [self.navigationController pushViewController:self.addToDoItemVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -131,23 +135,6 @@
     [self.tableView reloadData];
     [self.refreshControl endRefreshing];
 }
-
-//- (IBAction)unwindToList:(UIStoryboardSegue *)segue
-//{
-//    AddToDoItemViewController *source = [segue sourceViewController];
-//    ToDoItem *todoItem = source.toDoItem;
-//    
-//    if (todoItem != nil)
-//    {
-//        [self.toDoItems addObject:todoItem];
-//        [self.tableView reloadData];
-//        
-//        NSLog(@"List size is: %d", (int) self.toDoItems.count);
-//        
-//        // Save list
-//        [self saveList];
-//    }
-//}
 
 #pragma mark - Table view data source
 
