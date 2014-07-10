@@ -12,7 +12,7 @@
 
 @interface ToDoListTableViewController ()
 
-@property (assign, nonatomic) NSString *title;
+@property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSMutableArray *toDoItems;
 @property (strong, nonatomic) AddToDoItemViewController *addToDoItemVC;
 @property (strong, nonatomic) CreateListViewController *delegate;
@@ -30,7 +30,15 @@
     self.delegate = delegate;
     self.list = actualList;
     self.title = actualList.name;
-    self.toDoItems = [[NSMutableArray alloc] init];
+    
+    if (!actualList.toDoItems)
+    {
+        self.toDoItems = [[NSMutableArray alloc] init];
+    }
+    else
+    {
+        self.toDoItems = actualList.toDoItems;
+    }
     
     // Create new add item VC using main storyboard
     self.addToDoItemVC = [[GlobalData getInstance].mainStoryboard instantiateViewControllerWithIdentifier:@"addItemVC"];
@@ -53,22 +61,19 @@
     //[self loadList];
     
     // Used for the pull-down refresh
-    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
-    refreshControl.tintColor = [UIColor purpleColor];
-    [refreshControl addTarget:self action:@selector(refreshData) forControlEvents:UIControlEventValueChanged];
-    self.refreshControl = refreshControl;
+//    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+//    refreshControl.tintColor = [UIColor purpleColor];
+//    [refreshControl addTarget:self action:@selector(refreshData) forControlEvents:UIControlEventValueChanged];
+//    self.refreshControl = refreshControl;
     
     // Set the title to the list name
     [self.navigationController setTitle:self.title];
-    
-    // refresh table and save list
-    [self.tableView reloadData];
-    [self saveList];
 }
 
 - (void) viewDidAppear:(BOOL)animated
 {
-    NSLog(@"Ohhh YEAHHH!");
+    // Save list
+    [self saveList];
 }
 
 - (void)addToDoItem:(id)sender
@@ -135,6 +140,9 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:archiveArray forKey:self.title];
     [defaults synchronize];
+    
+    // Save to list
+    self.list.toDoItems = self.toDoItems;
     
     NSLog(@"List saved");
 }

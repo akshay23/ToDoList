@@ -34,7 +34,6 @@
     {
         ToDoItem *listItem = [[ToDoItem alloc] initWithNameAndCompleted:self.itemTxtField.text isCompleted:NO];
         [self.delegate addToArray:listItem];
-        [self.delegate saveList];
         [self.delegate.tableView reloadData];
         
         self.itemTxtField.text = @"";
