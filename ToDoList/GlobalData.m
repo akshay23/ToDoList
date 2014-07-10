@@ -26,4 +26,9 @@ static GlobalData *instance;
     return instance;
 }
 
++ (BOOL)stringIsNilOrEmpty:(NSString*)aString
+{
+    return !(aString && aString.length);
+}
+
 @end

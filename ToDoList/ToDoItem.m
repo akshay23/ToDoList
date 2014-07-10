@@ -10,6 +10,14 @@
 
 @implementation ToDoItem
 
+- (id)initWithNameAndCompleted:(NSString *)name isCompleted:(BOOL)completedd
+{
+    self.itemName = name;
+    self.completed = completedd;
+    
+    return self;
+}
+
 - (id)initWithCoder:(NSCoder *)coder {
     self = [super init];
     if (self) {

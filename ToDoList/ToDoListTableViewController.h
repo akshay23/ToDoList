@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
-#import "GlobalData.h"
 #import "CreateListViewController.h"
 #import "ListItem.h"
 
@@ -16,7 +15,10 @@
 
 @interface ToDoListTableViewController : UITableViewController
 
-@property ListItem *list;
+@property (nonatomic, strong) ListItem *list;
 
-- (id)initWithDelegateAndListItem:(ListItem *)list theDelegate:(CreateListViewController *)delegate;
+- (id)initWithDelegateAndListItem:(ListItem *)actualList theDelegate:(CreateListViewController *)delegate;
+- (void)addToArray:(ToDoItem *)item;
+- (void)saveList;
+
 @end

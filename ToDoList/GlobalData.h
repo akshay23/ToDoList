@@ -19,4 +19,7 @@
 // Singleton method
 + (GlobalData *)getInstance;
 
+// Check if string is null or empty
++ (BOOL)stringIsNilOrEmpty:(NSString*)aString;
+
 @end

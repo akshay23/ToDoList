@@ -310,6 +310,9 @@
                             <constraint firstItem="Ygq-bT-7C3" firstAttribute="top" secondItem="BFi-zn-Va5" secondAttribute="bottom" constant="70" id="bT1-D3-DKl"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="itemTxtField" destination="Ygq-bT-7C3" id="FlJ-iv-iXx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jkt-Cr-1EX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

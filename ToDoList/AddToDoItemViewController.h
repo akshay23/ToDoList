@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "ToDoItem.h"
+#import "ToDoListTableViewController.h"
 
 @interface AddToDoItemViewController : UIViewController
 
 @property ToDoItem *toDoItem;
+@property (nonatomic, strong)  ToDoListTableViewController *delegate;
+@property (weak, nonatomic) IBOutlet UITextField *itemTxtField;
 
 @end

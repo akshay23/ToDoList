@@ -10,6 +10,8 @@
 
 @interface CreateListViewController ()
 
+@property (retain, nonatomic) ToDoListTableViewController *toDoListVC;
+
 @end
 
 @implementation CreateListViewController
@@ -21,7 +23,7 @@
     if (![GlobalData getInstance].mainStoryboard)
     {
         // Instantiate new main storyboard instance
-        [GlobalData getInstance].mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+        [GlobalData getInstance].mainStoryboard = self.storyboard;
         NSLog(@"mainStoryboard instantiated");
     }
 }
@@ -41,7 +43,7 @@
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (buttonIndex == 1 && ![self stringIsNilOrEmpty:[[alertView textFieldAtIndex:0] text]])
+    if (buttonIndex == 1 && ![GlobalData stringIsNilOrEmpty:[[alertView textFieldAtIndex:0] text]])
     {
         NSString *listName = [[alertView textFieldAtIndex:0] text];
         ListItem *item = [[ListItem alloc] initWithName:listName];
@@ -55,8 +57,9 @@
         [self.lists addObject:item];
         [self.tableView reloadData];
         
-        ToDoListTableViewController *todoList = [[ToDoListTableViewController alloc] initWithDelegateAndListItem:item theDelegate:self];
-        [self.navigationController pushViewController:todoList animated:YES];
+        self.toDoListVC = [[ToDoListTableViewController alloc] initWithDelegateAndListItem:item theDelegate:self];
+        
+        [self.navigationController pushViewController:self.toDoListVC animated:YES];
     }
 }
 
@@ -74,11 +77,6 @@
         [[self.navigationItem leftBarButtonItem] setTitle:@"Edit"];
         [[self.navigationItem rightBarButtonItem] setEnabled:YES];
     }
-}
-
-- (BOOL)stringIsNilOrEmpty:(NSString*)aString
-{
-    return !(aString && aString.length);
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -115,8 +113,8 @@
     //[tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     
     ListItem *item = [self.lists objectAtIndex:indexPath.row];
-    ToDoListTableViewController *todoList = [[ToDoListTableViewController alloc] initWithDelegateAndListItem:item theDelegate:self];
-    [self.navigationController pushViewController:todoList animated:YES];
+    self.toDoListVC = [[ToDoListTableViewController alloc] initWithDelegateAndListItem:item theDelegate:self];
+    [self.navigationController pushViewController:self.toDoListVC animated:YES];
 }
 
 // Override to support conditional editing of the table view.

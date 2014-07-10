@@ -13,27 +13,28 @@
 @interface ToDoListTableViewController ()
 
 @property NSMutableArray *toDoItems;
-@property CreateListViewController *delegate;
 @property NSString *title;
 @property (strong, nonatomic) AddToDoItemViewController *addToDoItemVC;
+@property (nonatomic, strong) CreateListViewController *delegate;
 
 - (void)loadList;
 - (NSMutableArray *)decodeMyArray:(NSMutableArray *)encodedArray;
-- (void)saveList;
 - (void)refreshData;
 
 @end
 
 @implementation ToDoListTableViewController
 
-- (id)initWithDelegateAndListItem:(ListItem *)list theDelegate:(CreateListViewController *)delegate
+- (id)initWithDelegateAndListItem:(ListItem *)actualList theDelegate:(CreateListViewController *)delegate
 {
     self.delegate = delegate;
-    self.list = list;
-    self.title = list.name;
-
+    self.list = actualList;
+    self.title = actualList.name;
+    self.toDoItems = [[NSMutableArray alloc] init];
+    
     // Create new add item VC using main storyboard
     self.addToDoItemVC = [[GlobalData getInstance].mainStoryboard instantiateViewControllerWithIdentifier:@"addItemVC"];
+    self.addToDoItemVC.delegate = self;
     
     return self;
 }
@@ -49,7 +50,7 @@
     [self.navigationItem setRightBarButtonItem:add];
     
     // Load data into list (if any)
-    [self loadList];
+    //[self loadList];
     
     // Used for the pull-down refresh
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
@@ -65,9 +66,19 @@
     [self saveList];
 }
 
+- (void) viewDidAppear:(BOOL)animated
+{
+    NSLog(@"Ohhh YEAHHH!");
+}
+
 - (void)addToDoItem:(id)sender
 {
     [self.navigationController pushViewController:self.addToDoItemVC animated:YES];
+}
+
+- (void)addToArray:(ToDoItem *)item
+{
+    [self.toDoItems addObject:item];
 }
 
 - (void)didReceiveMemoryWarning
@@ -80,12 +91,12 @@
 {
     // Get the stored data before the view loads
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSMutableArray *list = [self decodeMyArray:[defaults objectForKey:self.title]];
+    NSMutableArray *listt = [self decodeMyArray:[defaults objectForKey:self.title]];
     
-    if (list && list.count > 0)
+    if (listt && listt.count > 0)
     {
-        self.toDoItems = list;
-        NSLog(@"List size is: %d", (int) list.count);
+        self.toDoItems = listt;
+        NSLog(@"List size is: %d", (int) listt.count);
     }
     else
     {
