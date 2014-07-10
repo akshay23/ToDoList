@@ -12,10 +12,10 @@
 
 @interface ToDoListTableViewController ()
 
-@property NSMutableArray *toDoItems;
-@property NSString *title;
+@property (assign, nonatomic) NSString *title;
+@property (strong, nonatomic) NSMutableArray *toDoItems;
 @property (strong, nonatomic) AddToDoItemViewController *addToDoItemVC;
-@property (nonatomic, strong) CreateListViewController *delegate;
+@property (strong, nonatomic) CreateListViewController *delegate;
 
 - (void)loadList;
 - (NSMutableArray *)decodeMyArray:(NSMutableArray *)encodedArray;

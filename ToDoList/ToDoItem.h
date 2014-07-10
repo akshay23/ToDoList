@@ -10,8 +10,8 @@
 
 @interface ToDoItem : NSObject <NSCoding>
 
-@property NSString *itemName;
-@property BOOL completed;
+@property (assign, nonatomic) NSString *itemName;
+@property (assign, nonatomic) BOOL completed;
 @property (readonly) NSDate *creationDate;
 
 - (id)initWithNameAndCompleted:(NSString *)name isCompleted:(BOOL)completedd;

@@ -10,7 +10,7 @@
 
 @interface CreateListViewController ()
 
-@property (retain, nonatomic) ToDoListTableViewController *toDoListVC;
+@property (strong, nonatomic) ToDoListTableViewController *toDoListVC;
 
 @end
 

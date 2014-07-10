@@ -14,7 +14,7 @@
     UIStoryboard *mainStoryboard;
 }
 
-@property (nonatomic, retain) UIStoryboard *mainStoryboard;
+@property (nonatomic, strong) UIStoryboard *mainStoryboard;
 
 // Singleton method
 + (GlobalData *)getInstance;
