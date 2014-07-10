@@ -21,10 +21,9 @@
     // Set focus on text field
     [self.itemTxtField becomeFirstResponder];
     
-    UIBarButtonItem *add = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStylePlain
-                                                           target:self action:@selector(addItem:)];
-    
-    [self.navigationItem setRightBarButtonItem:add];
+    // Create and add the 'Done' button to navigation bar
+    UIBarButtonItem *done = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStylePlain target:self action:@selector(addItem:)];
+    [self.navigationItem setRightBarButtonItem:done];
 
 }
 

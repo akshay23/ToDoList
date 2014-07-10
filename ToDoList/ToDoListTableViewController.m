@@ -31,6 +31,7 @@
     self.list = actualList;
     self.title = actualList.name;
     
+    // Either create new or load existing list of todo items
     if (!actualList.toDoItems)
     {
         self.toDoItems = [[NSMutableArray alloc] init];
@@ -51,20 +52,15 @@
 {
     [super viewDidLoad];
     
-    UIBarButtonItem *add = [[UIBarButtonItem alloc] initWithTitle:@"Add"
-                                                            style:UIBarButtonItemStylePlain
-                                                           target:self action:@selector(addToDoItem:)];
-    
+    // Create and add the 'Add' button to navigation bar
+    UIBarButtonItem *add = [[UIBarButtonItem alloc] initWithTitle:@"Add" style:UIBarButtonItemStylePlain target:self action:@selector(addToDoItem:)];
     [self.navigationItem setRightBarButtonItem:add];
     
-    // Load data into list (if any)
-    //[self loadList];
-    
     // Used for the pull-down refresh
-//    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
-//    refreshControl.tintColor = [UIColor purpleColor];
-//    [refreshControl addTarget:self action:@selector(refreshData) forControlEvents:UIControlEventValueChanged];
-//    self.refreshControl = refreshControl;
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    refreshControl.tintColor = [UIColor purpleColor];
+    [refreshControl addTarget:self action:@selector(refreshData) forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refreshControl;
     
     // Set the title to the list name
     [self.navigationController setTitle:self.title];
@@ -98,15 +94,11 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSMutableArray *listt = [self decodeMyArray:[defaults objectForKey:self.title]];
     
-    if (listt && listt.count > 0)
+    if (listt)
     {
         self.toDoItems = listt;
+        self.list.toDoItems = self.toDoItems;
         NSLog(@"List size is: %d", (int) listt.count);
-    }
-    else
-    {
-        self.toDoItems = [[NSMutableArray alloc] init];
-        NSLog(@"List is empty on load");
     }
 }
 
