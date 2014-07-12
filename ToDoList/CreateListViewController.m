@@ -26,6 +26,11 @@
         [GlobalData getInstance].mainStoryboard = self.storyboard;
         NSLog(@"mainStoryboard instantiated");
     }
+    
+    UITapGestureRecognizer* doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTap:)];
+    doubleTap.numberOfTapsRequired = 2;
+    doubleTap.numberOfTouchesRequired = 1;
+    [self.tableView addGestureRecognizer:doubleTap];
 }
 
 - (void)didReceiveMemoryWarning
@@ -76,6 +81,19 @@
         [self.tableView setEditing:NO animated:YES];
         [[self.navigationItem leftBarButtonItem] setTitle:@"Edit"];
         [[self.navigationItem rightBarButtonItem] setEnabled:YES];
+    }
+}
+
+- (void)doubleTap:(UISwipeGestureRecognizer *) tap
+{
+    if(UIGestureRecognizerStateEnded == tap.state)
+    {
+        CGPoint where = [tap locationInView:tap.view];
+        NSIndexPath* ip = [self.tableView indexPathForRowAtPoint:where];
+        //UITableViewCell* cell = [self.tableView cellForRowAtIndexPath:ip];
+        NSMutableString* aString = [NSMutableString stringWithFormat:@"You double-tapped the row %ld", (long)ip.row];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Double Tap" message:aString delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+        [alert show];
     }
 }
 
@@ -137,6 +155,9 @@
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
 {
+    ListItem *temp = [self.lists objectAtIndex:toIndexPath.row];
+    [self.lists removeObjectAtIndex:toIndexPath.row];
+    [self.lists insertObject:temp atIndex:fromIndexPath.row];
 }
 
 // Override to support conditional rearranging of the table view.
