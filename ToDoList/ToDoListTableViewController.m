@@ -64,9 +64,12 @@
     
     // Set the title to the list name
     [self.navigationController setTitle:self.title];
+    
+    // Set colour
+    [self.tableView setBackgroundColor:self.delegate.tableView.backgroundColor];
 }
 
-- (void) viewDidAppear:(BOOL)animated
+- (void)viewDidAppear:(BOOL)animated
 {
     // Save list
     [self saveList];

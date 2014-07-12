@@ -24,6 +24,9 @@
     // Create and add the 'Done' button to navigation bar
     UIBarButtonItem *done = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStylePlain target:self action:@selector(addItem:)];
     [self.navigationItem setRightBarButtonItem:done];
+    
+    // Set view colour
+    [self.view setBackgroundColor:self.delegate.tableView.backgroundColor];
 
 }
 
