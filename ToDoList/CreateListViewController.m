@@ -155,9 +155,9 @@
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
 {
-    ListItem *temp = [self.lists objectAtIndex:toIndexPath.row];
-    [self.lists removeObjectAtIndex:toIndexPath.row];
-    [self.lists insertObject:temp atIndex:fromIndexPath.row];
+    ListItem *temp = [self.lists objectAtIndex:fromIndexPath.row];
+    [self.lists removeObjectAtIndex:fromIndexPath.row];
+    [self.lists insertObject:temp atIndex:toIndexPath.row];
 }
 
 // Override to support conditional rearranging of the table view.
