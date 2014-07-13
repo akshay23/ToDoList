@@ -183,6 +183,7 @@
 {
     static NSString *CellIdentifier = @"ListPrototypeCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    [cell setBackgroundColor:self.tableView.backgroundColor];
     
     if (cell == nil) {
         cell = [[UITableViewCell alloc] init];
@@ -213,39 +214,6 @@
     [self saveList];   // Save list
     [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     [cell setBackgroundColor:[UIColor clearColor]];
-}
-
-- (NSString *)modelIdentifierForElementAtIndexPath:(NSIndexPath *)idx inView:(UIView *)view
-{
-    NSString *todoItem = nil;
-    if (idx && view)
-    {
-        ToDoItem *item = [self.toDoItems objectAtIndex:idx.row];
-        todoItem = item.itemName;
-    }
-    
-    return todoItem;
-}
-
-- (NSIndexPath *)indexPathForElementWithModelIdentifier:(NSString *)identifier inView:(UIView *)view
-{
-    NSIndexPath *indexPath = nil;
-    if (identifier && view)
-    {
-        NSPredicate *todoPred = [NSPredicate predicateWithFormat:@"itemName == %@", identifier];
-        NSInteger row = [self.toDoItems indexOfObjectPassingTest:
-                         ^(id obj, NSUInteger idx, BOOL *stop)
-                         {
-                             return [todoPred evaluateWithObject:obj];
-                         }];
-        
-        if (row != NSNotFound)
-        {
-            indexPath = [NSIndexPath indexPathForRow:row inSection:0];
-        }
-    }
-    
-    return indexPath;
 }
 
 // Override to support conditional editing of the table view.

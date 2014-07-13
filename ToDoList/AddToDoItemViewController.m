@@ -37,6 +37,7 @@
 
 - (void)viewDidDisappear:(BOOL)animated
 {
+    self.itemTxtField.text = @"";
     [self.itemTxtField resignFirstResponder];
     
     [super viewDidDisappear:animated];
@@ -70,7 +71,6 @@
 {
     if (event.subtype == UIEventSubtypeMotionShake)
     {
-        self.itemTxtField.text = @"";
         [self.navigationController popViewControllerAnimated:YES];
     }
 }
