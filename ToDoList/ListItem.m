@@ -15,7 +15,7 @@
     self.name = name;
     self.toDoItems = [[NSMutableArray alloc] init];
     
-    return self;
+    return [self init];
 }
 
 @end

@@ -31,11 +31,15 @@
 {
     // Set focus on text field
     [self.itemTxtField becomeFirstResponder];
+    
+    [super viewDidAppear:animated];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
     [self.itemTxtField resignFirstResponder];
+    
+    [super viewDidDisappear:animated];
 }
 
 - (BOOL)canBecomeFirstResponder

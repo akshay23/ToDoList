@@ -45,7 +45,7 @@
     self.addToDoItemVC = [[GlobalData getInstance].mainStoryboard instantiateViewControllerWithIdentifier:@"addItemVC"];
     self.addToDoItemVC.delegate = self;
     
-    return self;
+    return [self init];
 }
 
 - (void)viewDidLoad
@@ -73,6 +73,8 @@
 {
     // Save list
     [self saveList];
+    
+    [super viewDidAppear:animated];
 }
 
 - (BOOL)canBecomeFirstResponder
