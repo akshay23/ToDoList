@@ -51,20 +51,20 @@
 		1964B8C8193D7500000C48E9 /* ToDoListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoListTableViewController.m; sourceTree = "<group>"; };
 		1964B8CA193E207D000C48E9 /* ToDoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoItem.h; sourceTree = "<group>"; };
 		1964B8CB193E207D000C48E9 /* ToDoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoItem.m; sourceTree = "<group>"; };
-		198933D5193D1B320018C167 /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		198933D5193D1B320018C167 /* MyToDoLists.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyToDoLists.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		198933D8193D1B320018C167 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		198933DA193D1B320018C167 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		198933DC193D1B320018C167 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		198933E0193D1B320018C167 /* ToDoList-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ToDoList-Info.plist"; sourceTree = "<group>"; };
+		198933E0193D1B320018C167 /* MyToDoLists-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MyToDoLists-Info.plist"; sourceTree = "<group>"; };
 		198933E2193D1B320018C167 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		198933E4193D1B320018C167 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		198933E6193D1B320018C167 /* ToDoList-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ToDoList-Prefix.pch"; sourceTree = "<group>"; };
+		198933E6193D1B320018C167 /* MyToDoLists-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyToDoLists-Prefix.pch"; sourceTree = "<group>"; };
 		198933E7193D1B320018C167 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		198933E8193D1B320018C167 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		198933EA193D1B320018C167 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		198933F0193D1B320018C167 /* ToDoListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		198933F0193D1B320018C167 /* MyToDoListsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyToDoListsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		198933F1193D1B320018C167 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		198933F9193D1B320018C167 /* ToDoListTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ToDoListTests-Info.plist"; sourceTree = "<group>"; };
+		198933F9193D1B320018C167 /* MyToDoListsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MyToDoListsTests-Info.plist"; sourceTree = "<group>"; };
 		198933FB193D1B320018C167 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		198933FD193D1B320018C167 /* ToDoListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToDoListTests.m; sourceTree = "<group>"; };
 		19B8BAF71967330E00827AFB /* ListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListItem.h; sourceTree = "<group>"; };
@@ -108,8 +108,8 @@
 		198933D6193D1B320018C167 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				198933D5193D1B320018C167 /* ToDoList.app */,
-				198933F0193D1B320018C167 /* ToDoListTests.xctest */,
+				198933D5193D1B320018C167 /* MyToDoLists.app */,
+				198933F0193D1B320018C167 /* MyToDoListsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -153,10 +153,10 @@
 		198933DF193D1B320018C167 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				198933E0193D1B320018C167 /* ToDoList-Info.plist */,
+				198933E0193D1B320018C167 /* MyToDoLists-Info.plist */,
 				198933E1193D1B320018C167 /* InfoPlist.strings */,
 				198933E4193D1B320018C167 /* main.m */,
-				198933E6193D1B320018C167 /* ToDoList-Prefix.pch */,
+				198933E6193D1B320018C167 /* MyToDoLists-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -173,7 +173,7 @@
 		198933F8193D1B320018C167 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				198933F9193D1B320018C167 /* ToDoListTests-Info.plist */,
+				198933F9193D1B320018C167 /* MyToDoListsTests-Info.plist */,
 				198933FA193D1B320018C167 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -182,9 +182,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		198933D4193D1B320018C167 /* ToDoList */ = {
+		198933D4193D1B320018C167 /* MyToDoLists */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 19893401193D1B320018C167 /* Build configuration list for PBXNativeTarget "ToDoList" */;
+			buildConfigurationList = 19893401193D1B320018C167 /* Build configuration list for PBXNativeTarget "MyToDoLists" */;
 			buildPhases = (
 				198933D1193D1B320018C167 /* Sources */,
 				198933D2193D1B320018C167 /* Frameworks */,
@@ -194,14 +194,14 @@
 			);
 			dependencies = (
 			);
-			name = ToDoList;
+			name = MyToDoLists;
 			productName = ToDoList;
-			productReference = 198933D5193D1B320018C167 /* ToDoList.app */;
+			productReference = 198933D5193D1B320018C167 /* MyToDoLists.app */;
 			productType = "com.apple.product-type.application";
 		};
-		198933EF193D1B320018C167 /* ToDoListTests */ = {
+		198933EF193D1B320018C167 /* MyToDoListsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 19893404193D1B320018C167 /* Build configuration list for PBXNativeTarget "ToDoListTests" */;
+			buildConfigurationList = 19893404193D1B320018C167 /* Build configuration list for PBXNativeTarget "MyToDoListsTests" */;
 			buildPhases = (
 				198933EC193D1B320018C167 /* Sources */,
 				198933ED193D1B320018C167 /* Frameworks */,
@@ -212,9 +212,9 @@
 			dependencies = (
 				198933F6193D1B320018C167 /* PBXTargetDependency */,
 			);
-			name = ToDoListTests;
+			name = MyToDoListsTests;
 			productName = ToDoListTests;
-			productReference = 198933F0193D1B320018C167 /* ToDoListTests.xctest */;
+			productReference = 198933F0193D1B320018C167 /* MyToDoListsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -239,7 +239,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 198933D0193D1B320018C167 /* Build configuration list for PBXProject "ToDoList" */;
+			buildConfigurationList = 198933D0193D1B320018C167 /* Build configuration list for PBXProject "MyToDoLists" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -251,8 +251,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				198933D4193D1B320018C167 /* ToDoList */,
-				198933EF193D1B320018C167 /* ToDoListTests */,
+				198933D4193D1B320018C167 /* MyToDoLists */,
+				198933EF193D1B320018C167 /* MyToDoListsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -307,7 +307,7 @@
 /* Begin PBXTargetDependency section */
 		198933F6193D1B320018C167 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 198933D4193D1B320018C167 /* ToDoList */;
+			target = 198933D4193D1B320018C167 /* MyToDoLists */;
 			targetProxy = 198933F5193D1B320018C167 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -409,9 +409,9 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = ToDoList/ToDoList.entitlements;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ToDoList/ToDoList-Prefix.pch";
-				INFOPLIST_FILE = "ToDoList/ToDoList-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "ToDoList/MyToDoLists-Prefix.pch";
+				INFOPLIST_FILE = "ToDoList/MyToDoLists-Info.plist";
+				PRODUCT_NAME = MyToDoLists;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -423,9 +423,9 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = ToDoList/ToDoList.entitlements;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ToDoList/ToDoList-Prefix.pch";
-				INFOPLIST_FILE = "ToDoList/ToDoList-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "ToDoList/MyToDoLists-Prefix.pch";
+				INFOPLIST_FILE = "ToDoList/MyToDoLists-Info.plist";
+				PRODUCT_NAME = MyToDoLists;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -445,8 +445,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "ToDoListTests/ToDoListTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "ToDoListTests/MyToDoListsTests-Info.plist";
+				PRODUCT_NAME = MyToDoListsTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -463,8 +463,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ToDoList/ToDoList-Prefix.pch";
-				INFOPLIST_FILE = "ToDoListTests/ToDoListTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "ToDoListTests/MyToDoListsTests-Info.plist";
+				PRODUCT_NAME = MyToDoListsTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -473,7 +473,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		198933D0193D1B320018C167 /* Build configuration list for PBXProject "ToDoList" */ = {
+		198933D0193D1B320018C167 /* Build configuration list for PBXProject "MyToDoLists" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				198933FF193D1B320018C167 /* Debug */,
@@ -482,7 +482,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		19893401193D1B320018C167 /* Build configuration list for PBXNativeTarget "ToDoList" */ = {
+		19893401193D1B320018C167 /* Build configuration list for PBXNativeTarget "MyToDoLists" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				19893402193D1B320018C167 /* Debug */,
@@ -491,7 +491,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		19893404193D1B320018C167 /* Build configuration list for PBXNativeTarget "ToDoListTests" */ = {
+		19893404193D1B320018C167 /* Build configuration list for PBXNativeTarget "MyToDoListsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				19893405193D1B320018C167 /* Debug */,

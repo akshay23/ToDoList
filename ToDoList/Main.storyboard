@@ -319,7 +319,7 @@
             </objects>
             <point key="canvasLocation" x="1727" y="69"/>
         </scene>
-        <!--Create List View Controller - My Lists-->
+        <!--Create List View Controller - My To-Do Lists-->
         <scene sceneID="7Sy-mo-rjN">
             <objects>
                 <tableViewController storyboardIdentifier="createListVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="f4K-0d-vQG" customClass="CreateListViewController" sceneMemberID="viewController">
@@ -353,7 +353,7 @@
                             <outlet property="delegate" destination="f4K-0d-vQG" id="RLr-q6-IG1"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="My Lists" id="dQJ-rG-fmF">
+                    <navigationItem key="navigationItem" title="My To-Do Lists" id="dQJ-rG-fmF">
                         <barButtonItem key="leftBarButtonItem" title="Edit" id="ctb-TH-NZ8" userLabel="EditButton">
                             <connections>
                                 <action selector="editList:" destination="f4K-0d-vQG" id="eeA-wm-jye"/>
