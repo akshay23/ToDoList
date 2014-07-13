@@ -18,9 +18,6 @@
 {
     [super viewDidLoad];
     
-    // Set focus on text field
-    [self.itemTxtField becomeFirstResponder];
-    
     // Create and add the 'Done' button to navigation bar
     UIBarButtonItem *done = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStylePlain target:self action:@selector(addItem:)];
     [self.navigationItem setRightBarButtonItem:done];
@@ -28,6 +25,22 @@
     // Set view colour
     [self.view setBackgroundColor:self.delegate.tableView.backgroundColor];
 
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    // Set focus on text field
+    [self.itemTxtField becomeFirstResponder];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [self.itemTxtField resignFirstResponder];
+}
+
+- (BOOL)canBecomeFirstResponder
+{
+    return YES;
 }
 
 - (void)addItem:(id)sender
@@ -47,6 +60,15 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    if (event.subtype == UIEventSubtypeMotionShake)
+    {
+        self.itemTxtField.text = @"";
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 @end

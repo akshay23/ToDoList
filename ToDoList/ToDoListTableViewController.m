@@ -75,6 +75,11 @@
     [self saveList];
 }
 
+- (BOOL)canBecomeFirstResponder
+{
+    return YES;
+}
+
 - (void)addToDoItem:(id)sender
 {
     [self.navigationController pushViewController:self.addToDoItemVC animated:YES];
@@ -148,6 +153,14 @@
     [self loadList];
     [self.tableView reloadData];
     [self.refreshControl endRefreshing];
+}
+
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    if (event.subtype == UIEventSubtypeMotionShake)
+    {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 #pragma mark - Table view data source
