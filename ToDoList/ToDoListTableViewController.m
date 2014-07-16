@@ -15,7 +15,6 @@
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSMutableArray *toDoItems;
 @property (strong, nonatomic) AddToDoItemViewController *addToDoItemVC;
-@property (strong, nonatomic) CreateListViewController *delegate;
 
 - (void)loadList;
 - (NSMutableArray *)decodeMyArray:(NSMutableArray *)encodedArray;
@@ -25,27 +24,23 @@
 
 @implementation ToDoListTableViewController
 
-- (id)initWithDelegateAndListItem:(ListItem *)actualList theDelegate:(CreateListViewController *)delegate
+- (void)initializeView
 {
-    self.delegate = delegate;
-    self.list = actualList;
-    self.title = actualList.name;
+    self.title = self.list.name;
     
     // Either create new or load existing list of todo items
-    if (!actualList.toDoItems)
+    if (!self.list.toDoItems)
     {
         self.toDoItems = [[NSMutableArray alloc] init];
     }
     else
     {
-        self.toDoItems = actualList.toDoItems;
+        self.toDoItems = self.list.toDoItems;
     }
     
     // Create new add item VC using main storyboard
     self.addToDoItemVC = [[GlobalData getInstance].mainStoryboard instantiateViewControllerWithIdentifier:@"addItemVC"];
     self.addToDoItemVC.delegate = self;
-    
-    return [self init];
 }
 
 - (void)viewDidLoad
@@ -183,7 +178,6 @@
 {
     static NSString *CellIdentifier = @"ListPrototypeCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    [cell setBackgroundColor:self.tableView.backgroundColor];
     
     if (cell == nil) {
         cell = [[UITableViewCell alloc] init];
@@ -195,10 +189,12 @@
     if (toDoItem.completed)
     {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        [cell setBackgroundColor:[UIColor colorWithRed:0.0 green:2.0 blue:0.0 alpha:1.0]];
     }
     else
     {
         cell.accessoryType = UITableViewCellAccessoryNone;
+        [cell setBackgroundColor:self.tableView.backgroundColor];
     }
     
     return cell;
@@ -206,14 +202,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    [cell setBackgroundColor:[UIColor greenColor]];
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     ToDoItem *tappedItem = [self.toDoItems objectAtIndex:indexPath.row];
     tappedItem.completed = !tappedItem.completed;
-    [self saveList];   // Save list
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-    [cell setBackgroundColor:[UIColor clearColor]];
+    //[self saveList];   // Save list
 }
 
 // Override to support conditional editing of the table view.

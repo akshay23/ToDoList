@@ -16,8 +16,9 @@
 @interface ToDoListTableViewController : UITableViewController
 
 @property (strong, nonatomic) ListItem *list;
+@property (strong, nonatomic) CreateListViewController *delegate;
 
-- (id)initWithDelegateAndListItem:(ListItem *)actualList theDelegate:(CreateListViewController *)delegate;
+- (void)initializeView;
 - (void)addToArray:(ToDoItem *)item;
 - (void)saveList;
 

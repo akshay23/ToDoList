@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--To Do List Table View Controller - Title-->
+        <!--To Do List Table View Controller-->
         <scene sceneID="nSJ-MI-g0z">
             <objects>
                 <tableViewController storyboardIdentifier="todoListVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="80p-Ef-1pe" customClass="ToDoListTableViewController" sceneMemberID="viewController">
@@ -21,14 +21,22 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Take out the trash" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KzS-5X-B6X">
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KzS-5X-B6X">
                                             <rect key="frame" x="15" y="0.0" width="290" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <color key="textColor" red="0.0" green="0.38765729966464679" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Take out the trash">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.29236255933325239" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="18" name="HelveticaNeue"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" red="0.89979987780000004" green="1" blue="0.90733785290000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.89979987780000004" green="1" blue="0.90733785290000002" alpha="1" colorSpace="calibratedRGB"/>
                             </tableViewCell>
@@ -39,10 +47,6 @@
                             <outlet property="delegate" destination="80p-Ef-1pe" id="G39-Mc-z1l"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="vXc-Jf-fQH">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Av1-Sv-Hwi"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="jNW-i5-TJa"/>
-                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pg2-oF-bWD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

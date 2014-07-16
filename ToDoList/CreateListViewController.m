@@ -64,7 +64,10 @@
         [self.lists addObject:item];
         [self.tableView reloadData];
         
-        self.toDoListVC = [[ToDoListTableViewController alloc] initWithDelegateAndListItem:item theDelegate:self];
+        self.toDoListVC = [[GlobalData getInstance].mainStoryboard instantiateViewControllerWithIdentifier:@"todoListVC"];
+        self.toDoListVC.delegate = self;
+        self.toDoListVC.list = item;
+        [self.toDoListVC initializeView];
         
         [self.navigationController pushViewController:self.toDoListVC animated:YES];
     }
@@ -133,7 +136,11 @@
     //[tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     
     ListItem *item = [self.lists objectAtIndex:indexPath.row];
-    self.toDoListVC = [[ToDoListTableViewController alloc] initWithDelegateAndListItem:item theDelegate:self];
+    self.toDoListVC = [[GlobalData getInstance].mainStoryboard instantiateViewControllerWithIdentifier:@"todoListVC"];
+    self.toDoListVC.delegate = self;
+    self.toDoListVC.list = item;
+    [self.toDoListVC initializeView];
+    
     [self.navigationController pushViewController:self.toDoListVC animated:YES];
 }
 

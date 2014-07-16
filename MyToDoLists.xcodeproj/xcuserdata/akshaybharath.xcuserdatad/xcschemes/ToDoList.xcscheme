@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "198933D4193D1B320018C167"
-               BuildableName = "ToDoList.app"
+               BuildableName = "MyToDoLists.app"
                BlueprintName = "MyToDoLists"
                ReferencedContainer = "container:MyToDoLists.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "198933EF193D1B320018C167"
-               BuildableName = "ToDoListTests.xctest"
+               BuildableName = "MyToDoListsTests.xctest"
                BlueprintName = "MyToDoListsTests"
                ReferencedContainer = "container:MyToDoLists.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "198933D4193D1B320018C167"
-            BuildableName = "ToDoList.app"
+            BuildableName = "MyToDoLists.app"
             BlueprintName = "MyToDoLists"
             ReferencedContainer = "container:MyToDoLists.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "198933D4193D1B320018C167"
-            BuildableName = "ToDoList.app"
+            BuildableName = "MyToDoLists.app"
             BlueprintName = "MyToDoLists"
             ReferencedContainer = "container:MyToDoLists.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "198933D4193D1B320018C167"
-            BuildableName = "ToDoList.app"
+            BuildableName = "MyToDoLists.app"
             BlueprintName = "MyToDoLists"
             ReferencedContainer = "container:MyToDoLists.xcodeproj">
          </BuildableReference>
