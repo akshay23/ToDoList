@@ -90,6 +90,15 @@
 
 - (void)refreshData
 {
+    for (ToDoItem *item in self.toDoItems)
+    {
+        if (item.completed)
+        {
+            [self.toDoItems removeObject:item];
+        }
+    }
+    
+    [self.delegate saveLists];
     [self.tableView reloadData];
     [self.refreshControl endRefreshing];
 }
@@ -131,7 +140,7 @@
     if (toDoItem.completed)
     {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
-        [cell setBackgroundColor:[UIColor colorWithRed:0.0 green:2.0 blue:0.0 alpha:1.0]];
+        [cell setBackgroundColor:[UIColor colorWithRed:0.0 green:2.0 blue:0.5 alpha:1.0]];
     }
     else
     {
@@ -149,7 +158,8 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-    //[self saveList];   // Save list
+    
+    [self.delegate saveLists];   // Save list
 }
 
 // Override to support conditional editing of the table view.
