@@ -11,7 +11,7 @@
 
 @interface ListItem : NSObject
 
-@property (assign, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSMutableArray *toDoItems;
 
 - (id)initWithName:(NSString *)name;

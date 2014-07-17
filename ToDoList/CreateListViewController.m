@@ -12,6 +12,8 @@
 
 @property (strong, nonatomic) ToDoListTableViewController *toDoListVC;
 
+- (NSMutableArray *)decodeMyArray:(NSMutableArray *)encodedArray;
+
 @end
 
 @implementation CreateListViewController
@@ -31,12 +33,64 @@
     doubleTap.numberOfTapsRequired = 2;
     doubleTap.numberOfTouchesRequired = 1;
     [self.tableView addGestureRecognizer:doubleTap];
+    
+    // Load existing to-do lists (if any)
+    [self loadLists];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)saveLists
+{
+    // Save list (in two steps)
+    // Step 1: convert custom objects in array into NSData
+    NSMutableArray *archiveArray = [NSMutableArray arrayWithCapacity:self.lists.count];
+    for (ListItem *item in self.lists) {
+        NSData *itemEncodedObject = [NSKeyedArchiver archivedDataWithRootObject:item];
+        [archiveArray addObject:itemEncodedObject];
+    }
+
+    // Step 2: Actually save the new array
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:archiveArray forKey:@"MyToDoLists"];
+    [defaults synchronize];
+
+    NSLog(@"Lists saved");
+}
+
+- (void)loadLists
+{
+    // Get the stored data before the view loads
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *listt = [self decodeMyArray:[defaults objectForKey:@"MyToDoLists"]];
+
+    if (listt)
+    {
+        self.lists = listt;
+        NSLog(@"List size is: %d", (int) listt.count);
+    }
+    else
+    {
+        self.lists = [[NSMutableArray alloc] init];
+        NSLog(@"List of ListItems is nil");
+    }
+}
+
+- (NSMutableArray *)decodeMyArray:(NSMutableArray *)encodedArray
+{
+    if (!encodedArray) return nil;
+
+    NSMutableArray *decoded = [NSMutableArray arrayWithCapacity:encodedArray.count];
+    for (NSData *item in encodedArray) {
+        ListItem *decodedObject = [NSKeyedUnarchiver unarchiveObjectWithData:item];
+        [decoded addObject:decodedObject];
+    }
+
+    return decoded;
 }
 
 - (IBAction)addList:(id)sender
@@ -54,21 +108,24 @@
     {
         NSString *listName = [[alertView textFieldAtIndex:0] text];
         ListItem *item = [[ListItem alloc] initWithName:listName];
-        
+
         if (self.lists == nil)
         {
             NSLog(@"Lists array is nil");
             self.lists = [[NSMutableArray alloc] init];
         }
-        
+
         [self.lists addObject:item];
         [self.tableView reloadData];
-        
+
         self.toDoListVC = [[GlobalData getInstance].mainStoryboard instantiateViewControllerWithIdentifier:@"todoListVC"];
         self.toDoListVC.delegate = self;
         self.toDoListVC.list = item;
         [self.toDoListVC initializeView];
-        
+
+        // Save array of lists
+        [self saveLists];
+
         [self.navigationController pushViewController:self.toDoListVC animated:YES];
     }
 }
@@ -86,6 +143,9 @@
         [self.tableView setEditing:NO animated:YES];
         [[self.navigationItem leftBarButtonItem] setTitle:@"Edit"];
         [[self.navigationItem rightBarButtonItem] setEnabled:YES];
+        
+        // Save array of lists
+        [self saveLists];
     }
 }
 
@@ -157,6 +217,7 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
         [self.lists removeObjectAtIndex:indexPath.row];
+        [self saveLists];
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }

@@ -19,5 +19,7 @@
 
 - (IBAction)addList:(id)sender;
 - (IBAction)editList:(id)sender;
+- (void)saveLists;
+- (void)loadLists;
 
 @end

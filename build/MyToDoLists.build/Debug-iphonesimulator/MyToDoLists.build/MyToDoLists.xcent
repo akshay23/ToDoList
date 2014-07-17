@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>application-identifier</key>
+	<string>VRYW4TD62Q.com.actionman.*</string>
+	<key>com.apple.developer.default-data-protection</key>
+	<string>NSFileProtectionComplete</string>
+	<key>com.apple.developer.pass-type-identifiers</key>
+	<array>
+		<string>VRYW4TD62Q.*</string>
+	</array>
+	<key>com.apple.developer.team-identifier</key>
+	<string>VRYW4TD62Q</string>
+	<key>com.apple.developer.ubiquity-container-identifiers</key>
+	<array>
+		<string>VRYW4TD62Q.com.actionman.AkshaysToDoListApp</string>
+		<string>VRYW4TD62Q.VRYW4TD62Q.com.actionman.AkshaysToDoListApp</string>
+	</array>
+	<key>get-task-allow</key>
+	<true/>
+</dict>
+</plist>

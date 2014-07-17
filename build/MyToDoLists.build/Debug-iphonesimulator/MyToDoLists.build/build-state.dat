@@ -1,0 +1,1072 @@
+TMyToDoLists
+v6
+r1
+cCheck dependencies
+cProcessPCH /var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/MyToDoLists-Prefix-dtgkbrbzhptmqsfalyngpkxhxpxi/MyToDoLists-Prefix.pch.pch ToDoList/MyToDoLists-Prefix.pch normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cProcessPCH /var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/MyToDoLists-Prefix-fmrcyfrubdzzvhhgmwzdufctjaod/MyToDoLists-Prefix.pch.pch ToDoList/MyToDoLists-Prefix.pch normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.analyzer
+cCompileC build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/AppDelegate.o /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/AppDelegate.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/ToDoItem.o /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ToDoItem.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/GlobalData.o /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/GlobalData.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/CreateListViewController.o /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/CreateListViewController.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/ListItem.o /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ListItem.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/ToDoListTableViewController.o /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ToDoListTableViewController.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/main.o /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/main.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/AddToDoItemViewController.o /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/AddToDoItemViewController.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cAnalyzeShallow /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/AppDelegate.m
+cAnalyzeShallow /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ToDoItem.m
+cAnalyzeShallow /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/GlobalData.m
+cAnalyzeShallow /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/CreateListViewController.m
+cAnalyzeShallow /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ListItem.m
+cAnalyzeShallow /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ToDoListTableViewController.m
+cAnalyzeShallow /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/main.m
+cAnalyzeShallow /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/AddToDoItemViewController.m
+cCompileAssetCatalog /Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/MyToDoLists.app /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/Images.xcassets
+cCompileStoryboard /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/Main.storyboard
+cCopyStringsFile /Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/MyToDoLists.app/en.lproj/InfoPlist.strings ToDoList/en.lproj/InfoPlist.strings
+cProcessInfoPlistFile /Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/MyToDoLists.app/Info.plist /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/MyToDoLists-Info.plist
+cProcessProductPackaging /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ToDoList.entitlements /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists.xcent
+cLd /Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/MyToDoLists.app/MyToDoLists normal x86_64
+cGenerateDSYMFile /Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/MyToDoLists.app.dSYM /Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/MyToDoLists.app/MyToDoLists
+cTouch /Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/MyToDoLists.app
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk
+c0000000053119F8A0000000000000198
+t1393663882
+s408
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/SDKSettings.plist
+c00000000538CE77300000000000003B4
+t1401743219
+s948
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/CoreServices/SystemVersion.plist
+c00000000538CE776000000000000019E
+t1401743222
+s414
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CFNetwork.framework/CFNetwork
+c00000000538CE777000000000058E0E0
+t1401743223
+s5824736
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
+c00000000538CE77700000000005B82F0
+t1401743223
+s5997296
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c00000000538CE7770000000000446820
+t1401743223
+s4483104
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreImage.framework/CoreImage
+c00000000538CE77700000000003599D0
+t1401743223
+s3512784
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreText.framework/CoreText
+c00000000538CE77700000000002FC3B0
+t1401743223
+s3130288
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreVideo.framework/CoreVideo
+c00000000538CE777000000000004B000
+t1401743223
+s307200
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c00000000538CE778000000000088D8C0
+t1401743224
+s8968384
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/OpenGLES.framework/OpenGLES
+c00000000538CE7780000000000037680
+t1401743224
+s226944
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/QuartzCore.framework/QuartzCore
+c00000000538CE778000000000048F720
+t1401743224
+s4781856
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/Security.framework/Security
+c00000000538CE778000000000013FD70
+t1401743224
+s1310064
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c00000000538CE77A0000000001F1DE10
+t1401743226
+s32628240
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
+c00000000538CE77E00000000002BC360
+t1401743230
+s2868064
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/crt1.o
+c00000000538CE7820000000000002338
+t1401743234
+s9016
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libSystem.dylib
+c00000000538CE782000000000008D370
+t1401743234
+s578416
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libobjc.dylib
+c00000000538CE7820000000000392E20
+t1401743234
+s3747360
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/host/libdyld.dylib
+c000000005380D59100000000000141F0
+t1400952209
+s82416
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcache_sim.dylib
+c00000000538CE7820000000000014A80
+t1401743234
+s84608
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcommonCrypto_sim.dylib
+c00000000538CE7820000000000033BA0
+t1401743234
+s211872
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcompiler_rt_sim.dylib
+c00000000538CE782000000000001CFB0
+t1401743234
+s118704
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcopyfile_sim.dylib
+c00000000538CE782000000000001B2B0
+t1401743234
+s111280
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcorecrypto_sim.dylib
+c00000000538CE78200000000000C9570
+t1401743234
+s824688
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libdispatch.dylib
+c00000000538CE7820000000000063280
+t1401743234
+s406144
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libdyld_sim.dylib
+c00000000538CE7820000000000008880
+t1401743234
+s34944
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libmacho_sim.dylib
+c00000000538CE7820000000000015080
+t1401743234
+s86144
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libnotify_sim.dylib
+c00000000538CE78200000000000230F0
+t1401743234
+s143600
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libremovefile_sim.dylib
+c00000000538CE782000000000000E380
+t1401743234
+s58240
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_network.dylib
+c00000000538CE7820000000000089380
+t1401743234
+s562048
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_override.dylib
+c00000000538CE7820000000000017320
+t1401743234
+s95008
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_asl.dylib
+c00000000538CE7820000000000039CD0
+t1401743234
+s236752
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_blocks.dylib
+c00000000538CE782000000000000B0B0
+t1401743234
+s45232
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_c.dylib
+c00000000538CE7820000000000167E80
+t1401743234
+s1474176
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_configuration.dylib
+c00000000538CE78200000000000106A0
+t1401743234
+s67232
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_dnssd.dylib
+c00000000538CE782000000000001CE40
+t1401743234
+s118336
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_info.dylib
+c00000000538CE78200000000000740C0
+t1401743234
+s475328
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_m.dylib
+c00000000538CE782000000000006CA60
+t1401743234
+s445024
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libunwind_sim.dylib
+c00000000538CE782000000000001BAD0
+t1401743234
+s113360
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libxpc.dylib
+c00000000538CE7820000000000084A20
+t1401743234
+s543264
+
+N/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.1/include/module.map
+c00000000538CE78D0000000000000ADC
+t1401743245
+s2780
+
+N/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.1/lib/darwin/libclang_rt.ios.a
+c00000000538CE78D000000000000514C
+t1401743245
+s20812
+
+N/Users/akshaybharath/Documents/checker-276/lib/clang/3.5/include/module.map
+c0000000051B263880000000000000A5B
+t1370645384
+s2651
+
+N/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/AddToDoItemViewController.h
+c0000000053BE8FCA00000000000001E9
+t1404997578
+s489
+
+N/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/AddToDoItemViewController.m
+c0000000053C731BB0000000000000769
+t1405563323
+s1897
+
+N/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/AppDelegate.h
+c0000000053B75DC3000000000000011F
+t1404526019
+s287
+
+N/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/AppDelegate.m
+c0000000053C0D63600000000000008B5
+t1405146678
+s2229
+
+N/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/CreateListViewController.h
+c0000000053C728FC0000000000000262
+t1405561084
+s610
+
+N/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/CreateListViewController.m
+c0000000053C73D320000000000001F87
+t1405566258
+s8071
+
+N/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/GlobalData.h
+c0000000053BE91BA00000000000001DB
+t1404998074
+s475
+
+N/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/GlobalData.m
+c0000000053BE1B4F000000000000020D
+t1404967759
+s525
+
+N/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/Images.xcassets
+c0000000053B75DC30000000000000088
+t1404526019
+s136
+
+N/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ListItem.h
+c0000000053C738E60000000000000176
+t1405565158
+s374
+
+N/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ListItem.m
+c0000000053C737D000000000000002DA
+t1405564880
+s730
+
+N/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/Main.storyboard
+c0000000053C5FE2F00000000000039BF
+t1405484591
+s14783
+
+N/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/MyToDoLists-Info.plist
+c0000000053C20C170000000000000461
+t1405226007
+s1121
+
+N/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/MyToDoLists-Prefix.pch
+c0000000053B75DC30000000000000158
+t1404526019
+s344
+
+N/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ToDoItem.h
+c0000000053BE95BE00000000000001A5
+t1404999102
+s421
+
+N/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ToDoItem.m
+c0000000053BE2BFD00000000000002F9
+t1404972029
+s761
+
+N/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ToDoList.entitlements
+c0000000053B75DC300000000000001AF
+t1404526019
+s431
+
+N/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ToDoListTableViewController.h
+c0000000053C72D01000000000000021F
+t1405562113
+s543
+
+N/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ToDoListTableViewController.m
+c0000000053C73DE0000000000000155C
+t1405566432
+s5468
+
+N/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/en.lproj/InfoPlist.strings
+c0000000053B75DC3000000000000002D
+t1404526019
+s45
+
+N/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/main.m
+c0000000053B75DC3000000000000015B
+t1404526019
+s347
+
+N/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/MyToDoLists.app
+t1405566454
+s306
+
+N/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/MyToDoLists.app.dSYM
+t1405523506
+s102
+
+N/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/MyToDoLists.app/Info.plist
+t1405523500
+s967
+
+N/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/MyToDoLists.app/Main.storyboardc
+t1405523500
+s340
+
+N/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/MyToDoLists.app/MyToDoLists
+t1405566454
+s81332
+
+N/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/MyToDoLists.app/PkgInfo
+t1405523500
+s8
+
+N/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/MyToDoLists.app/en.lproj/InfoPlist.strings
+t1405523498
+s42
+
+N/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists.xcent
+t1405566454
+s804
+
+N/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/AddToDoItemViewController.o
+t1405566454
+s59808
+
+N/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/AppDelegate.o
+t1405523498
+s70404
+
+N/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/CreateListViewController.o
+t1405566454
+s90208
+
+N/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/GlobalData.o
+t1405523498
+s10304
+
+N/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/ListItem.o
+t1405566454
+s13012
+
+N/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/MyToDoLists.LinkFileList
+c0000000053C6962A000000000000049D
+t1405523498
+s1181
+
+N/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/ToDoItem.o
+t1405523498
+s15032
+
+N/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/ToDoListTableViewController.o
+t1405566454
+s78744
+
+N/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/main.o
+t1405523498
+s3780
+
+N/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/assetcatalog_dependencies.txt
+t1405523499
+s373
+
+N/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/assetcatalog_generated_info.plist
+t1405523499
+s525
+
+N/usr/lib/libSystem.B.dylib
+c000000005380D57C000000000000E6D0
+t1400952188
+s59088
+
+N/usr/lib/system/libcache.dylib
+c000000005302F3030000000000012A00
+t1392702211
+s76288
+
+N/usr/lib/system/libcommonCrypto.dylib
+c000000005302F2EB000000000002E320
+t1392702187
+s189216
+
+N/usr/lib/system/libcompiler_rt.dylib
+c000000005302F2F70000000000021860
+t1392702199
+s137312
+
+N/usr/lib/system/libcopyfile.dylib
+c0000000053BB48AB000000000001B610
+t1404782763
+s112144
+
+N/usr/lib/system/libcorecrypto.dylib
+c000000005302F30300000000000BD920
+t1392702211
+s776480
+
+N/usr/lib/system/libkeymgr.dylib
+c000000005302F303000000000000A120
+t1392702211
+s41248
+
+N/usr/lib/system/liblaunch.dylib
+c0000000053BB48AC000000000001D550
+t1404782764
+s120144
+
+N/usr/lib/system/libmacho.dylib
+c000000005302F3030000000000014EE0
+t1392702211
+s85728
+
+N/usr/lib/system/libquarantine.dylib
+c000000005302F3050000000000010380
+t1392702213
+s66432
+
+N/usr/lib/system/libremovefile.dylib
+c000000005302F305000000000000C4C0
+t1392702213
+s50368
+
+N/usr/lib/system/libsystem_asl.dylib
+c000000005302F30300000000000357A0
+t1392702211
+s219040
+
+N/usr/lib/system/libsystem_blocks.dylib
+c000000005302F303000000000000C070
+t1392702211
+s49264
+
+N/usr/lib/system/libsystem_c.dylib
+c000000005302F2F70000000000168D00
+t1392702199
+s1477888
+
+N/usr/lib/system/libsystem_configuration.dylib
+c000000005380D58D0000000000010630
+t1400952205
+s67120
+
+N/usr/lib/system/libsystem_dnssd.dylib
+c0000000053BB48AC000000000001DF10
+t1404782764
+s122640
+
+N/usr/lib/system/libsystem_info.dylib
+c000000005302F2F70000000000075B00
+t1392702199
+s482048
+
+N/usr/lib/system/libsystem_kernel.dylib
+c0000000053BB48AC000000000007CD60
+t1404782764
+s511328
+
+N/usr/lib/system/libsystem_m.dylib
+c000000005302F2F700000000000766C0
+t1392702199
+s485056
+
+N/usr/lib/system/libsystem_malloc.dylib
+c000000005302F3040000000000044DC0
+t1392702212
+s282048
+
+N/usr/lib/system/libsystem_notify.dylib
+c000000005302F2F70000000000021FA0
+t1392702199
+s139168
+
+N/usr/lib/system/libsystem_platform.dylib
+c000000005302F304000000000002D920
+t1392702212
+s186656
+
+N/usr/lib/system/libsystem_pthread.dylib
+c000000005302F304000000000001E570
+t1392702212
+s124272
+
+N/usr/lib/system/libsystem_sandbox.dylib
+c0000000053BB48AC000000000000CC70
+t1404782764
+s52336
+
+N/usr/lib/system/libsystem_stats.dylib
+c000000005380D5890000000000009A80
+t1400952201
+s39552
+
+N/usr/lib/system/libunc.dylib
+c000000005302F2FF000000000000C3F0
+t1392702207
+s50160
+
+N/usr/lib/system/libunwind.dylib
+c000000005302F30400000000000199F0
+t1392702212
+s104944
+
+N/var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/MyToDoLists-Prefix-dtgkbrbzhptmqsfalyngpkxhxpxi/MyToDoLists-Prefix.pch.pch
+t1405523498
+s123192
+
+N/var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/MyToDoLists-Prefix-fmrcyfrubdzzvhhgmwzdufctjaod/MyToDoLists-Prefix.pch.pch
+t1405523498
+s122944
+
+N/var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/T/scan-build-2014-07-16-111137-12722-1/StaticAnalyzer/MyToDoLists/MyToDoLists/normal/x86_64/AddToDoItemViewController.plist
+t2
+s0
+
+N/var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/T/scan-build-2014-07-16-111137-12722-1/StaticAnalyzer/MyToDoLists/MyToDoLists/normal/x86_64/AppDelegate.plist
+t2
+s0
+
+N/var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/T/scan-build-2014-07-16-111137-12722-1/StaticAnalyzer/MyToDoLists/MyToDoLists/normal/x86_64/CreateListViewController.plist
+t2
+s0
+
+N/var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/T/scan-build-2014-07-16-111137-12722-1/StaticAnalyzer/MyToDoLists/MyToDoLists/normal/x86_64/GlobalData.plist
+t2
+s0
+
+N/var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/T/scan-build-2014-07-16-111137-12722-1/StaticAnalyzer/MyToDoLists/MyToDoLists/normal/x86_64/ListItem.plist
+t2
+s0
+
+N/var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/T/scan-build-2014-07-16-111137-12722-1/StaticAnalyzer/MyToDoLists/MyToDoLists/normal/x86_64/ToDoItem.plist
+t2
+s0
+
+N/var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/T/scan-build-2014-07-16-111137-12722-1/StaticAnalyzer/MyToDoLists/MyToDoLists/normal/x86_64/ToDoListTableViewController.plist
+t2
+s0
+
+N/var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/T/scan-build-2014-07-16-111137-12722-1/StaticAnalyzer/MyToDoLists/MyToDoLists/normal/x86_64/main.plist
+t2
+s0
+
+N/var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/T/scan-build-2014-07-16-111145-12788-1/StaticAnalyzer/MyToDoLists/MyToDoLists/normal/x86_64/AddToDoItemViewController.plist
+t2
+s0
+
+N/var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/T/scan-build-2014-07-16-111145-12788-1/StaticAnalyzer/MyToDoLists/MyToDoLists/normal/x86_64/AppDelegate.plist
+t2
+s0
+
+N/var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/T/scan-build-2014-07-16-111145-12788-1/StaticAnalyzer/MyToDoLists/MyToDoLists/normal/x86_64/CreateListViewController.plist
+t2
+s0
+
+N/var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/T/scan-build-2014-07-16-111145-12788-1/StaticAnalyzer/MyToDoLists/MyToDoLists/normal/x86_64/GlobalData.plist
+t2
+s0
+
+N/var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/T/scan-build-2014-07-16-111145-12788-1/StaticAnalyzer/MyToDoLists/MyToDoLists/normal/x86_64/ListItem.plist
+t2
+s0
+
+N/var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/T/scan-build-2014-07-16-111145-12788-1/StaticAnalyzer/MyToDoLists/MyToDoLists/normal/x86_64/ToDoItem.plist
+t2
+s0
+
+N/var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/T/scan-build-2014-07-16-111145-12788-1/StaticAnalyzer/MyToDoLists/MyToDoLists/normal/x86_64/ToDoListTableViewController.plist
+t2
+s0
+
+N/var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/T/scan-build-2014-07-16-111145-12788-1/StaticAnalyzer/MyToDoLists/MyToDoLists/normal/x86_64/main.plist
+t2
+s0
+
+N/var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/T/scan-build-2014-07-16-230734-19544-1/StaticAnalyzer/MyToDoLists/MyToDoLists/normal/x86_64/AddToDoItemViewController.plist
+t2
+s0
+
+N/var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/T/scan-build-2014-07-16-230734-19544-1/StaticAnalyzer/MyToDoLists/MyToDoLists/normal/x86_64/AppDelegate.plist
+t2
+s0
+
+N/var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/T/scan-build-2014-07-16-230734-19544-1/StaticAnalyzer/MyToDoLists/MyToDoLists/normal/x86_64/CreateListViewController.plist
+t2
+s0
+
+N/var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/T/scan-build-2014-07-16-230734-19544-1/StaticAnalyzer/MyToDoLists/MyToDoLists/normal/x86_64/GlobalData.plist
+t2
+s0
+
+N/var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/T/scan-build-2014-07-16-230734-19544-1/StaticAnalyzer/MyToDoLists/MyToDoLists/normal/x86_64/ListItem.plist
+t2
+s0
+
+N/var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/T/scan-build-2014-07-16-230734-19544-1/StaticAnalyzer/MyToDoLists/MyToDoLists/normal/x86_64/ToDoItem.plist
+t2
+s0
+
+N/var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/T/scan-build-2014-07-16-230734-19544-1/StaticAnalyzer/MyToDoLists/MyToDoLists/normal/x86_64/ToDoListTableViewController.plist
+t2
+s0
+
+N/var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/T/scan-build-2014-07-16-230734-19544-1/StaticAnalyzer/MyToDoLists/MyToDoLists/normal/x86_64/main.plist
+t2
+s0
+
+CAnalyzeShallow /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/AddToDoItemViewController.m
+s427259254.842050
+e427259254.886104
+r1
+xAnalyzeShallow
+x/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/AddToDoItemViewController.m
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection98"Analyze (shallow) /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/AddToDoItemViewController.m67"[1mAnalyzeShallow[0m [1mToDoList/AddToDoItemViewController.m[0m90bcd7767577b941^e9d7e2767577b941^---0#0#1#-19%DVTDocumentLocation2@87"file:///Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/AddToDoItemViewController.m0000000000000000^4529"[1mAnalyzeShallow[0m [1mToDoList/AddToDoItemViewController.m[0m    cd /Users/akshaybharath/Documents/iOS/ToDoList    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/Documents/doxygen/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/.rvm/gems/ruby-2.1.1/bin:/Users/akshaybharath/.rvm/gems/ruby-2.1.1@global/bin:/Users/akshaybharath/.rvm/rubies/ruby-2.1.1/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin"    /Users/akshaybharath/Documents/checker-276/bin/clang -x objective-c -arch x86_64 -fmessage-length=176 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -fmodules -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__clang_analyzer__ -Xclang -analyzer-output=plist-html -Xclang -analyzer-config -Xclang path-diagnostics-alternate=true -Xclang -analyzer-config -Xclang report-in-main-source-file=true -Xclang -analyzer-config -Xclang mode=shallow -Xclang -analyzer-checker -Xclang security.insecureAPI.UncheckedReturn -Xclang -analyzer-checker -Xclang security.insecureAPI.getpw -Xclang -analyzer-checker -Xclang security.insecureAPI.gets -Xclang -analyzer-checker -Xclang security.insecureAPI.mkstemp -Xclang -analyzer-checker -Xclang security.insecureAPI.mktemp -Xclang -analyzer-disable-checker -Xclang security.insecureAPI.rand -Xclang -analyzer-disable-checker -Xclang security.insecureAPI.strcpy -Xclang -analyzer-checker -Xclang security.insecureAPI.vfork -mios-simulator-version-min=7.1 -iquote /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-generated-files.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-own-target-headers.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-all-target-headers.hmap -iquote /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-project-headers.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/DerivedSources/x86_64 -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/DerivedSources -F/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator -include /var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/MyToDoLists-Prefix-fmrcyfrubdzzvhhgmwzdufctjaod/MyToDoLists-Prefix.pch --analyze /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/AddToDoItemViewController.m -o /var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/T/scan-build-2014-07-16-230734-19544-1/StaticAnalyzer/MyToDoLists/MyToDoLists/normal/x86_64/AddToDoItemViewController.plist36"E459F7B2-20CD-44AC-98D1-46321A405F9D-
+bC48657D3-88EE-4731-A839-D2BFF8ED299B
+
+CAnalyzeShallow /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/AppDelegate.m
+s427259254.642610
+e427259254.840866
+r1
+xAnalyzeShallow
+x/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/AppDelegate.m
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection84"Analyze (shallow) /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/AppDelegate.m53"[1mAnalyzeShallow[0m [1mToDoList/AppDelegate.m[0m89b5a4767577b941^ff42d7767577b941^---0#0#1#-19%DVTDocumentLocation2@73"file:///Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/AppDelegate.m0000000000000000^4487"[1mAnalyzeShallow[0m [1mToDoList/AppDelegate.m[0m    cd /Users/akshaybharath/Documents/iOS/ToDoList    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/Documents/doxygen/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/.rvm/gems/ruby-2.1.1/bin:/Users/akshaybharath/.rvm/gems/ruby-2.1.1@global/bin:/Users/akshaybharath/.rvm/rubies/ruby-2.1.1/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin"    /Users/akshaybharath/Documents/checker-276/bin/clang -x objective-c -arch x86_64 -fmessage-length=176 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -fmodules -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__clang_analyzer__ -Xclang -analyzer-output=plist-html -Xclang -analyzer-config -Xclang path-diagnostics-alternate=true -Xclang -analyzer-config -Xclang report-in-main-source-file=true -Xclang -analyzer-config -Xclang mode=shallow -Xclang -analyzer-checker -Xclang security.insecureAPI.UncheckedReturn -Xclang -analyzer-checker -Xclang security.insecureAPI.getpw -Xclang -analyzer-checker -Xclang security.insecureAPI.gets -Xclang -analyzer-checker -Xclang security.insecureAPI.mkstemp -Xclang -analyzer-checker -Xclang security.insecureAPI.mktemp -Xclang -analyzer-disable-checker -Xclang security.insecureAPI.rand -Xclang -analyzer-disable-checker -Xclang security.insecureAPI.strcpy -Xclang -analyzer-checker -Xclang security.insecureAPI.vfork -mios-simulator-version-min=7.1 -iquote /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-generated-files.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-own-target-headers.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-all-target-headers.hmap -iquote /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-project-headers.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/DerivedSources/x86_64 -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/DerivedSources -F/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator -include /var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/MyToDoLists-Prefix-fmrcyfrubdzzvhhgmwzdufctjaod/MyToDoLists-Prefix.pch --analyze /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/AppDelegate.m -o /var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/T/scan-build-2014-07-16-230734-19544-1/StaticAnalyzer/MyToDoLists/MyToDoLists/normal/x86_64/AppDelegate.plist36"AC88A17C-7DF8-4A31-97AE-D30A9C749262-
+bC48657D3-88EE-4731-A839-D2BFF8ED299B
+
+CAnalyzeShallow /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/CreateListViewController.m
+s427259254.643945
+e427259254.863927
+r1
+xAnalyzeShallow
+x/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/CreateListViewController.m
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection97"Analyze (shallow) /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/CreateListViewController.m66"[1mAnalyzeShallow[0m [1mToDoList/CreateListViewController.m[0m8a06a5767577b941^4e2bdd767577b941^---0#0#1#-19%DVTDocumentLocation2@86"file:///Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/CreateListViewController.m0000000000000000^4526"[1mAnalyzeShallow[0m [1mToDoList/CreateListViewController.m[0m    cd /Users/akshaybharath/Documents/iOS/ToDoList    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/Documents/doxygen/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/.rvm/gems/ruby-2.1.1/bin:/Users/akshaybharath/.rvm/gems/ruby-2.1.1@global/bin:/Users/akshaybharath/.rvm/rubies/ruby-2.1.1/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin"    /Users/akshaybharath/Documents/checker-276/bin/clang -x objective-c -arch x86_64 -fmessage-length=176 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -fmodules -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__clang_analyzer__ -Xclang -analyzer-output=plist-html -Xclang -analyzer-config -Xclang path-diagnostics-alternate=true -Xclang -analyzer-config -Xclang report-in-main-source-file=true -Xclang -analyzer-config -Xclang mode=shallow -Xclang -analyzer-checker -Xclang security.insecureAPI.UncheckedReturn -Xclang -analyzer-checker -Xclang security.insecureAPI.getpw -Xclang -analyzer-checker -Xclang security.insecureAPI.gets -Xclang -analyzer-checker -Xclang security.insecureAPI.mkstemp -Xclang -analyzer-checker -Xclang security.insecureAPI.mktemp -Xclang -analyzer-disable-checker -Xclang security.insecureAPI.rand -Xclang -analyzer-disable-checker -Xclang security.insecureAPI.strcpy -Xclang -analyzer-checker -Xclang security.insecureAPI.vfork -mios-simulator-version-min=7.1 -iquote /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-generated-files.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-own-target-headers.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-all-target-headers.hmap -iquote /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-project-headers.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/DerivedSources/x86_64 -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/DerivedSources -F/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator -include /var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/MyToDoLists-Prefix-fmrcyfrubdzzvhhgmwzdufctjaod/MyToDoLists-Prefix.pch --analyze /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/CreateListViewController.m -o /var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/T/scan-build-2014-07-16-230734-19544-1/StaticAnalyzer/MyToDoLists/MyToDoLists/normal/x86_64/CreateListViewController.plist36"DA63A40E-6DDA-41C0-A1F1-9E196B034BF4-
+bC48657D3-88EE-4731-A839-D2BFF8ED299B
+
+CAnalyzeShallow /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/GlobalData.m
+s427259254.643261
+e427259254.840800
+r1
+xAnalyzeShallow
+x/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/GlobalData.m
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection83"Analyze (shallow) /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/GlobalData.m52"[1mAnalyzeShallow[0m [1mToDoList/GlobalData.m[0m33e0a4767577b941^1b4cd7767577b941^---0#0#1#-19%DVTDocumentLocation2@72"file:///Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/GlobalData.m0000000000000000^4484"[1mAnalyzeShallow[0m [1mToDoList/GlobalData.m[0m    cd /Users/akshaybharath/Documents/iOS/ToDoList    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/Documents/doxygen/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/.rvm/gems/ruby-2.1.1/bin:/Users/akshaybharath/.rvm/gems/ruby-2.1.1@global/bin:/Users/akshaybharath/.rvm/rubies/ruby-2.1.1/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin"    /Users/akshaybharath/Documents/checker-276/bin/clang -x objective-c -arch x86_64 -fmessage-length=176 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -fmodules -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__clang_analyzer__ -Xclang -analyzer-output=plist-html -Xclang -analyzer-config -Xclang path-diagnostics-alternate=true -Xclang -analyzer-config -Xclang report-in-main-source-file=true -Xclang -analyzer-config -Xclang mode=shallow -Xclang -analyzer-checker -Xclang security.insecureAPI.UncheckedReturn -Xclang -analyzer-checker -Xclang security.insecureAPI.getpw -Xclang -analyzer-checker -Xclang security.insecureAPI.gets -Xclang -analyzer-checker -Xclang security.insecureAPI.mkstemp -Xclang -analyzer-checker -Xclang security.insecureAPI.mktemp -Xclang -analyzer-disable-checker -Xclang security.insecureAPI.rand -Xclang -analyzer-disable-checker -Xclang security.insecureAPI.strcpy -Xclang -analyzer-checker -Xclang security.insecureAPI.vfork -mios-simulator-version-min=7.1 -iquote /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-generated-files.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-own-target-headers.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-all-target-headers.hmap -iquote /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-project-headers.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/DerivedSources/x86_64 -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/DerivedSources -F/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator -include /var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/MyToDoLists-Prefix-fmrcyfrubdzzvhhgmwzdufctjaod/MyToDoLists-Prefix.pch --analyze /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/GlobalData.m -o /var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/T/scan-build-2014-07-16-230734-19544-1/StaticAnalyzer/MyToDoLists/MyToDoLists/normal/x86_64/GlobalData.plist36"AB7697C5-7710-4C3F-883E-1DEF3F2CE491-
+bC48657D3-88EE-4731-A839-D2BFF8ED299B
+
+CAnalyzeShallow /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ListItem.m
+s427259254.801275
+e427259254.849406
+r1
+xAnalyzeShallow
+x/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ListItem.m
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection81"Analyze (shallow) /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ListItem.m50"[1mAnalyzeShallow[0m [1mToDoList/ListItem.m[0m1139cd767577b941^5a81d9767577b941^---0#0#1#-19%DVTDocumentLocation2@70"file:///Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ListItem.m0000000000000000^4478"[1mAnalyzeShallow[0m [1mToDoList/ListItem.m[0m    cd /Users/akshaybharath/Documents/iOS/ToDoList    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/Documents/doxygen/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/.rvm/gems/ruby-2.1.1/bin:/Users/akshaybharath/.rvm/gems/ruby-2.1.1@global/bin:/Users/akshaybharath/.rvm/rubies/ruby-2.1.1/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin"    /Users/akshaybharath/Documents/checker-276/bin/clang -x objective-c -arch x86_64 -fmessage-length=176 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -fmodules -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__clang_analyzer__ -Xclang -analyzer-output=plist-html -Xclang -analyzer-config -Xclang path-diagnostics-alternate=true -Xclang -analyzer-config -Xclang report-in-main-source-file=true -Xclang -analyzer-config -Xclang mode=shallow -Xclang -analyzer-checker -Xclang security.insecureAPI.UncheckedReturn -Xclang -analyzer-checker -Xclang security.insecureAPI.getpw -Xclang -analyzer-checker -Xclang security.insecureAPI.gets -Xclang -analyzer-checker -Xclang security.insecureAPI.mkstemp -Xclang -analyzer-checker -Xclang security.insecureAPI.mktemp -Xclang -analyzer-disable-checker -Xclang security.insecureAPI.rand -Xclang -analyzer-disable-checker -Xclang security.insecureAPI.strcpy -Xclang -analyzer-checker -Xclang security.insecureAPI.vfork -mios-simulator-version-min=7.1 -iquote /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-generated-files.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-own-target-headers.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-all-target-headers.hmap -iquote /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-project-headers.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/DerivedSources/x86_64 -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/DerivedSources -F/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator -include /var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/MyToDoLists-Prefix-fmrcyfrubdzzvhhgmwzdufctjaod/MyToDoLists-Prefix.pch --analyze /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ListItem.m -o /var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/T/scan-build-2014-07-16-230734-19544-1/StaticAnalyzer/MyToDoLists/MyToDoLists/normal/x86_64/ListItem.plist36"F2BB4D99-3046-40EF-8475-7F86768A80FA-
+bC48657D3-88EE-4731-A839-D2BFF8ED299B
+
+CAnalyzeShallow /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ToDoItem.m
+s427259254.642879
+e427259254.840805
+r1
+xAnalyzeShallow
+x/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ToDoItem.m
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection81"Analyze (shallow) /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ToDoItem.m50"[1mAnalyzeShallow[0m [1mToDoList/ToDoItem.m[0m1cd2a4767577b941^0d53d7767577b941^---0#0#1#-19%DVTDocumentLocation2@70"file:///Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ToDoItem.m0000000000000000^4478"[1mAnalyzeShallow[0m [1mToDoList/ToDoItem.m[0m    cd /Users/akshaybharath/Documents/iOS/ToDoList    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/Documents/doxygen/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/.rvm/gems/ruby-2.1.1/bin:/Users/akshaybharath/.rvm/gems/ruby-2.1.1@global/bin:/Users/akshaybharath/.rvm/rubies/ruby-2.1.1/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin"    /Users/akshaybharath/Documents/checker-276/bin/clang -x objective-c -arch x86_64 -fmessage-length=176 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -fmodules -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__clang_analyzer__ -Xclang -analyzer-output=plist-html -Xclang -analyzer-config -Xclang path-diagnostics-alternate=true -Xclang -analyzer-config -Xclang report-in-main-source-file=true -Xclang -analyzer-config -Xclang mode=shallow -Xclang -analyzer-checker -Xclang security.insecureAPI.UncheckedReturn -Xclang -analyzer-checker -Xclang security.insecureAPI.getpw -Xclang -analyzer-checker -Xclang security.insecureAPI.gets -Xclang -analyzer-checker -Xclang security.insecureAPI.mkstemp -Xclang -analyzer-checker -Xclang security.insecureAPI.mktemp -Xclang -analyzer-disable-checker -Xclang security.insecureAPI.rand -Xclang -analyzer-disable-checker -Xclang security.insecureAPI.strcpy -Xclang -analyzer-checker -Xclang security.insecureAPI.vfork -mios-simulator-version-min=7.1 -iquote /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-generated-files.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-own-target-headers.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-all-target-headers.hmap -iquote /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-project-headers.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/DerivedSources/x86_64 -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/DerivedSources -F/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator -include /var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/MyToDoLists-Prefix-fmrcyfrubdzzvhhgmwzdufctjaod/MyToDoLists-Prefix.pch --analyze /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ToDoItem.m -o /var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/T/scan-build-2014-07-16-230734-19544-1/StaticAnalyzer/MyToDoLists/MyToDoLists/normal/x86_64/ToDoItem.plist36"66DEB407-383C-4C44-A06B-F0747E58803D-
+bC48657D3-88EE-4731-A839-D2BFF8ED299B
+
+CAnalyzeShallow /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ToDoListTableViewController.m
+s427259254.841006
+e427259254.895774
+r1
+xAnalyzeShallow
+x/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ToDoListTableViewController.m
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection100"Analyze (shallow) /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ToDoListTableViewController.m69"[1mAnalyzeShallow[0m [1mToDoList/ToDoListTableViewController.m[0mf183d7767577b941^a052e5767577b941^---0#0#1#-19%DVTDocumentLocation2@89"file:///Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ToDoListTableViewController.m0000000000000000^4535"[1mAnalyzeShallow[0m [1mToDoList/ToDoListTableViewController.m[0m    cd /Users/akshaybharath/Documents/iOS/ToDoList    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/Documents/doxygen/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/.rvm/gems/ruby-2.1.1/bin:/Users/akshaybharath/.rvm/gems/ruby-2.1.1@global/bin:/Users/akshaybharath/.rvm/rubies/ruby-2.1.1/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin"    /Users/akshaybharath/Documents/checker-276/bin/clang -x objective-c -arch x86_64 -fmessage-length=176 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -fmodules -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__clang_analyzer__ -Xclang -analyzer-output=plist-html -Xclang -analyzer-config -Xclang path-diagnostics-alternate=true -Xclang -analyzer-config -Xclang report-in-main-source-file=true -Xclang -analyzer-config -Xclang mode=shallow -Xclang -analyzer-checker -Xclang security.insecureAPI.UncheckedReturn -Xclang -analyzer-checker -Xclang security.insecureAPI.getpw -Xclang -analyzer-checker -Xclang security.insecureAPI.gets -Xclang -analyzer-checker -Xclang security.insecureAPI.mkstemp -Xclang -analyzer-checker -Xclang security.insecureAPI.mktemp -Xclang -analyzer-disable-checker -Xclang security.insecureAPI.rand -Xclang -analyzer-disable-checker -Xclang security.insecureAPI.strcpy -Xclang -analyzer-checker -Xclang security.insecureAPI.vfork -mios-simulator-version-min=7.1 -iquote /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-generated-files.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-own-target-headers.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-all-target-headers.hmap -iquote /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-project-headers.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/DerivedSources/x86_64 -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/DerivedSources -F/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator -include /var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/MyToDoLists-Prefix-fmrcyfrubdzzvhhgmwzdufctjaod/MyToDoLists-Prefix.pch --analyze /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ToDoListTableViewController.m -o /var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/T/scan-build-2014-07-16-230734-19544-1/StaticAnalyzer/MyToDoLists/MyToDoLists/normal/x86_64/ToDoListTableViewController.plist36"1EEE7F11-18B6-4716-A0C0-55144A6DDC58-
+bC48657D3-88EE-4731-A839-D2BFF8ED299B
+
+CAnalyzeShallow /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/main.m
+s427259254.841250
+e427259254.877349
+r1
+xAnalyzeShallow
+x/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/main.m
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection77"Analyze (shallow) /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/main.m46"[1mAnalyzeShallow[0m [1mToDoList/main.m[0ma6b7d7767577b941^d89fe0767577b941^---0#0#1#-19%DVTDocumentLocation2@66"file:///Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/main.m0000000000000000^4466"[1mAnalyzeShallow[0m [1mToDoList/main.m[0m    cd /Users/akshaybharath/Documents/iOS/ToDoList    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/Documents/doxygen/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/.rvm/gems/ruby-2.1.1/bin:/Users/akshaybharath/.rvm/gems/ruby-2.1.1@global/bin:/Users/akshaybharath/.rvm/rubies/ruby-2.1.1/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin"    /Users/akshaybharath/Documents/checker-276/bin/clang -x objective-c -arch x86_64 -fmessage-length=176 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -fmodules -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__clang_analyzer__ -Xclang -analyzer-output=plist-html -Xclang -analyzer-config -Xclang path-diagnostics-alternate=true -Xclang -analyzer-config -Xclang report-in-main-source-file=true -Xclang -analyzer-config -Xclang mode=shallow -Xclang -analyzer-checker -Xclang security.insecureAPI.UncheckedReturn -Xclang -analyzer-checker -Xclang security.insecureAPI.getpw -Xclang -analyzer-checker -Xclang security.insecureAPI.gets -Xclang -analyzer-checker -Xclang security.insecureAPI.mkstemp -Xclang -analyzer-checker -Xclang security.insecureAPI.mktemp -Xclang -analyzer-disable-checker -Xclang security.insecureAPI.rand -Xclang -analyzer-disable-checker -Xclang security.insecureAPI.strcpy -Xclang -analyzer-checker -Xclang security.insecureAPI.vfork -mios-simulator-version-min=7.1 -iquote /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-generated-files.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-own-target-headers.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-all-target-headers.hmap -iquote /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-project-headers.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/DerivedSources/x86_64 -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/DerivedSources -F/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator -include /var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/MyToDoLists-Prefix-fmrcyfrubdzzvhhgmwzdufctjaod/MyToDoLists-Prefix.pch --analyze /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/main.m -o /var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/T/scan-build-2014-07-16-230734-19544-1/StaticAnalyzer/MyToDoLists/MyToDoLists/normal/x86_64/main.plist36"4F4D4C04-9880-4814-A7D5-137689E8CC7F-
+bC48657D3-88EE-4731-A839-D2BFF8ED299B
+
+CCheck dependencies
+r0
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependencies4ab87c767577b941^ac55a3767577b941^---0#1#1#--18"Check dependencies36"8C037671-D783-46AE-9C14-F5B438D1EC9E-
+
+CCompileAssetCatalog /Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/MyToDoLists.app /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/Images.xcassets
+s427216298.762163
+e427216299.550062
+r1
+xCompileAssetCatalog
+x/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/MyToDoLists.app
+x/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/Images.xcassets
+o/* com.apple.actool.compilation-results */
+o/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/MyToDoLists.app/LaunchImage-700-568h@2x.png
+o/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/MyToDoLists.app/Assets.car
+o/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/assetcatalog_generated_info.plist
+o
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection104"[1mCompileAssetCatalog[0m build/Debug-iphonesimulator/MyToDoLists.app [1mToDoList/Images.xcassets[0m104"[1mCompileAssetCatalog[0m build/Debug-iphonesimulator/MyToDoLists.app [1mToDoList/Images.xcassets[0ma438c3aacd76b941^0fd18cabcd76b941^-401"/* com.apple.actool.compilation-results *//Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/MyToDoLists.app/LaunchImage-700-568h@2x.png/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/MyToDoLists.app/Assets.car/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/assetcatalog_generated_info.plist-0#0#1#-19%DVTDocumentLocation2@76"file:///Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/Images.xcassets/0000000000000000^1747"[1mCompileAssetCatalog[0m build/Debug-iphonesimulator/MyToDoLists.app [1mToDoList/Images.xcassets[0m    cd /Users/akshaybharath/Documents/iOS/ToDoList    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/Documents/doxygen/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/.rvm/gems/ruby-2.1.1/bin:/Users/akshaybharath/.rvm/gems/ruby-2.1.1@global/bin:/Users/akshaybharath/.rvm/rubies/ruby-2.1.1/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin"    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/actool --output-format human-readable-text --notices --warnings --export-dependency-info /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/assetcatalog_dependencies.txt --output-partial-info-plist /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/assetcatalog_generated_info.plist --app-icon AppIcon --launch-image LaunchImage --platform iphonesimulator --minimum-deployment-target 7.1 --target-device iphone --compress-pngs --compile /Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/MyToDoLists.app /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/Images.xcassets36"E700C727-C319-4731-AA53-DFEF6EA61955-
+bB306D86C-A96B-49D3-8150-1F1A14629D98
+
+CCompileC build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/AddToDoItemViewController.o /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/AddToDoItemViewController.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s427259254.641977
+e427259254.843058
+r1
+xCompileC
+xbuild/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/AddToDoItemViewController.o
+x/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/AddToDoItemViewController.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/AddToDoItemViewController.m
+d/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/AddToDoItemViewController.h
+d/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ToDoItem.h
+d/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ToDoListTableViewController.h
+d/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/AppDelegate.h
+d/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/CreateListViewController.h
+d/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/GlobalData.h
+d/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ListItem.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection88"Compile /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/AddToDoItemViewController.m245"[1mCompileC[0m build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/AddToDoItemViewController.o [1mToDoList/AddToDoItemViewController.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler4088a4767577b941^40c3d7767577b941^---0#0#1#-19%DVTDocumentLocation2@87"file:///Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/AddToDoItemViewController.m0000000000000000^4346"[1mCompileC[0m build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/AddToDoItemViewController.o [1mToDoList/AddToDoItemViewController.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/akshaybharath/Documents/iOS/ToDoList    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/Documents/doxygen/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/.rvm/gems/ruby-2.1.1/bin:/Users/akshaybharath/.rvm/gems/ruby-2.1.1@global/bin:/Users/akshaybharath/.rvm/rubies/ruby-2.1.1/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=176 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -fmodules -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=7.1 -iquote /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-generated-files.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-own-target-headers.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-all-target-headers.hmap -iquote /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-project-headers.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/DerivedSources/x86_64 -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/DerivedSources -F/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator -include /var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/MyToDoLists-Prefix-dtgkbrbzhptmqsfalyngpkxhxpxi/MyToDoLists-Prefix.pch -MMD -MT dependencies -MF /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/AddToDoItemViewController.d --serialize-diagnostics /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/AddToDoItemViewController.dia -c /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/AddToDoItemViewController.m -o /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/AddToDoItemViewController.o36"3908B177-E76E-4ABE-9858-6DDF650EE5CC-
+bC48657D3-88EE-4731-A839-D2BFF8ED299B
+
+CCompileC build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/AppDelegate.o /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/AppDelegate.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s427216298.534212
+e427216298.660607
+r1
+xCompileC
+xbuild/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/AppDelegate.o
+x/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/AppDelegate.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/AppDelegate.m
+d/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/AppDelegate.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection74"Compile /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/AppDelegate.m217"[1mCompileC[0m build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/AppDelegate.o [1mToDoList/AppDelegate.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler1de588aacd76b941^5e2aaaaacd76b941^---0#0#1#-19%DVTDocumentLocation2@73"file:///Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/AppDelegate.m0000000000000000^4262"[1mCompileC[0m build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/AppDelegate.o [1mToDoList/AppDelegate.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/akshaybharath/Documents/iOS/ToDoList    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/Documents/doxygen/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/.rvm/gems/ruby-2.1.1/bin:/Users/akshaybharath/.rvm/gems/ruby-2.1.1@global/bin:/Users/akshaybharath/.rvm/rubies/ruby-2.1.1/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=176 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -fmodules -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=7.1 -iquote /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-generated-files.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-own-target-headers.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-all-target-headers.hmap -iquote /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-project-headers.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/DerivedSources/x86_64 -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/DerivedSources -F/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator -include /var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/MyToDoLists-Prefix-dtgkbrbzhptmqsfalyngpkxhxpxi/MyToDoLists-Prefix.pch -MMD -MT dependencies -MF /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/AppDelegate.d --serialize-diagnostics /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/AppDelegate.dia -c /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/AppDelegate.m -o /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/AppDelegate.o36"A4C02B41-CF4F-478E-8823-A79147BBBACC-
+bB306D86C-A96B-49D3-8150-1F1A14629D98
+
+CCompileC build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/CreateListViewController.o /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/CreateListViewController.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s427259254.641031
+e427259254.853169
+r1
+xCompileC
+xbuild/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/CreateListViewController.o
+x/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/CreateListViewController.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/CreateListViewController.m
+d/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/CreateListViewController.h
+d/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/GlobalData.h
+d/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ToDoListTableViewController.h
+d/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/AppDelegate.h
+d/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ListItem.h
+d/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ToDoItem.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection87"Compile /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/CreateListViewController.m243"[1mCompileC[0m build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/CreateListViewController.o [1mToDoList/CreateListViewController.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler793da4767577b941^9c69da767577b941^---0#0#1#-19%DVTDocumentLocation2@86"file:///Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/CreateListViewController.m0000000000000000^4340"[1mCompileC[0m build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/CreateListViewController.o [1mToDoList/CreateListViewController.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/akshaybharath/Documents/iOS/ToDoList    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/Documents/doxygen/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/.rvm/gems/ruby-2.1.1/bin:/Users/akshaybharath/.rvm/gems/ruby-2.1.1@global/bin:/Users/akshaybharath/.rvm/rubies/ruby-2.1.1/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=176 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -fmodules -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=7.1 -iquote /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-generated-files.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-own-target-headers.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-all-target-headers.hmap -iquote /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-project-headers.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/DerivedSources/x86_64 -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/DerivedSources -F/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator -include /var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/MyToDoLists-Prefix-dtgkbrbzhptmqsfalyngpkxhxpxi/MyToDoLists-Prefix.pch -MMD -MT dependencies -MF /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/CreateListViewController.d --serialize-diagnostics /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/CreateListViewController.dia -c /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/CreateListViewController.m -o /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/CreateListViewController.o36"244883DC-42C5-434D-B11C-91BE99B1213D-
+bC48657D3-88EE-4731-A839-D2BFF8ED299B
+
+CCompileC build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/GlobalData.o /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/GlobalData.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s427216298.534633
+e427216298.656260
+r1
+xCompileC
+xbuild/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/GlobalData.o
+x/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/GlobalData.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/GlobalData.m
+d/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/GlobalData.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection73"Compile /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/GlobalData.m215"[1mCompileC[0m build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/GlobalData.o [1mToDoList/GlobalData.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler3a0589aacd76b941^4e26aaaacd76b941^---0#0#1#-19%DVTDocumentLocation2@72"file:///Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/GlobalData.m0000000000000000^4256"[1mCompileC[0m build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/GlobalData.o [1mToDoList/GlobalData.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/akshaybharath/Documents/iOS/ToDoList    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/Documents/doxygen/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/.rvm/gems/ruby-2.1.1/bin:/Users/akshaybharath/.rvm/gems/ruby-2.1.1@global/bin:/Users/akshaybharath/.rvm/rubies/ruby-2.1.1/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=176 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -fmodules -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=7.1 -iquote /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-generated-files.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-own-target-headers.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-all-target-headers.hmap -iquote /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-project-headers.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/DerivedSources/x86_64 -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/DerivedSources -F/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator -include /var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/MyToDoLists-Prefix-dtgkbrbzhptmqsfalyngpkxhxpxi/MyToDoLists-Prefix.pch -MMD -MT dependencies -MF /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/GlobalData.d --serialize-diagnostics /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/GlobalData.dia -c /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/GlobalData.m -o /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/GlobalData.o36"8AFD262C-9B5B-427C-9AE7-4D812D6E46BC-
+bB306D86C-A96B-49D3-8150-1F1A14629D98
+
+CCompileC build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/ListItem.o /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ListItem.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s427259254.641206
+e427259254.801068
+r1
+xCompileC
+xbuild/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/ListItem.o
+x/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ListItem.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ListItem.m
+d/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ListItem.h
+d/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ToDoItem.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection71"Compile /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ListItem.m211"[1mCompileC[0m build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/ListItem.o [1mToDoList/ListItem.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compilerc040a4767577b941^a912cd767577b941^---0#0#1#-19%DVTDocumentLocation2@70"file:///Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ListItem.m0000000000000000^4244"[1mCompileC[0m build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/ListItem.o [1mToDoList/ListItem.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/akshaybharath/Documents/iOS/ToDoList    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/Documents/doxygen/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/.rvm/gems/ruby-2.1.1/bin:/Users/akshaybharath/.rvm/gems/ruby-2.1.1@global/bin:/Users/akshaybharath/.rvm/rubies/ruby-2.1.1/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=176 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -fmodules -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=7.1 -iquote /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-generated-files.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-own-target-headers.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-all-target-headers.hmap -iquote /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-project-headers.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/DerivedSources/x86_64 -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/DerivedSources -F/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator -include /var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/MyToDoLists-Prefix-dtgkbrbzhptmqsfalyngpkxhxpxi/MyToDoLists-Prefix.pch -MMD -MT dependencies -MF /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/ListItem.d --serialize-diagnostics /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/ListItem.dia -c /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ListItem.m -o /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/ListItem.o36"07EA1BDD-301C-4F06-BBF9-1D91C0A8A1EF-
+bC48657D3-88EE-4731-A839-D2BFF8ED299B
+
+CCompileC build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/ToDoItem.o /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ToDoItem.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s427216298.534370
+e427216298.657459
+r1
+xCompileC
+xbuild/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/ToDoItem.o
+x/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ToDoItem.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ToDoItem.m
+d/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ToDoItem.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection71"Compile /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ToDoItem.m211"[1mCompileC[0m build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/ToDoItem.o [1mToDoList/ToDoItem.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler06f288aacd76b941^f227aaaacd76b941^---0#0#1#-19%DVTDocumentLocation2@70"file:///Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ToDoItem.m0000000000000000^4244"[1mCompileC[0m build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/ToDoItem.o [1mToDoList/ToDoItem.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/akshaybharath/Documents/iOS/ToDoList    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/Documents/doxygen/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/.rvm/gems/ruby-2.1.1/bin:/Users/akshaybharath/.rvm/gems/ruby-2.1.1@global/bin:/Users/akshaybharath/.rvm/rubies/ruby-2.1.1/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=176 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -fmodules -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=7.1 -iquote /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-generated-files.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-own-target-headers.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-all-target-headers.hmap -iquote /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-project-headers.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/DerivedSources/x86_64 -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/DerivedSources -F/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator -include /var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/MyToDoLists-Prefix-dtgkbrbzhptmqsfalyngpkxhxpxi/MyToDoLists-Prefix.pch -MMD -MT dependencies -MF /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/ToDoItem.d --serialize-diagnostics /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/ToDoItem.dia -c /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ToDoItem.m -o /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/ToDoItem.o36"50E94C30-C2C2-4E0C-B1C0-D9CDCEE51FA5-
+bB306D86C-A96B-49D3-8150-1F1A14629D98
+
+CCompileC build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/ToDoListTableViewController.o /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ToDoListTableViewController.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s427259254.641399
+e427259254.851911
+r1
+xCompileC
+xbuild/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/ToDoListTableViewController.o
+x/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ToDoListTableViewController.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ToDoListTableViewController.m
+d/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ToDoListTableViewController.h
+d/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/AppDelegate.h
+d/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/CreateListViewController.h
+d/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/GlobalData.h
+d/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ListItem.h
+d/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ToDoItem.h
+d/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/AddToDoItemViewController.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection90"Compile /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ToDoListTableViewController.m249"[1mCompileC[0m build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/ToDoListTableViewController.o [1mToDoList/ToDoListTableViewController.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compilerf453a4767577b941^8316da767577b941^---0#0#1#-19%DVTDocumentLocation2@89"file:///Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ToDoListTableViewController.m0000000000000000^4358"[1mCompileC[0m build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/ToDoListTableViewController.o [1mToDoList/ToDoListTableViewController.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/akshaybharath/Documents/iOS/ToDoList    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/Documents/doxygen/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/.rvm/gems/ruby-2.1.1/bin:/Users/akshaybharath/.rvm/gems/ruby-2.1.1@global/bin:/Users/akshaybharath/.rvm/rubies/ruby-2.1.1/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=176 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -fmodules -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=7.1 -iquote /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-generated-files.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-own-target-headers.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-all-target-headers.hmap -iquote /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-project-headers.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/DerivedSources/x86_64 -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/DerivedSources -F/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator -include /var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/MyToDoLists-Prefix-dtgkbrbzhptmqsfalyngpkxhxpxi/MyToDoLists-Prefix.pch -MMD -MT dependencies -MF /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/ToDoListTableViewController.d --serialize-diagnostics /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/ToDoListTableViewController.dia -c /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ToDoListTableViewController.m -o /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/ToDoListTableViewController.o36"C5D6EA5F-9F71-4557-9D9B-C08A43045BA3-
+bC48657D3-88EE-4731-A839-D2BFF8ED299B
+
+CCompileC build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/main.o /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/main.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s427216298.537559
+e427216298.644250
+r1
+xCompileC
+xbuild/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/main.o
+x/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/main.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/main.m
+d/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/AppDelegate.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection67"Compile /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/main.m203"[1mCompileC[0m build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/main.o [1mToDoList/main.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compilerfad089aacd76b941^13eea9aacd76b941^---0#0#1#-19%DVTDocumentLocation2@66"file:///Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/main.m0000000000000000^4220"[1mCompileC[0m build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/main.o [1mToDoList/main.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/akshaybharath/Documents/iOS/ToDoList    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/Documents/doxygen/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/.rvm/gems/ruby-2.1.1/bin:/Users/akshaybharath/.rvm/gems/ruby-2.1.1@global/bin:/Users/akshaybharath/.rvm/rubies/ruby-2.1.1/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=176 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -fmodules -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=7.1 -iquote /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-generated-files.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-own-target-headers.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-all-target-headers.hmap -iquote /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-project-headers.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/DerivedSources/x86_64 -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/DerivedSources -F/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator -include /var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/MyToDoLists-Prefix-dtgkbrbzhptmqsfalyngpkxhxpxi/MyToDoLists-Prefix.pch -MMD -MT dependencies -MF /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/main.d --serialize-diagnostics /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/main.dia -c /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/main.m -o /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/main.o36"1884B369-30A4-4D2B-BB26-B8096E4C14ED-
+bB306D86C-A96B-49D3-8150-1F1A14629D98
+
+CCompileStoryboard /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/Main.storyboard
+s427216298.762365
+e427216300.382240
+r1
+xCompileStoryboard
+x/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/Main.storyboard
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection58"[1mCompileStoryboard[0m [1mToDoList/Main.storyboard[0m58"[1mCompileStoryboard[0m [1mToDoList/Main.storyboard[0m0649c3aacd76b941^12db61accd76b941^---0#0#1#-19%DVTDocumentLocation2@75"file:///Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/Main.storyboard0000000000000000^1422"[1mCompileStoryboard[0m [1mToDoList/Main.storyboard[0m    cd /Users/akshaybharath/Documents/iOS/ToDoList    export IBSC_MINIMUM_COMPATIBILITY_VERSION=7.1    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/Documents/doxygen/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/.rvm/gems/ruby-2.1.1/bin:/Users/akshaybharath/.rvm/gems/ruby-2.1.1@global/bin:/Users/akshaybharath/.rvm/rubies/ruby-2.1.1/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin"    export XCODE_DEVELOPER_USR_PATH=/Applications/Xcode.app/Contents/Developer/usr/bin/..    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/ibtool --errors --warnings --notices --minimum-deployment-target 7.1 --output-format human-readable-text --compile /Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/MyToDoLists.app/Main.storyboardc /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/Main.storyboard36"163005BA-34A1-446A-9F11-C604FD8F9AA9-
+bB306D86C-A96B-49D3-8150-1F1A14629D98
+
+CCopyStringsFile /Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/MyToDoLists.app/en.lproj/InfoPlist.strings ToDoList/en.lproj/InfoPlist.strings
+s427216298.762519
+e427216298.764100
+r1
+xCopyStringsFile
+x/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/MyToDoLists.app/en.lproj/InfoPlist.strings
+xToDoList/en.lproj/InfoPlist.strings
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection40"Copy ToDoList/en.lproj/InfoPlist.strings130"[1mCopyStringsFile[0m build/Debug-iphonesimulator/MyToDoLists.app/en.lproj/InfoPlist.strings ToDoList/en.lproj/InfoPlist.strings844bc3aacd76b941^849cc3aacd76b941^---0#0#1#-19%DVTDocumentLocation2@86"file:///Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/en.lproj/InfoPlist.strings0000000000000000^1191"[1mCopyStringsFile[0m build/Debug-iphonesimulator/MyToDoLists.app/en.lproj/InfoPlist.strings ToDoList/en.lproj/InfoPlist.strings    cd /Users/akshaybharath/Documents/iOS/ToDoList    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/Documents/doxygen/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/.rvm/gems/ruby-2.1.1/bin:/Users/akshaybharath/.rvm/gems/ruby-2.1.1@global/bin:/Users/akshaybharath/.rvm/rubies/ruby-2.1.1/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin"    builtin-copyStrings --validate --inputencoding utf-8 --outputencoding binary --outdir /Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/MyToDoLists.app/en.lproj -- ToDoList/en.lproj/InfoPlist.strings36"37B61A1F-4DD3-4A56-AABD-AF5513EDF1CB-
+bB306D86C-A96B-49D3-8150-1F1A14629D98
+
+CGenerateDSYMFile /Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/MyToDoLists.app.dSYM /Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/MyToDoLists.app/MyToDoLists
+s427259254.932572
+e427259254.948157
+r1
+xGenerateDSYMFile
+x/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/MyToDoLists.app.dSYM
+x/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/MyToDoLists.app/MyToDoLists
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection101"Generate /Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/MyToDoLists.app.dSYM137"[1mGenerateDSYMFile[0m [1mbuild/Debug-iphonesimulator/MyToDoLists.app.dSYM[0m build/Debug-iphonesimulator/MyToDoLists.app/MyToDoListsc0cdee767577b941^45bbf2767577b941^---0#0#1#-19%DVTDocumentLocation2@100"file:///Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/MyToDoLists.app.dSYM/0000000000000000^1268"[1mGenerateDSYMFile[0m [1mbuild/Debug-iphonesimulator/MyToDoLists.app.dSYM[0m build/Debug-iphonesimulator/MyToDoLists.app/MyToDoLists    cd /Users/akshaybharath/Documents/iOS/ToDoList    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/Documents/doxygen/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/.rvm/gems/ruby-2.1.1/bin:/Users/akshaybharath/.rvm/gems/ruby-2.1.1@global/bin:/Users/akshaybharath/.rvm/rubies/ruby-2.1.1/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/MyToDoLists.app/MyToDoLists -o /Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/MyToDoLists.app.dSYM36"744CE1F9-2F91-4113-9CF2-1F13DE717939-
+bC48657D3-88EE-4731-A839-D2BFF8ED299B
+
+CLd /Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/MyToDoLists.app/MyToDoLists normal x86_64
+s427259254.900216
+e427259254.931961
+r1
+xLd
+x/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/MyToDoLists.app/MyToDoLists
+xnormal
+xx86_64
+d/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/MyToDoLists.LinkFileList
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/crt1.o
+d/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/AppDelegate.o
+d/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/ToDoItem.o
+d/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/GlobalData.o
+d/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/CreateListViewController.o
+d/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/ListItem.o
+d/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/ToDoListTableViewController.o
+d/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/main.o
+d/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/AddToDoItemViewController.o
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libobjc.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libSystem.dylib
+d/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.1/lib/darwin/libclang_rt.ios.a
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreVideo.framework/CoreVideo
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreImage.framework/CoreImage
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/Security.framework/Security
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CFNetwork.framework/CFNetwork
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/OpenGLES.framework/OpenGLES
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/QuartzCore.framework/QuartzCore
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreText.framework/CoreText
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_override.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcache_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcommonCrypto_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcorecrypto_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcompiler_rt_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcopyfile_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libdispatch.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libdyld_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libmacho_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libnotify_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libremovefile_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_blocks.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_c.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_dnssd.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_info.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_m.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_network.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libunwind_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libxpc.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_configuration.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_asl.dylib
+d/usr/lib/libSystem.B.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
+d/usr/lib/system/libcache.dylib
+d/usr/lib/system/libcommonCrypto.dylib
+d/usr/lib/system/libcompiler_rt.dylib
+d/usr/lib/system/libcopyfile.dylib
+d/usr/lib/system/libcorecrypto.dylib
+d/usr/lib/system/libdyld.dylib
+d/usr/lib/system/libkeymgr.dylib
+d/usr/lib/system/liblaunch.dylib
+d/usr/lib/system/libmacho.dylib
+d/usr/lib/system/libquarantine.dylib
+d/usr/lib/system/libremovefile.dylib
+d/usr/lib/system/libsystem_asl.dylib
+d/usr/lib/system/libsystem_blocks.dylib
+d/usr/lib/system/libsystem_c.dylib
+d/usr/lib/system/libsystem_configuration.dylib
+d/usr/lib/system/libsystem_dnssd.dylib
+d/usr/lib/system/libsystem_info.dylib
+d/usr/lib/system/libsystem_kernel.dylib
+d/usr/lib/system/libsystem_m.dylib
+d/usr/lib/system/libsystem_malloc.dylib
+d/usr/lib/system/libsystem_notify.dylib
+d/usr/lib/system/libsystem_platform.dylib
+d/usr/lib/system/libsystem_pthread.dylib
+d/usr/lib/system/libsystem_sandbox.dylib
+d/usr/lib/system/libsystem_stats.dylib
+d/usr/lib/system/libunc.dylib
+d/usr/lib/system/libunwind.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/host/libdyld.dylib
+d/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists.xcent
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection104"Link /Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/MyToDoLists.app/MyToDoLists80"[1mLd[0m build/Debug-iphonesimulator/MyToDoLists.app/MyToDoLists normal x86_64cd90e6767577b941^5f96ee767577b941^---0#0#1#--2195"[1mLd[0m build/Debug-iphonesimulator/MyToDoLists.app/MyToDoLists normal x86_64    cd /Users/akshaybharath/Documents/iOS/ToDoList    export IPHONEOS_DEPLOYMENT_TARGET=7.1    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/Documents/doxygen/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/.rvm/gems/ruby-2.1.1/bin:/Users/akshaybharath/.rvm/gems/ruby-2.1.1@global/bin:/Users/akshaybharath/.rvm/rubies/ruby-2.1.1/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -L/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator -F/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator -filelist /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/MyToDoLists.LinkFileList -Xlinker -objc_abi_version -Xlinker 2 -fobjc-arc -fobjc-link-runtime -Xlinker -no_implicit_dylibs -mios-simulator-version-min=7.1 -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __entitlements -Xlinker /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists.xcent -framework CoreGraphics -framework UIKit -framework Foundation -Xlinker -dependency_info -Xlinker /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/Objects-normal/x86_64/MyToDoLists_dependency_info.dat -o /Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/MyToDoLists.app/MyToDoLists36"7740AB2F-B8FE-4416-BC7B-D18BD169EB95-
+bC48657D3-88EE-4731-A839-D2BFF8ED299B
+
+CProcessInfoPlistFile /Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/MyToDoLists.app/Info.plist /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/MyToDoLists-Info.plist
+s427216300.382710
+e427216300.384276
+r1
+xProcessInfoPlistFile
+x/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/MyToDoLists.app/Info.plist
+x/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/MyToDoLists-Info.plist
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection83"Process /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/MyToDoLists-Info.plist123"[1mProcessInfoPlistFile[0m build/Debug-iphonesimulator/MyToDoLists.app/Info.plist [1mToDoList/MyToDoLists-Info.plist[0m950e62accd76b941^6b6162accd76b941^---0#0#1#-19%DVTDocumentLocation2@82"file:///Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/MyToDoLists-Info.plist0000000000000000^1500"[1mProcessInfoPlistFile[0m build/Debug-iphonesimulator/MyToDoLists.app/Info.plist [1mToDoList/MyToDoLists-Info.plist[0m    cd /Users/akshaybharath/Documents/iOS/ToDoList    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/Documents/doxygen/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/.rvm/gems/ruby-2.1.1/bin:/Users/akshaybharath/.rvm/gems/ruby-2.1.1@global/bin:/Users/akshaybharath/.rvm/rubies/ruby-2.1.1/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin"    builtin-infoPlistUtility /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/MyToDoLists-Info.plist -genpkginfo /Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/MyToDoLists.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -additionalcontentfile /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/assetcatalog_generated_info.plist -o /Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/MyToDoLists.app/Info.plist36"DB9F9844-B09E-488A-A286-C6796E9C9AC3-
+bB306D86C-A96B-49D3-8150-1F1A14629D98
+
+CProcessPCH /var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/MyToDoLists-Prefix-dtgkbrbzhptmqsfalyngpkxhxpxi/MyToDoLists-Prefix.pch.pch ToDoList/MyToDoLists-Prefix.pch normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s427216298.319885
+e427216298.533670
+r1
+xProcessPCH
+x/var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/MyToDoLists-Prefix-dtgkbrbzhptmqsfalyngpkxhxpxi/MyToDoLists-Prefix.pch.pch
+xToDoList/MyToDoLists-Prefix.pch
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/MyToDoLists-Prefix.pch
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection42"Precompile ToDoList/MyToDoLists-Prefix.pch313"[1mProcessPCH[0m /var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/MyToDoLists-Prefix-dtgkbrbzhptmqsfalyngpkxhxpxi/MyToDoLists-Prefix.pch.pch ToDoList/MyToDoLists-Prefix.pch normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler933952aacd76b941^a59f88aacd76b941^---0#0#1#-19%DVTDocumentLocation2@82"file:///Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/MyToDoLists-Prefix.pch0000000000000000^4319"[1mProcessPCH[0m /var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/MyToDoLists-Prefix-dtgkbrbzhptmqsfalyngpkxhxpxi/MyToDoLists-Prefix.pch.pch ToDoList/MyToDoLists-Prefix.pch normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/akshaybharath/Documents/iOS/ToDoList    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/Documents/doxygen/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/.rvm/gems/ruby-2.1.1/bin:/Users/akshaybharath/.rvm/gems/ruby-2.1.1@global/bin:/Users/akshaybharath/.rvm/rubies/ruby-2.1.1/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch x86_64 -fmessage-length=176 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -fmodules -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=7.1 -iquote /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-generated-files.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-own-target-headers.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-all-target-headers.hmap -iquote /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-project-headers.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/DerivedSources/x86_64 -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/DerivedSources -F/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator --serialize-diagnostics /var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/MyToDoLists-Prefix-dtgkbrbzhptmqsfalyngpkxhxpxi/MyToDoLists-Prefix.pch.dia -MMD -MT dependencies -MF /var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/MyToDoLists-Prefix-dtgkbrbzhptmqsfalyngpkxhxpxi/MyToDoLists-Prefix.pch.d -c /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/MyToDoLists-Prefix.pch -o /var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/MyToDoLists-Prefix-dtgkbrbzhptmqsfalyngpkxhxpxi/MyToDoLists-Prefix.pch.pch36"CF91CFA9-DC40-492A-9275-7D007FBC5064-
+bB306D86C-A96B-49D3-8150-1F1A14629D98
+
+CProcessPCH /var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/MyToDoLists-Prefix-fmrcyfrubdzzvhhgmwzdufctjaod/MyToDoLists-Prefix.pch.pch ToDoList/MyToDoLists-Prefix.pch normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.analyzer
+s427216298.320553
+e427216298.497462
+r1
+xProcessPCH
+x/var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/MyToDoLists-Prefix-fmrcyfrubdzzvhhgmwzdufctjaod/MyToDoLists-Prefix.pch.pch
+xToDoList/MyToDoLists-Prefix.pch
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.analyzer
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection42"Precompile ToDoList/MyToDoLists-Prefix.pch313"[1mProcessPCH[0m /var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/MyToDoLists-Prefix-fmrcyfrubdzzvhhgmwzdufctjaod/MyToDoLists-Prefix.pch.pch ToDoList/MyToDoLists-Prefix.pch normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.analyzer603952aacd76b941^425a7faacd76b941^---0#0#1#-19%DVTDocumentLocation2@82"file:///Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/MyToDoLists-Prefix.pch0000000000000000^4594"[1mProcessPCH[0m /var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/MyToDoLists-Prefix-fmrcyfrubdzzvhhgmwzdufctjaod/MyToDoLists-Prefix.pch.pch ToDoList/MyToDoLists-Prefix.pch normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.analyzer    cd /Users/akshaybharath/Documents/iOS/ToDoList    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/Documents/doxygen/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/.rvm/gems/ruby-2.1.1/bin:/Users/akshaybharath/.rvm/gems/ruby-2.1.1@global/bin:/Users/akshaybharath/.rvm/rubies/ruby-2.1.1/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin"    /Users/akshaybharath/Documents/checker-276/bin/clang -x objective-c-header -arch x86_64 -fmessage-length=176 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -fmodules -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__clang_analyzer__ -Xclang -analyzer-output=plist-html -Xclang -analyzer-config -Xclang path-diagnostics-alternate=true -Xclang -analyzer-config -Xclang report-in-main-source-file=true -Xclang -analyzer-config -Xclang mode=shallow -Xclang -analyzer-checker -Xclang security.insecureAPI.UncheckedReturn -Xclang -analyzer-checker -Xclang security.insecureAPI.getpw -Xclang -analyzer-checker -Xclang security.insecureAPI.gets -Xclang -analyzer-checker -Xclang security.insecureAPI.mkstemp -Xclang -analyzer-checker -Xclang security.insecureAPI.mktemp -Xclang -analyzer-disable-checker -Xclang security.insecureAPI.rand -Xclang -analyzer-disable-checker -Xclang security.insecureAPI.strcpy -Xclang -analyzer-checker -Xclang security.insecureAPI.vfork -mios-simulator-version-min=7.1 -iquote /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-generated-files.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-own-target-headers.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-all-target-headers.hmap -iquote /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists-project-headers.hmap -I/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/DerivedSources/x86_64 -I/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/DerivedSources -F/Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator -c /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/MyToDoLists-Prefix.pch -o /var/folders/gj/33_86kf52kdb7pfs0zrcnpdc0000gn/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/MyToDoLists-Prefix-fmrcyfrubdzzvhhgmwzdufctjaod/MyToDoLists-Prefix.pch.pch36"0EFAA77D-A702-42CB-98FB-A2B09E9D6349-
+bB306D86C-A96B-49D3-8150-1F1A14629D98
+
+CProcessProductPackaging /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ToDoList.entitlements /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists.xcent
+s427259254.896913
+e427259254.898415
+r1
+xProcessProductPackaging
+x/Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ToDoList.entitlements
+x/Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists.xcent
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection152"[1mProcessProductPackaging[0m ToDoList/ToDoList.entitlements [1mbuild/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists.xcent[0m152"[1mProcessProductPackaging[0m ToDoList/ToDoList.entitlements [1mbuild/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists.xcent[0mf6b2e5767577b941^ebfee5767577b941^---0#0#1#-19%DVTDocumentLocation2@132"file:///Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists.xcent0000000000000000^1253"[1mProcessProductPackaging[0m ToDoList/ToDoList.entitlements [1mbuild/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists.xcent[0m    cd /Users/akshaybharath/Documents/iOS/ToDoList    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/Documents/doxygen/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/Users/akshaybharath/Documents/checker-276:/Users/akshaybharath/.rvm/gems/ruby-2.1.1/bin:/Users/akshaybharath/.rvm/gems/ruby-2.1.1@global/bin:/Users/akshaybharath/.rvm/rubies/ruby-2.1.1/bin:/usr/local/bin:/Users/akshaybharath/Downloads/apache-ant-1.9.4.2/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin:/Users/akshaybharath/.rvm/bin"    builtin-productPackagingUtility /Users/akshaybharath/Documents/iOS/ToDoList/ToDoList/ToDoList.entitlements -entitlements -format xml -o /Users/akshaybharath/Documents/iOS/ToDoList/build/MyToDoLists.build/Debug-iphonesimulator/MyToDoLists.build/MyToDoLists.xcent36"E551FD43-8C76-4B94-9CAC-55854A6AD499-
+bC48657D3-88EE-4731-A839-D2BFF8ED299B
+
+CTouch /Users/akshaybharath/Documents/iOS/ToDoList/build/Debug-iphonesimulator/MyToDoLists.app
+r0
+

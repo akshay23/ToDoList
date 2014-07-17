@@ -20,6 +20,5 @@
 
 - (void)initializeView;
 - (void)addToArray:(ToDoItem *)item;
-- (void)saveList;
 
 @end

@@ -16,8 +16,6 @@
 @property (strong, nonatomic) NSMutableArray *toDoItems;
 @property (strong, nonatomic) AddToDoItemViewController *addToDoItemVC;
 
-- (void)loadList;
-- (NSMutableArray *)decodeMyArray:(NSMutableArray *)encodedArray;
 - (void)refreshData;
 
 @end
@@ -66,9 +64,6 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    // Save list
-    [self saveList];
-    
     [super viewDidAppear:animated];
 }
 
@@ -93,61 +88,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)loadList
-{
-    // Get the stored data before the view loads
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSMutableArray *listt = [self decodeMyArray:[defaults objectForKey:self.title]];
-    
-    if (listt)
-    {
-        self.toDoItems = listt;
-        self.list.toDoItems = self.toDoItems;
-        NSLog(@"List size is: %d", (int) listt.count);
-    }
-}
-
-- (NSMutableArray *)decodeMyArray:(NSMutableArray *)encodedArray
-{
-    if (!encodedArray) return nil;
-    
-    NSMutableArray *decoded = [NSMutableArray arrayWithCapacity:encodedArray.count];
-    for (NSData *item in encodedArray) {
-        ToDoItem *decodedObject = [NSKeyedUnarchiver unarchiveObjectWithData:item];
-        if (!decodedObject.completed)
-        {
-            [decoded addObject:decodedObject];
-        }
-    }
-    
-    return decoded;
-}
-
-- (void)saveList
-{
-    // Save list (in two steps)
-    // Step 1: convert custom objects in array into NSData
-    NSMutableArray *archiveArray = [NSMutableArray arrayWithCapacity:self.toDoItems.count];
-    for (ToDoItem *item in self.toDoItems) {
-        NSData *itemEncodedObject = [NSKeyedArchiver archivedDataWithRootObject:item];
-        [archiveArray addObject:itemEncodedObject];
-    }
-    
-    // Step 2: Actually save the new array
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:archiveArray forKey:self.title];
-    [defaults synchronize];
-    
-    // Save to list
-    self.list.toDoItems = self.toDoItems;
-    
-    NSLog(@"List saved");
-}
-
 - (void)refreshData
 {
-    // Load data into list
-    [self loadList];
     [self.tableView reloadData];
     [self.refreshControl endRefreshing];
 }
@@ -223,7 +165,7 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
         [self.toDoItems removeObjectAtIndex:indexPath.row];
-        [self saveList];
+        [self.delegate saveLists];
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
