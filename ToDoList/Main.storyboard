@@ -50,7 +50,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pg2-oF-bWD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1203" y="69"/>
+            <point key="canvasLocation" x="1159" y="69"/>
         </scene>
         <!--Add To Do Item View Controller-->
         <scene sceneID="8Mh-12-Kfd">
@@ -86,7 +86,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jkt-Cr-1EX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1675" y="69"/>
+            <point key="canvasLocation" x="1587" y="69"/>
         </scene>
         <!--Create List View Controller - My To-Do Lists-->
         <scene sceneID="7Sy-mo-rjN">
@@ -159,7 +159,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lUq-E8-y57" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="202" y="69"/>
+            <point key="canvasLocation" x="294" y="69"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

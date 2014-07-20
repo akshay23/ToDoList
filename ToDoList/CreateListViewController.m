@@ -7,12 +7,15 @@
 //
 
 #import "CreateListViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface CreateListViewController ()
 
 @property (strong, nonatomic) ToDoListTableViewController *toDoListVC;
 
 - (NSMutableArray *)decodeMyArray:(NSMutableArray *)encodedArray;
+- (void)showTextBoxesForEditing;
+- (void)hideTextBoxesAfterEditing;
 
 @end
 
@@ -28,11 +31,6 @@
         [GlobalData getInstance].mainStoryboard = self.storyboard;
         NSLog(@"mainStoryboard instantiated");
     }
-    
-    UITapGestureRecognizer* doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTap:)];
-    doubleTap.numberOfTapsRequired = 2;
-    doubleTap.numberOfTouchesRequired = 1;
-    [self.tableView addGestureRecognizer:doubleTap];
     
     // Load existing to-do lists (if any)
     [self loadLists];
@@ -134,12 +132,20 @@
 {
     if (![self.tableView isEditing])
     {
+        // Enter edit mode
         [self.tableView setEditing:YES animated:YES];
         [[self.navigationItem leftBarButtonItem] setTitle:@"Done"];
         [[self.navigationItem rightBarButtonItem] setEnabled:NO];
+        
+        // Show textboxes in cells for editing
+        [self showTextBoxesForEditing];
     }
     else
     {
+        // Hide textboxes
+        [self hideTextBoxesAfterEditing];
+        
+        // Exit edit mode
         [self.tableView setEditing:NO animated:YES];
         [[self.navigationItem leftBarButtonItem] setTitle:@"Edit"];
         [[self.navigationItem rightBarButtonItem] setEnabled:YES];
@@ -149,17 +155,48 @@
     }
 }
 
-- (void)doubleTap:(UISwipeGestureRecognizer *) tap
+// Un-hide the UITextView objects in each cell of the table
+- (void)showTextBoxesForEditing
 {
-    if(UIGestureRecognizerStateEnded == tap.state)
+    for (int i = 0; i < self.lists.count; i++)
     {
-        CGPoint where = [tap locationInView:tap.view];
-        NSIndexPath* ip = [self.tableView indexPathForRowAtPoint:where];
-        //UITableViewCell* cell = [self.tableView cellForRowAtIndexPath:ip];
-        NSMutableString* aString = [NSMutableString stringWithFormat:@"You double-tapped the row %ld", (long)ip.row];
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Double Tap" message:aString delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
-        [alert show];
+        NSIndexPath *path = [NSIndexPath indexPathForRow:i inSection:0];
+        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:path];
+        [cell.textLabel setText:@""];
+        
+        for (UIView *v in cell.contentView.subviews)
+        {
+            if([v isMemberOfClass:[UITextView class]])
+            {
+                UITextView *vv = (UITextView *)v;
+                [vv setHidden:NO];
+            }
+        }
     }
+    
+    NSLog(@"Showed UITextViews in each cell");
+}
+
+// Re-hide the UITextView objects and change name of each objec in array
+- (void)hideTextBoxesAfterEditing
+{
+    for (int i = 0; i < self.lists.count; i++)
+    {
+        NSIndexPath *path = [NSIndexPath indexPathForRow:i inSection:0];
+        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:path];
+        for (UIView *v in cell.contentView.subviews)
+        {
+            if([v isMemberOfClass:[UITextView class]])
+            {
+                UITextView *vv = (UITextView *)v;
+                [vv setHidden:YES];
+                [cell.textLabel setText:vv.text];
+                [[self.lists objectAtIndex:i] setName:vv.text];
+            }
+        }
+    }
+    
+    NSLog(@"Hid all UITextViews from each cell");
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -178,29 +215,40 @@
 {
     static NSString *CellIdentifier = @"ListCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    ListItem *item = [self.lists objectAtIndex:indexPath.row];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] init];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    ListItem *item = [self.lists objectAtIndex:indexPath.row];
-    cell.textLabel.text = item.name;
+    // Create new UITxtView subvew to allow user to edit list nam
+    // Keep hidden until needed
+    CGRect frame  = CGRectMake(cell.frame.origin.x, cell.frame.origin.y, cell.frame.size.width - 80, cell.frame.size.height - 3);
+    UITextView *txtField =[[UITextView alloc] initWithFrame:frame];
+    txtField.text = item.name;
+    txtField.editable = YES;
+    txtField.font = cell.textLabel.font;
+    [txtField setTextColor:cell.textLabel.textColor];
+    [txtField setBackgroundColor:cell.backgroundColor];
+    [txtField setHidden:YES];
+    [[txtField layer] setBorderWidth:1.5];
+    [[txtField layer] setBorderColor:[[UIColor grayColor] CGColor]];
+    [[txtField layer] setCornerRadius:10.0];
+    
+    [cell.textLabel setText:item.name];
+    [cell.contentView addSubview:txtField];
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    //[tableView deselectRowAtIndexPath:indexPath animated:YES];
-    //[tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-    
     ListItem *item = [self.lists objectAtIndex:indexPath.row];
     self.toDoListVC = [[GlobalData getInstance].mainStoryboard instantiateViewControllerWithIdentifier:@"todoListVC"];
     self.toDoListVC.delegate = self;
     self.toDoListVC.list = item;
+
     [self.toDoListVC initializeView];
-    
     [self.navigationController pushViewController:self.toDoListVC animated:YES];
 }
 
