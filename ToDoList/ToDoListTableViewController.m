@@ -90,13 +90,14 @@
 
 - (void)refreshData
 {
+    // Find the things to remove
+    NSMutableArray *toDelete = [NSMutableArray array];
     for (ToDoItem *item in self.toDoItems)
-    {
         if (item.completed)
-        {
-            [self.toDoItems removeObject:item];
-        }
-    }
+            [toDelete addObject:item];
+    
+    // Remove the completed items from local array
+    [self.toDoItems removeObjectsInArray:toDelete];
     
     [self.delegate saveLists];
     [self.tableView reloadData];

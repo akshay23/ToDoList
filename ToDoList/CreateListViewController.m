@@ -116,6 +116,7 @@
         [self.lists addObject:item];
         [self.tableView reloadData];
 
+        // Initialize new toDoList view controller instance
         self.toDoListVC = [[GlobalData getInstance].mainStoryboard instantiateViewControllerWithIdentifier:@"todoListVC"];
         self.toDoListVC.delegate = self;
         self.toDoListVC.list = item;
@@ -124,6 +125,7 @@
         // Save array of lists
         [self saveLists];
 
+        // Navigate to view
         [self.navigationController pushViewController:self.toDoListVC animated:YES];
     }
 }
@@ -221,6 +223,12 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
+    // Delete existing subviews from contentview
+//    for (UIView *view in cell.contentView.subviews)
+//    {
+//        [view removeFromSuperview];
+//    }
+    
     // Create new UITxtView subvew to allow user to edit list nam
     // Keep hidden until needed
     CGRect frame  = CGRectMake(cell.frame.origin.x, cell.frame.origin.y, cell.frame.size.width - 80, cell.frame.size.height - 3);
@@ -237,6 +245,8 @@
     
     [cell.textLabel setText:item.name];
     [cell.contentView addSubview:txtField];
+
+    NSLog(@"Inside CellForRowAtIndexPath");
     
     return cell;
 }
