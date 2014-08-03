@@ -78,6 +78,8 @@
     }
 }
 
+// Decodes each item in the input array using NSKeyedUnarchiver
+// into a ListItem
 - (NSMutableArray *)decodeMyArray:(NSMutableArray *)encodedArray
 {
     if (!encodedArray) return nil;
