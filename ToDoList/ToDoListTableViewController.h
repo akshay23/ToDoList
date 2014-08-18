@@ -10,7 +10,11 @@
 #import "AppDelegate.h"
 #import "CreateListViewController.h"
 #import "ListItem.h"
+#import "ToDoItem.h"
+#import "AddToDoItemViewController.h"
+#import "CustomTableViewCell.h"
 
+@class AddToDoItemViewController;
 @class CreateListViewController;
 
 @interface ToDoListTableViewController : UITableViewController

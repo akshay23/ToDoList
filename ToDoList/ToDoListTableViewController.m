@@ -7,8 +7,6 @@
 //
 
 #import "ToDoListTableViewController.h"
-#import "ToDoItem.h"
-#import "AddToDoItemViewController.h"
 
 @interface ToDoListTableViewController ()
 
@@ -129,24 +127,22 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"ListPrototypeCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    CustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] init];
+        cell = [[CustomTableViewCell alloc] init];
     }
     
     ToDoItem *toDoItem = [self.toDoItems objectAtIndex:indexPath.row];
-    cell.textLabel.text = toDoItem.itemName;
+    cell.cellLabel.text = toDoItem.itemName;
     
     if (toDoItem.completed)
     {
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-        [cell setBackgroundColor:[UIColor colorWithRed:0.0 green:2.0 blue:0.5 alpha:1.0]];
+        [cell setSelected:YES];
     }
     else
     {
-        cell.accessoryType = UITableViewCellAccessoryNone;
-        [cell setBackgroundColor:self.tableView.backgroundColor];
+        [cell setSelected:NO];
     }
     
     return cell;
