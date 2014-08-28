@@ -10,13 +10,14 @@
 
 @implementation CustomTableViewCell
 
-@synthesize isChecked;
+@synthesize isChecked, item;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
+        NSLog(@"Cell init");
     }
     return self;
 }
@@ -29,19 +30,19 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
-    [super setSelected:selected animated:animated];
+    if (self.selected == selected) return;
 
     // Configure the view for the selected state
     UIImage *image = nil;
     if (isChecked)
     {
         image = [UIImage imageNamed: @"checkbox_empty.png"];
-        isChecked = false;
+        isChecked = NO;
     }
     else
     {
         image = [UIImage imageNamed: @"checkbox_full.png"];
-        isChecked = true;
+        isChecked = YES;
     }
     
     [self.tickBoxImage setImage:image];

@@ -134,6 +134,7 @@
     }
     
     ToDoItem *toDoItem = [self.toDoItems objectAtIndex:indexPath.row];
+    cell.item = toDoItem;
     cell.cellLabel.text = toDoItem.itemName;
     
     if (toDoItem.completed)
@@ -152,9 +153,6 @@
 {
     ToDoItem *tappedItem = [self.toDoItems objectAtIndex:indexPath.row];
     tappedItem.completed = !tappedItem.completed;
-    
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     
     [self.delegate saveLists];   // Save list
 }
