@@ -20,6 +20,8 @@
 
 @implementation ToDoListTableViewController
 
+@synthesize tableView;
+
 - (void)initializeView
 {
     self.title = self.list.name;
@@ -65,11 +67,6 @@
     [super viewDidAppear:animated];
 }
 
-- (BOOL)canBecomeFirstResponder
-{
-    return YES;
-}
-
 - (void)addToDoItem:(id)sender
 {
     [self.navigationController pushViewController:self.addToDoItemVC animated:YES];
@@ -84,6 +81,8 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    
+    [self.delegate saveLists];
 }
 
 - (void)refreshData
@@ -93,7 +92,7 @@
     for (ToDoItem *item in self.toDoItems)
         if (item.completed)
             [toDelete addObject:item];
-    
+
     // Remove the completed items from local array
     [self.toDoItems removeObjectsInArray:toDelete];
     
@@ -127,7 +126,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"ListPrototypeCell";
-    CustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    CustomTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil) {
         cell = [[CustomTableViewCell alloc] init];
@@ -171,7 +170,7 @@
         // Delete the row from the data source
         [self.toDoItems removeObjectAtIndex:indexPath.row];
         [self.delegate saveLists];
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
 

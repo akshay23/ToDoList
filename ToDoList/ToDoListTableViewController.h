@@ -21,6 +21,7 @@
 
 @property (strong, nonatomic) ListItem *list;
 @property (strong, nonatomic) CreateListViewController *delegate;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 - (void)initializeView;
 - (void)addToArray:(ToDoItem *)item;

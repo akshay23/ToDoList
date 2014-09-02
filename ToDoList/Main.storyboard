@@ -55,6 +55,9 @@
                             <outlet property="delegate" destination="80p-Ef-1pe" id="G39-Mc-z1l"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="tableView" destination="IUR-WS-UeR" id="VXf-ni-jQf"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pg2-oF-bWD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -168,23 +171,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lUq-E8-y57" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="294" y="69"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="gGu-Zz-zuF">
-            <objects>
-                <viewController id="Gf0-r2-e0x" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="zOp-Pb-OKL"/>
-                        <viewControllerLayoutGuide type="bottom" id="tgI-TW-4i8"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Npv-Kh-17o">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iJn-uZ-lqB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
         </scene>
     </scenes>
     <resources>

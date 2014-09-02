@@ -54,11 +54,10 @@
     {
         ToDoItem *listItem = [[ToDoItem alloc] initWithNameAndCompleted:self.itemTxtField.text isCompleted:NO];
         [self.delegate addToArray:listItem];
+        [self.itemTxtField setText:@""];
+        [self.navigationController popViewControllerAnimated:YES];
         [self.delegate.delegate saveLists];
         [self.delegate.tableView reloadData];
-        
-        self.itemTxtField.text = @"";
-        [self.navigationController popViewControllerAnimated:YES];
     }
 }
 

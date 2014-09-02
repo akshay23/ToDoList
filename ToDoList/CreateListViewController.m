@@ -32,10 +32,20 @@
     [self loadLists];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    // Load existing to-do lists (if any)
+    [self loadLists];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    
+    [self saveLists];
 }
 
 - (void)saveLists

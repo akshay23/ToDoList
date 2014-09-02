@@ -12,6 +12,7 @@
 @interface CustomTableViewCell : UITableViewCell
 @property BOOL isChecked;
 @property (strong, nonatomic) ToDoItem *item;
+@property (strong, nonatomic) UIImage *tickImage;
 @property (strong, nonatomic) IBOutlet UIButton *infoButton;
 @property (strong, nonatomic) IBOutlet UILabel *cellLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *tickBoxImage;
