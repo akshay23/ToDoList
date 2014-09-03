@@ -136,14 +136,7 @@
     cell.item = toDoItem;
     cell.cellLabel.text = toDoItem.itemName;
     
-    if (toDoItem.completed)
-    {
-        [cell setSelected:YES];
-    }
-    else
-    {
-        [cell setSelected:NO];
-    }
+    [cell setSelected:toDoItem.completed animated:YES];
     
     return cell;
 }
@@ -152,6 +145,8 @@
 {
     ToDoItem *tappedItem = [self.toDoItems objectAtIndex:indexPath.row];
     tappedItem.completed = !tappedItem.completed;
+    
+    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     
     [self.delegate saveLists];   // Save list
 }
