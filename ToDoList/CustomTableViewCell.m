@@ -26,36 +26,23 @@
 {
     // Initialization code
     [super awakeFromNib];
-    
-    if (isChecked)
-    {
-        self.tickImage = [UIImage imageNamed: @"checkbox_full.png"];
-    }
-    else
-    {
-        self.tickImage = [UIImage imageNamed: @"checkbox_empty.png"];
-    }
-    
-    [self.tickBoxImage setImage:self.tickImage];
-    
-    NSLog(@"I am awake");
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
-    if (self.selected == selected) return;
+    [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
-    if (isChecked)
+    if (self.item.completed)
     {
-        self.tickImage = [UIImage imageNamed: @"checkbox_empty.png"];
-        isChecked = NO;
+        self.tickImage = [UIImage imageNamed: @"checkbox_full.png"];
     }
     else
     {
-        self.tickImage = [UIImage imageNamed: @"checkbox_full.png"];
-        isChecked = YES;
+        self.tickImage = [UIImage imageNamed: @"checkbox_empty.png"];
     }
+    
+    self.isChecked = self.item.completed;
     
     [self.tickBoxImage setImage:self.tickImage];
 }
