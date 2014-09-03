@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1923AA7E1964DAFC0034C05B /* CreateListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1923AA7D1964DAFC0034C05B /* CreateListViewController.m */; };
+		1928CEA919A167E400D6C805 /* checkbox_empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 1928CEA719A167E400D6C805 /* checkbox_empty.png */; };
+		1928CEAA19A167E400D6C805 /* checkbox_full.png in Resources */ = {isa = PBXBuildFile; fileRef = 1928CEA819A167E400D6C805 /* checkbox_full.png */; };
+		1928CEAE19A169CF00D6C805 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1928CEAD19A169CF00D6C805 /* CustomTableViewCell.m */; };
 		19516284196E22E700CF4440 /* GlobalData.m in Sources */ = {isa = PBXBuildFile; fileRef = 19516283196E22E700CF4440 /* GlobalData.m */; };
 		1964B8C3193D2027000C48E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1964B8C2193D2027000C48E9 /* Main.storyboard */; };
 		1964B8C6193D7449000C48E9 /* AddToDoItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1964B8C5193D7449000C48E9 /* AddToDoItemViewController.m */; };
@@ -42,6 +45,10 @@
 		19239A06193EA02D00E9ABB2 /* ToDoList.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ToDoList.entitlements; sourceTree = "<group>"; };
 		1923AA7C1964DAFC0034C05B /* CreateListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateListViewController.h; sourceTree = "<group>"; };
 		1923AA7D1964DAFC0034C05B /* CreateListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateListViewController.m; sourceTree = "<group>"; };
+		1928CEA719A167E400D6C805 /* checkbox_empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkbox_empty.png; sourceTree = "<group>"; };
+		1928CEA819A167E400D6C805 /* checkbox_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkbox_full.png; sourceTree = "<group>"; };
+		1928CEAC19A169CF00D6C805 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
+		1928CEAD19A169CF00D6C805 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 		19516282196E22E700CF4440 /* GlobalData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalData.h; sourceTree = "<group>"; };
 		19516283196E22E700CF4440 /* GlobalData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalData.m; sourceTree = "<group>"; };
 		1964B8C2193D2027000C48E9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -95,6 +102,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1928CEAB19A167EC00D6C805 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				1928CEA819A167E400D6C805 /* checkbox_full.png */,
+				1928CEA719A167E400D6C805 /* checkbox_empty.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		198933CC193D1B320018C167 = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +144,7 @@
 		198933DE193D1B320018C167 /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				1928CEAB19A167EC00D6C805 /* Images */,
 				19239A06193EA02D00E9ABB2 /* ToDoList.entitlements */,
 				198933E7193D1B320018C167 /* AppDelegate.h */,
 				198933E8193D1B320018C167 /* AppDelegate.m */,
@@ -146,6 +163,8 @@
 				198933DF193D1B320018C167 /* Supporting Files */,
 				19516282196E22E700CF4440 /* GlobalData.h */,
 				19516283196E22E700CF4440 /* GlobalData.m */,
+				1928CEAC19A169CF00D6C805 /* CustomTableViewCell.h */,
+				1928CEAD19A169CF00D6C805 /* CustomTableViewCell.m */,
 			);
 			path = ToDoList;
 			sourceTree = "<group>";
@@ -264,7 +283,9 @@
 			files = (
 				1964B8C3193D2027000C48E9 /* Main.storyboard in Resources */,
 				198933E3193D1B320018C167 /* InfoPlist.strings in Resources */,
+				1928CEA919A167E400D6C805 /* checkbox_empty.png in Resources */,
 				198933EB193D1B320018C167 /* Images.xcassets in Resources */,
+				1928CEAA19A167E400D6C805 /* checkbox_full.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +309,7 @@
 				19516284196E22E700CF4440 /* GlobalData.m in Sources */,
 				1923AA7E1964DAFC0034C05B /* CreateListViewController.m in Sources */,
 				19B8BAF91967330E00827AFB /* ListItem.m in Sources */,
+				1928CEAE19A169CF00D6C805 /* CustomTableViewCell.m in Sources */,
 				1964B8C9193D7500000C48E9 /* ToDoListTableViewController.m in Sources */,
 				198933E5193D1B320018C167 /* main.m in Sources */,
 				1964B8C6193D7449000C48E9 /* AddToDoItemViewController.m in Sources */,

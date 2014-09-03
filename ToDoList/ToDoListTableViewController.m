@@ -7,8 +7,6 @@
 //
 
 #import "ToDoListTableViewController.h"
-#import "ToDoItem.h"
-#import "AddToDoItemViewController.h"
 
 @interface ToDoListTableViewController ()
 
@@ -21,6 +19,8 @@
 @end
 
 @implementation ToDoListTableViewController
+
+@synthesize tableView;
 
 - (void)initializeView
 {
@@ -67,11 +67,6 @@
     [super viewDidAppear:animated];
 }
 
-- (BOOL)canBecomeFirstResponder
-{
-    return YES;
-}
-
 - (void)addToDoItem:(id)sender
 {
     [self.navigationController pushViewController:self.addToDoItemVC animated:YES];
@@ -86,6 +81,8 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    
+    [self.delegate saveLists];
 }
 
 - (void)refreshData
@@ -95,7 +92,7 @@
     for (ToDoItem *item in self.toDoItems)
         if (item.completed)
             [toDelete addObject:item];
-    
+
     // Remove the completed items from local array
     [self.toDoItems removeObjectsInArray:toDelete];
     
@@ -129,24 +126,23 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"ListPrototypeCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    CustomTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] init];
+        cell = [[CustomTableViewCell alloc] init];
     }
     
     ToDoItem *toDoItem = [self.toDoItems objectAtIndex:indexPath.row];
-    cell.textLabel.text = toDoItem.itemName;
+    cell.item = toDoItem;
+    cell.cellLabel.text = toDoItem.itemName;
     
     if (toDoItem.completed)
     {
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-        [cell setBackgroundColor:[UIColor colorWithRed:0.0 green:2.0 blue:0.5 alpha:1.0]];
+        [cell setSelected:YES];
     }
     else
     {
-        cell.accessoryType = UITableViewCellAccessoryNone;
-        [cell setBackgroundColor:self.tableView.backgroundColor];
+        [cell setSelected:NO];
     }
     
     return cell;
@@ -156,9 +152,6 @@
 {
     ToDoItem *tappedItem = [self.toDoItems objectAtIndex:indexPath.row];
     tappedItem.completed = !tappedItem.completed;
-    
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     
     [self.delegate saveLists];   // Save list
 }
@@ -177,7 +170,7 @@
         // Delete the row from the data source
         [self.toDoItems removeObjectAtIndex:indexPath.row];
         [self.delegate saveLists];
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
 
