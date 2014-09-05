@@ -33,9 +33,11 @@
     {
         self.itemTxtField.text = self.toDoItem.itemName;
     }
-
-    // Set focus on text field
-    [self.itemTxtField becomeFirstResponder];
+    else
+    {
+        // Set focus on text field
+        [self.itemTxtField becomeFirstResponder];
+    }
     
     [super viewDidAppear:animated];
 }
