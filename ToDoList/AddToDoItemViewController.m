@@ -28,26 +28,33 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    [super viewDidAppear:animated];
+    
+    // If in add mode, then set focus on txt field
+    if (self.mode == Add)
+    {
+        // Set focus on text field
+        [self.itemTxtField becomeFirstResponder];
+    }
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
     // If in edit mode, then display text in txtbox
     if (self.mode == Edit)
     {
         self.itemTxtField.text = self.toDoItem.itemName;
     }
-    else
-    {
-        // Set focus on text field
-        [self.itemTxtField becomeFirstResponder];
-    }
-    
-    [super viewDidAppear:animated];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
+    [super viewDidDisappear:animated];
+    
     self.itemTxtField.text = @"";
     [self.itemTxtField resignFirstResponder];
-    
-    [super viewDidDisappear:animated];
 }
 
 - (BOOL)canBecomeFirstResponder
