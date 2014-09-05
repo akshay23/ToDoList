@@ -12,7 +12,6 @@
 
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSMutableArray *toDoItems;
-@property (strong, nonatomic) AddToDoItemViewController *addToDoItemVC;
 
 - (void)refreshData;
 
@@ -69,6 +68,7 @@
 
 - (void)addToDoItem:(id)sender
 {
+    self.addToDoItemVC.mode = Add;
     [self.navigationController pushViewController:self.addToDoItemVC animated:YES];
 }
 
@@ -135,6 +135,7 @@
     ToDoItem *toDoItem = [self.toDoItems objectAtIndex:indexPath.row];
     cell.item = toDoItem;
     cell.cellLabel.text = toDoItem.itemName;
+    cell.delegate = self;
     
     [cell setSelected:toDoItem.completed animated:YES];
     

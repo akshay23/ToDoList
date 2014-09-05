@@ -47,4 +47,11 @@
     [self.tickBoxImage setImage:self.tickImage];
 }
 
+- (IBAction)moreInfo:(id)sender
+{
+    self.delegate.addToDoItemVC.mode = Edit;
+    self.delegate.addToDoItemVC.toDoItem = self.item;
+    
+    [self.delegate.navigationController pushViewController:self.delegate.addToDoItemVC animated:YES];
+}
 @end

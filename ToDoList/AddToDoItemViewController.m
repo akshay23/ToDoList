@@ -18,17 +18,22 @@
 {
     [super viewDidLoad];
     
-    // Create and add the 'Done' button to navigation bar
-    UIBarButtonItem *done = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStylePlain target:self action:@selector(addItem:)];
-    [self.navigationItem setRightBarButtonItem:done];
+    // Create and add the 'Save' button to navigation bar
+    UIBarButtonItem *save = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStylePlain target:self action:@selector(saveItem:)];
+    [self.navigationItem setRightBarButtonItem:save];
     
     // Set view colour
     [self.view setBackgroundColor:self.delegate.tableView.backgroundColor];
-
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    // If in edit mode, then display text in txtbox
+    if (self.mode == Edit)
+    {
+        self.itemTxtField.text = self.toDoItem.itemName;
+    }
+
     // Set focus on text field
     [self.itemTxtField becomeFirstResponder];
     
@@ -48,12 +53,20 @@
     return YES;
 }
 
-- (void)addItem:(id)sender
+- (void)saveItem:(id)sender
 {
     if (![GlobalData stringIsNilOrEmpty:self.itemTxtField.text])
     {
-        ToDoItem *listItem = [[ToDoItem alloc] initWithNameAndCompleted:self.itemTxtField.text isCompleted:NO];
-        [self.delegate addToArray:listItem];
+        if (self.mode == Add)
+        {
+            self.toDoItem = [[ToDoItem alloc] initWithNameAndCompleted:self.itemTxtField.text isCompleted:NO];
+            [self.delegate addToArray:self.toDoItem];
+        }
+        else
+        {
+            self.toDoItem.itemName = self.itemTxtField.text;
+        }
+        
         [self.itemTxtField setText:@""];
         [self.navigationController popViewControllerAnimated:YES];
         [self.delegate.delegate saveLists];
