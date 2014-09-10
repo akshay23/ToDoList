@@ -12,8 +12,10 @@
 
 @property BOOL completed;
 @property (strong, nonatomic) NSString *itemName;
+@property (strong, nonatomic) NSString *notes;
 @property (readonly) NSDate *creationDate;
 
 - (id)initWithNameAndCompleted:(NSString *)name isCompleted:(BOOL)completedd;
+- (id)initWithNameNotesAndCompleted:(NSString *)name notes:(NSString *)theNotes isCompleted:(BOOL)completedd;
 
 @end

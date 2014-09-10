@@ -14,7 +14,17 @@
 {
     self.itemName = name;
     self.completed = completedd;
+    self.notes = @"";
     
+    return self;
+}
+
+- (id)initWithNameNotesAndCompleted:(NSString *)name notes:(NSString *)theNotes isCompleted:(BOOL)completedd
+{
+    self.itemName = name;
+    self.notes = theNotes;
+    self.completed = completedd;
+
     return self;
 }
 
@@ -23,6 +33,7 @@
     if (self) {
         self.itemName = [coder decodeObjectForKey:@"ItemName"];
         self.completed = [coder decodeBoolForKey:@"ItemCompleted"];
+        self.notes = [coder decodeObjectForKey:@"ItemNotes"];
     }
     return self;
 }
@@ -30,6 +41,7 @@
 - (void)encodeWithCoder:(NSCoder *)coder {
     [coder encodeObject:self.itemName forKey:@"ItemName"];
     [coder encodeBool:self.completed forKey:@"ItemCompleted"];
+    [coder encodeObject:self.notes forKey:@"ItemNotes"];
 }
 
 @end
