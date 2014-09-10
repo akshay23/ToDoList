@@ -57,13 +57,6 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
-    // If in add mode, then set focus on txt field
-    if (self.mode == Add)
-    {
-        // Set focus on text field
-        [self.itemTxtField becomeFirstResponder];
-    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
