@@ -14,8 +14,15 @@
 
 @interface AddToDoItemViewController : UIViewController
 
+typedef NS_ENUM(NSInteger, SaveMode)
+{
+    Add = 1,
+    Edit = 2
+};
+
+@property NSInteger mode;
 @property (strong, nonatomic) ToDoItem *toDoItem;
-@property (strong, nonatomic)  ToDoListTableViewController *delegate;
+@property (strong, nonatomic) ToDoListTableViewController *delegate;
 @property (strong, nonatomic) IBOutlet UITextField *itemTxtField;
 
 @end
