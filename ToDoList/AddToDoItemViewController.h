@@ -24,5 +24,6 @@ typedef NS_ENUM(NSInteger, SaveMode)
 @property (strong, nonatomic) ToDoItem *toDoItem;
 @property (strong, nonatomic) ToDoListTableViewController *delegate;
 @property (strong, nonatomic) IBOutlet UITextField *itemTxtField;
+@property (strong, nonatomic) IBOutlet UITextView *itemNotesField;
 
 @end
