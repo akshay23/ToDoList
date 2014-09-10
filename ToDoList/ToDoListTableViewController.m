@@ -64,6 +64,9 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
+    // Clear temp data
+    [self.addToDoItemVC clearTemps];
 }
 
 - (void)addToDoItem:(id)sender
