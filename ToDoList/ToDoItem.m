@@ -15,15 +15,17 @@
     self.itemName = name;
     self.completed = completedd;
     self.notes = @"";
+    self.itemImage = NULL;
     
     return self;
 }
 
-- (id)initWithNameNotesAndCompleted:(NSString *)name notes:(NSString *)theNotes isCompleted:(BOOL)completedd
+- (id)initWithNameNotesAndCompleted:(NSString *)name notes:(NSString *)theNotes image:(UIImage *)theImage isCompleted:(BOOL)completedd
 {
     self.itemName = name;
     self.notes = theNotes;
     self.completed = completedd;
+    self.itemImage = theImage;
 
     return self;
 }
@@ -34,6 +36,7 @@
         self.itemName = [coder decodeObjectForKey:@"ItemName"];
         self.completed = [coder decodeBoolForKey:@"ItemCompleted"];
         self.notes = [coder decodeObjectForKey:@"ItemNotes"];
+        self.itemImage = [coder decodeObjectForKey:@"ItemImage"];
     }
     return self;
 }
@@ -42,6 +45,7 @@
     [coder encodeObject:self.itemName forKey:@"ItemName"];
     [coder encodeBool:self.completed forKey:@"ItemCompleted"];
     [coder encodeObject:self.notes forKey:@"ItemNotes"];
+    [coder encodeObject:self.itemImage forKey:@"ItemImage"];
 }
 
 @end

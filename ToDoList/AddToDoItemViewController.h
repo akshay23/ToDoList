@@ -12,7 +12,7 @@
 
 @class ToDoListTableViewController;
 
-@interface AddToDoItemViewController : UIViewController
+@interface AddToDoItemViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 typedef NS_ENUM(NSInteger, SaveMode)
 {
@@ -23,7 +23,14 @@ typedef NS_ENUM(NSInteger, SaveMode)
 @property NSInteger mode;
 @property (strong, nonatomic) ToDoItem *toDoItem;
 @property (strong, nonatomic) ToDoListTableViewController *delegate;
-@property (strong, nonatomic) IBOutlet UITextField *itemTxtField;
+@property (strong, nonatomic) IBOutlet UIScrollView *mainScrollView;
+@property (strong, nonatomic) IBOutlet UITextView *itemTxtField;
 @property (strong, nonatomic) IBOutlet UITextView *itemNotesField;
+@property (strong, nonatomic) IBOutlet UILabel *lblPicture;
+@property (strong, nonatomic) IBOutlet UILabel *lblImgOptional;
+@property (strong, nonatomic) IBOutlet UIImageView *itemImage;
+@property (strong, nonatomic) IBOutlet UIButton *btnCamera;
 
+- (IBAction)takePicture:(id)sender;
+- (void)clearTemps;
 @end
