@@ -29,6 +29,7 @@
 		198933FC193D1B320018C167 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 198933FA193D1B320018C167 /* InfoPlist.strings */; };
 		198933FE193D1B320018C167 /* ToDoListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 198933FD193D1B320018C167 /* ToDoListTests.m */; };
 		198C241D19C0E5B100D22DB7 /* takepicture.png in Resources */ = {isa = PBXBuildFile; fileRef = 198C241C19C0E5B100D22DB7 /* takepicture.png */; };
+		198C241F19C1043600D22DB7 /* MyLists.plist in Resources */ = {isa = PBXBuildFile; fileRef = 198C241E19C1043600D22DB7 /* MyLists.plist */; };
 		19B8BAF91967330E00827AFB /* ListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B8BAF81967330E00827AFB /* ListItem.m */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +77,7 @@
 		198933FB193D1B320018C167 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		198933FD193D1B320018C167 /* ToDoListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToDoListTests.m; sourceTree = "<group>"; };
 		198C241C19C0E5B100D22DB7 /* takepicture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = takepicture.png; sourceTree = "<group>"; };
+		198C241E19C1043600D22DB7 /* MyLists.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MyLists.plist; sourceTree = "<group>"; };
 		19B8BAF71967330E00827AFB /* ListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListItem.h; sourceTree = "<group>"; };
 		19B8BAF81967330E00827AFB /* ListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -179,6 +181,7 @@
 				198933E1193D1B320018C167 /* InfoPlist.strings */,
 				198933E4193D1B320018C167 /* main.m */,
 				198933E6193D1B320018C167 /* MyToDoLists-Prefix.pch */,
+				198C241E19C1043600D22DB7 /* MyLists.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				198C241D19C0E5B100D22DB7 /* takepicture.png in Resources */,
 				198933E3193D1B320018C167 /* InfoPlist.strings in Resources */,
 				1928CEA919A167E400D6C805 /* checkbox_empty.png in Resources */,
+				198C241F19C1043600D22DB7 /* MyLists.plist in Resources */,
 				198933EB193D1B320018C167 /* Images.xcassets in Resources */,
 				1928CEAA19A167E400D6C805 /* checkbox_full.png in Resources */,
 			);

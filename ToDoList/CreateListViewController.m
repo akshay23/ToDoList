@@ -30,6 +30,14 @@
     
     // Load existing to-do lists (if any)
     [self loadLists];
+    
+    // Create tap recognizer to detect taps on view
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
+    // prevents the scroll view from swallowing up the touch event of child buttons
+    tapGesture.cancelsTouchesInView = NO;
+    
+    // Add tap recognizer to scrollview, then
+    [self.tableView addGestureRecognizer:tapGesture];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -172,17 +180,10 @@
     {
         NSIndexPath *path = [NSIndexPath indexPathForRow:i inSection:0];
         UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:path];
+        ListItem *lItem = [self.lists objectAtIndex:path.row];
         [cell.textLabel setText:@""];
         
-        for (UIView *v in cell.contentView.subviews)
-        {
-            if([v isMemberOfClass:[UITextView class]])
-            {
-                UITextView *vv = (UITextView *)v;
-                [vv setHidden:NO];
-                [vv setEditable:YES];
-            }
-        }
+        [self addTextViewIntoCell:cell itemBeingAdded:lItem];
     }
     
     NSLog(@"Showed UITextViews in each cell");
@@ -202,7 +203,6 @@
             {
                 UITextView *vv = (UITextView *)v;
                 [vv setHidden:YES];
-                [vv setEditable:NO];
                 [cell.textLabel setText:vv.text];
                 [[self.lists objectAtIndex:i] setName:vv.text];
                 
@@ -215,6 +215,53 @@
     }
     
     NSLog(@"Hid all UITextViews from each cell");
+}
+
+// Allows user to tap anywhere on the background/view to dismiss keyboard
+- (void)hideKeyboard
+{
+    for (int i = 0; i < self.lists.count; i++)
+    {
+        NSIndexPath *path = [NSIndexPath indexPathForRow:i inSection:0];
+        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:path];
+        
+        for (UIView *v in cell.contentView.subviews)
+        {
+            if([v isMemberOfClass:[UITextView class]])
+            {
+                [v resignFirstResponder];
+            }
+        }
+    }
+}
+
+- (void)addTextViewIntoCell:(UITableViewCell *)cell itemBeingAdded:(ListItem *)item
+{
+    // First remove existing UITextView items from cell
+    for (UIView *view in cell.contentView.subviews)
+    {
+        if ([view isMemberOfClass:[UITextView class]])
+        {
+            [view removeFromSuperview];
+        }
+    }
+    
+    // Create new UITxtView subvew to allow user to edit list nam
+    // Keep hidden until needed
+    CGRect frame  = CGRectMake(cell.contentView.frame.origin.x - 40, cell.contentView.frame.origin.y, cell.contentView.frame.size.width, cell.contentView.frame.size.height);
+    UITextView *txtField =[[UITextView alloc] initWithFrame:frame];
+    txtField.text = item.name;
+    txtField.editable = YES;
+    txtField.userInteractionEnabled = YES;
+    txtField.font = cell.textLabel.font;
+    [txtField setTextColor:cell.textLabel.textColor];
+    [txtField setBackgroundColor:cell.backgroundColor];
+    [[txtField layer] setBorderWidth:1.5];
+    [[txtField layer] setBorderColor:[[UIColor grayColor] CGColor]];
+    [[txtField layer] setCornerRadius:10.0];
+    
+    // Add UITextView to contentView
+    [cell.contentView addSubview:txtField];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -238,43 +285,10 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    
-    [self addTextViewIntoCell:cell itemBeingAdded:item];
+
+    [cell.textLabel setText:item.name];
     
     return cell;
-}
-
-- (void)addTextViewIntoCell:(UITableViewCell *)cell itemBeingAdded:(ListItem *)item
-{
-    // First remove existing UITextView items from cell
-    for (UIView *view in cell.contentView.subviews)
-    {
-        if ([view isMemberOfClass:[UITextView class]])
-        {
-            [view removeFromSuperview];
-            break;
-        }
-    }
-    
-    // Create new UITxtView subvew to allow user to edit list nam
-    // Keep hidden until needed
-    //CGRect frame  = CGRectMake(cell.frame.origin.x, cell.frame.origin.y, cell.frame.size.width - 80, cell.frame.size.height - 3);
-    CGRect frame = [cell.contentView frame];
-    UITextView *txtField =[[UITextView alloc] initWithFrame:frame];
-    txtField.text = item.name;
-    txtField.editable = YES;
-    txtField.font = cell.textLabel.font;
-    [txtField setTextColor:cell.textLabel.textColor];
-    [txtField setBackgroundColor:cell.backgroundColor];
-    [txtField setHidden:YES];
-    [[txtField layer] setBorderWidth:1.5];
-    [[txtField layer] setBorderColor:[[UIColor grayColor] CGColor]];
-    [[txtField layer] setCornerRadius:10.0];
-    
-    // Set the text to the item name
-    // and add UITextView to contentView
-    [cell.textLabel setText:item.name];
-    [cell.contentView addSubview:txtField];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
