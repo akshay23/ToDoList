@@ -188,6 +188,8 @@
     self.itemImage.image = chosenImage;
     self.itemImage.hidden = NO;
     
+    self.toDoItem.itemImage = self.itemImage.image;
+    
     [picker dismissViewControllerAnimated:YES completion:NULL];
 }
 
