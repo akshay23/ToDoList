@@ -202,8 +202,17 @@
             if([v isMemberOfClass:[UITextView class]])
             {
                 UITextView *vv = (UITextView *)v;
-                [cell.textLabel setText:vv.text];
-                [[self.lists objectAtIndex:i] setName:vv.text];
+                
+                if (vv.text.length != 0)
+                {
+                    [cell.textLabel setText:vv.text];
+                    [[self.lists objectAtIndex:i] setName:vv.text];
+                }
+                else
+                {
+                    [cell.textLabel setText:[[self.lists objectAtIndex:i] name]];
+                }
+
                 [vv removeFromSuperview];
             }
         }
