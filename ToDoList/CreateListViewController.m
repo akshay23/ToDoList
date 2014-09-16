@@ -202,19 +202,14 @@
             if([v isMemberOfClass:[UITextView class]])
             {
                 UITextView *vv = (UITextView *)v;
-                [vv setHidden:YES];
                 [cell.textLabel setText:vv.text];
                 [[self.lists objectAtIndex:i] setName:vv.text];
-                
-                if ([vv isFirstResponder])
-                {
-                    [vv resignFirstResponder];
-                }
+                [vv removeFromSuperview];
             }
         }
     }
     
-    NSLog(@"Hid all UITextViews from each cell");
+    NSLog(@"Removed all UITextViews from each cell");
 }
 
 // Allows user to tap anywhere on the background/view to dismiss keyboard
@@ -237,15 +232,6 @@
 
 - (void)addTextViewIntoCell:(UITableViewCell *)cell itemBeingAdded:(ListItem *)item
 {
-    // First remove existing UITextView items from cell
-    for (UIView *view in cell.contentView.subviews)
-    {
-        if ([view isMemberOfClass:[UITextView class]])
-        {
-            [view removeFromSuperview];
-        }
-    }
-    
     // Create new UITxtView subvew to allow user to edit list nam
     // Keep hidden until needed
     CGRect frame  = CGRectMake(cell.contentView.frame.origin.x - 40, cell.contentView.frame.origin.y, cell.contentView.frame.size.width, cell.contentView.frame.size.height);
