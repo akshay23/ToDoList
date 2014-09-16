@@ -58,6 +58,11 @@
 
 - (void)saveLists
 {
+    // Clear all data first
+    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults removePersistentDomainForName:appDomain];
+    
     // Save list (in two steps)
     // Step 1: convert custom objects in array into NSData
     NSMutableArray *archiveArray = [NSMutableArray arrayWithCapacity:self.lists.count];
@@ -67,7 +72,6 @@
     }
 
     // Step 2: Actually save the new array
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:archiveArray forKey:@"MyToDoLists"];
     [defaults synchronize];
 
