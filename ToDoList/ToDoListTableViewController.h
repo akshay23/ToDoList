@@ -26,5 +26,6 @@
 
 - (void)initializeView;
 - (void)addToArray:(ToDoItem *)item;
+- (void)confirmRefreshData;
 
 @end

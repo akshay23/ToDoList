@@ -51,7 +51,7 @@
     // Used for the pull-down refresh
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     refreshControl.tintColor = [UIColor purpleColor];
-    [refreshControl addTarget:self action:@selector(refreshData) forControlEvents:UIControlEventValueChanged];
+    [refreshControl addTarget:self action:@selector(confirmRefreshData) forControlEvents:UIControlEventValueChanged];
     self.refreshControl = refreshControl;
     
     // Set the title to the list name
@@ -88,6 +88,27 @@
     [self.delegate saveLists];
 }
 
+- (void)confirmRefreshData
+{
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Confirm"
+                                               message:@"Are you sure you want to clear the checked items ?"
+                                               delegate:self
+                                               cancelButtonTitle:@"No"
+                                               otherButtonTitles:@"Yes", nil];
+    
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1)
+    {
+        [self refreshData];
+    }
+    
+    [self.refreshControl endRefreshing];
+}
+
 - (void)refreshData
 {
     // Find the things to remove
@@ -101,7 +122,6 @@
     
     [self.delegate saveLists];
     [self.tableView reloadData];
-    [self.refreshControl endRefreshing];
 }
 
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
