@@ -51,7 +51,12 @@
     
     // Add tap recognizer to scrollview, then
     [self.mainScrollView addGestureRecognizer:tapGesture];
-
+    
+    // Round the corners of the reminders and reset buttons
+    self.btnReset.layer.cornerRadius = 5;
+    self.btnReminders.layer.cornerRadius = 5;
+    self.btnReset.clipsToBounds = YES;
+    self.btnReminders.clipsToBounds = YES;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -180,6 +185,14 @@
         
         [self presentViewController:picker animated:YES completion:NULL];
     }
+}
+
+// Reset all fields
+- (IBAction)resetFields:(id)sender
+{
+    self.itemTxtField.text = @"";
+    self.itemNotesField.text = @"";
+    self.itemImage.image = NULL;
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info

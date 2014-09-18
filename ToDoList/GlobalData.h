@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <EventKit/EventKit.h>
 
 // Used for global objects
 @interface GlobalData : NSObject
@@ -15,6 +16,7 @@
 }
 
 @property (nonatomic, strong) UIStoryboard *mainStoryboard;
+@property (strong,  nonatomic) EKEventStore *eventStore;
 
 // Singleton method
 + (GlobalData *)getInstance;

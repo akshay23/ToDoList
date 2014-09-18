@@ -30,7 +30,11 @@ typedef NS_ENUM(NSInteger, SaveMode)
 @property (strong, nonatomic) IBOutlet UILabel *lblImgOptional;
 @property (strong, nonatomic) IBOutlet UIImageView *itemImage;
 @property (strong, nonatomic) IBOutlet UIButton *btnCamera;
+@property (strong, nonatomic) IBOutlet UIButton *btnReminders;
+@property (strong, nonatomic) IBOutlet UIButton *btnReset;
 
 - (IBAction)takePicture:(id)sender;
+- (IBAction)resetFields:(id)sender;
+
 - (void)clearTemps;
 @end
