@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="oJ2-C3-MEv">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
@@ -143,10 +142,13 @@
                                         <rect key="frame" x="31" y="291" width="127" height="30"/>
                                         <color key="backgroundColor" red="1" green="0.8538320739588563" blue="0.60816975545955476" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                        <state key="normal" title="Add Reminders">
+                                        <state key="normal" title="Add Reminder">
                                             <color key="titleColor" red="0.38193161949999999" green="0.52412881680000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" red="1" green="0.76806693722195396" blue="0.81852069282005513" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="addReminder:" destination="BfM-G2-48V" eventType="touchUpInside" id="gYZ-lL-eXX"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QiK-1i-FJ3">
                                         <rect key="frame" x="183" y="291" width="127" height="30"/>
@@ -181,33 +183,61 @@
             </objects>
             <point key="canvasLocation" x="1587" y="69"/>
         </scene>
-        <!--Add Reminders View Controller-->
-        <scene sceneID="yfL-EE-Zep">
+        <!--Reminder View Controller-->
+        <scene sceneID="fhu-Q6-uyj">
             <objects>
-                <tableViewController storyboardIdentifier="remindersVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="k3E-5V-7xW" userLabel="Add Reminders View Controller" customClass="RemindersTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ehD-Oq-ZT1">
+                <viewController storyboardIdentifier="reminderVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="w5c-RV-xTZ" userLabel="Reminder View Controller" customClass="ReminderViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4By-zd-ndu"/>
+                        <viewControllerLayoutGuide type="bottom" id="HRg-gn-N53"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="psY-HT-wMM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ListPrototypeCell" id="3dp-Yi-Ymu">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3dp-Yi-Ymu" id="GfD-ye-nOX">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="k3E-5V-7xW" id="fPk-Ah-wLv"/>
-                            <outlet property="delegate" destination="k3E-5V-7xW" id="M0j-WO-9zi"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3fT-I5-5FX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="k8F-yo-lEp">
+                                <rect key="frame" x="8" y="112" width="304" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="432832214.26445198">
+                                    <!--2014-09-19 15:10:14 +0000-->
+                                </date>
+                            </datePicker>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Set Reminder:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5hT-7f-rHZ">
+                                <rect key="frame" x="16" y="89" width="112" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.38193161949999999" green="0.52412881680000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZS-1P-c9d">
+                                <rect key="frame" x="16" y="296" width="288" height="115"/>
+                                <color key="backgroundColor" red="0.89979987780000004" green="1" blue="0.90733785290000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wp8-xI-c4w">
+                                <rect key="frame" x="81" y="419" width="159" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.85383207400000005" blue="0.60816975549999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Delete Reminder">
+                                    <color key="titleColor" red="0.38193161949999999" green="0.52412881680000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="1" green="0.76806693719999997" blue="0.81852069279999995" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addReminder:" destination="BfM-G2-48V" eventType="touchUpInside" id="kPx-hw-Lse"/>
+                                    <action selector="deleteReminder:" destination="w5c-RV-xTZ" eventType="touchUpInside" id="ki8-vc-Yov"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.89979987780000004" green="1" blue="0.90733785290000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="btnDeleteReminder" destination="wp8-xI-c4w" id="2Tu-sB-Jvf"/>
+                        <outlet property="datePicker" destination="k8F-yo-lEp" id="CXs-WZ-03Y"/>
+                        <outlet property="txtMessage" destination="XZS-1P-c9d" id="V9x-dh-swU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zCl-mA-TaR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2024" y="69"/>
+            <point key="canvasLocation" x="2023" y="69"/>
         </scene>
         <!--My To-Do Lists-->
         <scene sceneID="7Sy-mo-rjN">

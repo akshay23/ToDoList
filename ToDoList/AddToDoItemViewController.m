@@ -59,11 +59,6 @@
     self.btnReminders.clipsToBounds = YES;
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -80,11 +75,21 @@
             [self.itemImage setImage:self.toDoItem.itemImage];
             [self.itemImage setFrame:CGRectMake(self.itemImage.frame.origin.x, self.itemImage.frame.origin.y, 280, 200)];
         }
+        
+        if (self.toDoItem.reminderDate < [NSDate date])
+        {
+            self.toDoItem.reminderDate = NULL;
+        }
     }
     else
     {
         self.itemNotesField.text = self.tmpNotes;
         self.itemTxtField.text = self.tmpItemName;
+        
+        if (!self.toDoItem)
+        {
+            self.toDoItem = [[ToDoItem alloc] init];
+        }
     }
 }
 
@@ -114,7 +119,17 @@
     {
         if (self.mode == Add)
         {
-            self.toDoItem = [[ToDoItem alloc] initWithNameNotesAndCompleted:self.itemTxtField.text notes:self.itemNotesField.text image:self.itemImage.image isCompleted:NO];
+            if (!self.toDoItem)
+            {
+                self.toDoItem = [[ToDoItem alloc] initWithNameNotesAndCompleted:self.itemTxtField.text notes:self.itemNotesField.text image:self.itemImage.image isCompleted:NO];
+            }
+            else
+            {
+                self.toDoItem.itemName = self.itemTxtField.text;
+                self.toDoItem.itemImage = self.itemImage.image;
+                self.toDoItem.notes = self.itemNotesField.text;
+            }
+
             [self.delegate addToArray:self.toDoItem];
         }
         else
@@ -123,6 +138,8 @@
             self.toDoItem.notes = self.itemNotesField.text;
             self.toDoItem.itemImage = self.itemImage.image;
         }
+        
+        [self saveReminder];
 
         [self.navigationController popViewControllerAnimated:YES];
         [self.delegate.delegate saveLists];
@@ -193,6 +210,36 @@
     self.itemTxtField.text = @"";
     self.itemNotesField.text = @"";
     self.itemImage.image = NULL;
+}
+
+- (IBAction)addReminder:(id)sender
+{
+    if (!self.reminderVC)
+    {
+        self.reminderVC = [[GlobalData getInstance].mainStoryboard instantiateViewControllerWithIdentifier:@"reminderVC"];
+    }
+
+    self.reminderVC.toDoItem = self.toDoItem;
+
+    // Save all text from text boxes
+    self.tmpItemName = self.itemTxtField.text;
+    self.tmpNotes = self.itemNotesField.text;
+    
+    [self.navigationController pushViewController:self.reminderVC animated:YES];
+    
+}
+
+// Tell todo item to save reminder if changed
+- (void)saveReminder
+{
+    if (self.toDoItem.reminderChanged)
+    {
+        if (![self.toDoItem createReminder])    // Could not create reminder
+        {
+            UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Could not create reminder!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            [myAlertView show];
+        }
+    }
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
