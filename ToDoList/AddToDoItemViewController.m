@@ -85,11 +85,7 @@
     {
         self.itemNotesField.text = self.tmpNotes;
         self.itemTxtField.text = self.tmpItemName;
-        
-        if (!self.toDoItem)
-        {
-            self.toDoItem = [[ToDoItem alloc] init];
-        }
+        self.toDoItem = [[ToDoItem alloc] init];
     }
 }
 

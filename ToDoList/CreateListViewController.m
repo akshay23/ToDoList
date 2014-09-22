@@ -134,7 +134,6 @@
         }
 
         [self.lists addObject:item];
-        [self.tableView reloadData];
 
         // Initialize new toDoList view controller instance
         self.toDoListVC = [[GlobalData getInstance].mainStoryboard instantiateViewControllerWithIdentifier:@"todoListVC"];

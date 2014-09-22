@@ -65,6 +65,7 @@
     [super viewDidDisappear:animated];
 }
 
+// Show message in text view based on to-do item's reminder date
 - (void)setupInitialStates
 {
     [self.datePicker setLocale:[NSLocale currentLocale]];
@@ -108,7 +109,7 @@
     }
 }
 
-// Set reminder
+// Set reminder (but dont actually create in calendar)
 - (void)setItem:(id)sender
 {
     if (self.toDoItem.reminderDate && ([self.datePicker.date compare:self.toDoItem.reminderDate] != NSOrderedSame) && ([self.datePicker.date compare:[NSDate date]] == NSOrderedDescending))
@@ -130,6 +131,7 @@
     }
 }
 
+// Format the reminder date into MM-dd-yyyy at HH:mm a format
 - (void)setTextViewMessage
 {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -141,6 +143,7 @@
     [self.btnDeleteReminder setHidden:NO];
 }
 
+// Delete reminder from calendar (if possible)
 - (IBAction)deleteReminder:(id)sender
 {
     if ([self.toDoItem deleteReminder])
