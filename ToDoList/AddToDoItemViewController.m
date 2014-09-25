@@ -43,6 +43,10 @@
     self.itemNotesField.layer.cornerRadius = 5;
     self.itemNotesField.clipsToBounds = YES;
     
+    // Border thing again
+    [self.itemImage.layer setBorderColor:[[[UIColor grayColor] colorWithAlphaComponent:0.5] CGColor]];
+    [self.itemImage.layer setBorderWidth:2.0];
+    
     // Set view colour
     [self.view setBackgroundColor:self.delegate.tableView.backgroundColor];
     
@@ -73,13 +77,11 @@
 
         if (self.toDoItem.itemImage)
         {
-            [self.itemImage setHidden:NO];
             [self.itemImage setImage:self.toDoItem.itemImage];
             [self.itemImage setFrame:CGRectMake(self.itemImage.frame.origin.x, self.itemImage.frame.origin.y, 280, 200)];
         }
         else
         {
-            [self.itemImage setHidden:YES];
             [self.itemImage setImage:NULL];
         }
         
