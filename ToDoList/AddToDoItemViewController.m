@@ -12,6 +12,8 @@
 
 @property NSString *tmpItemName;
 @property NSString *tmpNotes;
+@property NSDate *tmpReminder;
+@property UIImage *tmpImage;
 
 @end
 
@@ -59,11 +61,6 @@
     self.btnReminders.clipsToBounds = YES;
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -80,12 +77,53 @@
             [self.itemImage setImage:self.toDoItem.itemImage];
             [self.itemImage setFrame:CGRectMake(self.itemImage.frame.origin.x, self.itemImage.frame.origin.y, 280, 200)];
         }
+        else
+        {
+            [self.itemImage setHidden:YES];
+            [self.itemImage setImage:NULL];
+        }
+        
+        // Reminder date is in the past, so delete it
+        if ([self.toDoItem.reminderDate compare:[NSDate date]] == NSOrderedAscending)
+        {
+            [self.toDoItem deleteReminder];
+            self.toDoItem.reminderDate = NULL;
+            self.toDoItem.reminderId = NULL;
+        }
     }
     else
     {
+        if (!self.toDoItem)
+        {
+            self.toDoItem = [[ToDoItem alloc] init];
+        }
+
         self.itemNotesField.text = self.tmpNotes;
         self.itemTxtField.text = self.tmpItemName;
+        
+        if (self.tmpImage)
+        {
+           self.itemImage.image = self.tmpImage;
+        }
+
+        if (self.tmpReminder)
+        {
+            self.toDoItem.reminderDate = self.tmpReminder;
+        }
     }
+    
+    // Set button text if reminder date is not null
+    if (self.toDoItem.reminderDate)
+    {
+        [self.btnReminders setTitle:@"Edit Reminder" forState:UIControlStateNormal];
+    }
+    else
+    {
+        [self.btnReminders setTitle:@"Add Reminder" forState:UIControlStateNormal];
+    }
+    
+    // Scroll to top
+    [self.mainScrollView setContentOffset:CGPointMake(0, -self.mainScrollView.contentInset.top) animated:YES];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -94,12 +132,11 @@
     
     [self.itemTxtField resignFirstResponder];
     [self.itemNotesField resignFirstResponder];
-    [self.itemImage setImage:NULL];
 }
 
 - (void)viewDidLayoutSubviews
 {
-    [self.mainScrollView setContentSize:CGSizeMake(self.mainScrollView.bounds.size.width, self.mainScrollView.bounds.size.height)];
+    [self.mainScrollView setContentSize:CGSizeMake(self.mainScrollView.bounds.size.width, self.mainScrollView.bounds.size.height + 50)];
 }
 
 - (BOOL)canBecomeFirstResponder
@@ -114,7 +151,17 @@
     {
         if (self.mode == Add)
         {
-            self.toDoItem = [[ToDoItem alloc] initWithNameNotesAndCompleted:self.itemTxtField.text notes:self.itemNotesField.text image:self.itemImage.image isCompleted:NO];
+            if (!self.toDoItem)
+            {
+                self.toDoItem = [[ToDoItem alloc] initWithNameNotesAndCompleted:self.itemTxtField.text notes:self.itemNotesField.text image:self.itemImage.image isCompleted:NO];
+            }
+            else
+            {
+                self.toDoItem.itemName = self.itemTxtField.text;
+                self.toDoItem.itemImage = self.itemImage.image;
+                self.toDoItem.notes = self.itemNotesField.text;
+            }
+
             [self.delegate addToArray:self.toDoItem];
         }
         else
@@ -123,10 +170,17 @@
             self.toDoItem.notes = self.itemNotesField.text;
             self.toDoItem.itemImage = self.itemImage.image;
         }
+        
+        [self saveReminder];
 
         [self.navigationController popViewControllerAnimated:YES];
         [self.delegate.delegate saveLists];
         [self.delegate.tableView reloadData];
+        
+        if (self.mode == Add)
+        {
+            self.toDoItem = NULL;
+        }
     }
 }
 
@@ -157,19 +211,45 @@
 {
     self.tmpNotes = @"";
     self.tmpItemName = @"";
+    self.tmpReminder = NULL;
+    self.tmpImage = NULL;
+    self.itemImage.image = NULL;
+}
+
+// Set the temp date
+- (void)setTempDate:(NSDate *)date
+{
+    self.tmpReminder = date;
 }
 
 // Method that gets called when camera button is tapped
 - (IBAction)takePicture:(id)sender
 {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Import Picture" message:@"Please pick where to import from" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Camera", @"Photo Library", nil];
+    [alert show];
+}
+
+// Redirect based on which button in alertview was pressed
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1)
+    {
+        NSLog(@"User wants to import from Camera");
+        [self getPicFromCamera];
+    }
+    else if (buttonIndex == 2)
+    {
+        NSLog(@"User wants to import from Photo Library");
+        [self getPicFromPhotoLibrary];
+    }
+}
+
+// Use camera to take picture
+- (void)getPicFromCamera
+{
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
     {
-        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                              message:@"Device has no camera"
-                                                             delegate:nil
-                                                    cancelButtonTitle:@"OK"
-                                                    otherButtonTitles: nil];
-        
+        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Device has no camera" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [myAlertView show];
     }
     else
@@ -178,13 +258,30 @@
         picker.delegate = self;
         picker.allowsEditing = YES;
         picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-        
+
         // Save all text from text boxes
         self.tmpItemName = self.itemTxtField.text;
         self.tmpNotes = self.itemNotesField.text;
-        
+        self.tmpReminder = self.toDoItem.reminderDate;
+
         [self presentViewController:picker animated:YES completion:NULL];
     }
+}
+
+// Get picture from photo library
+- (void)getPicFromPhotoLibrary
+{
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = YES;
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+
+    // Save all text from text boxes
+    self.tmpItemName = self.itemTxtField.text;
+    self.tmpNotes = self.itemNotesField.text;
+    self.tmpReminder = self.toDoItem.reminderDate;
+
+    [self presentViewController:picker animated:YES completion:NULL];
 }
 
 // Reset all fields
@@ -195,8 +292,42 @@
     self.itemImage.image = NULL;
 }
 
+// Show the ReminderVC
+- (IBAction)addReminder:(id)sender
+{
+    if (!self.reminderVC)
+    {
+        self.reminderVC = [[GlobalData getInstance].mainStoryboard instantiateViewControllerWithIdentifier:@"reminderVC"];
+        self.reminderVC.delegate = self;
+    }
+
+    self.reminderVC.toDoItem = self.toDoItem;
+
+    // Save all text from text boxes
+    self.tmpItemName = self.itemTxtField.text;
+    self.tmpNotes = self.itemNotesField.text;
+    self.tmpImage = self.itemImage.image;
+    
+    [self.navigationController pushViewController:self.reminderVC animated:YES];
+    
+}
+
+// Tell todo item to save reminder if changed
+- (void)saveReminder
+{
+    if (self.toDoItem.reminderChanged)
+    {
+        if (![self.toDoItem createReminder])    // Could not create reminder
+        {
+            UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Could not create reminder!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            [myAlertView show];
+        }
+    }
+}
+
+// User finished picking image from image picker
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
-{    
+{
     UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
     self.itemImage.image = chosenImage;
     self.itemImage.hidden = NO;
@@ -206,6 +337,7 @@
     [picker dismissViewControllerAnimated:YES completion:NULL];
 }
 
+// User cancelled image pick process
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
     [picker dismissViewControllerAnimated:YES completion:NULL];

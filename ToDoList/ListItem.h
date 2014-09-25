@@ -11,9 +11,11 @@
 
 @interface ListItem : NSObject
 
+@property (strong, nonatomic) NSString *listId;
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSMutableArray *toDoItems;
 
 - (id)initWithName:(NSString *)name;
+- (void)checkId;
 
 @end

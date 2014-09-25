@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "ToDoItem.h"
 #import "ToDoListTableViewController.h"
+#import "ReminderViewController.h"
 
-@class ToDoListTableViewController;
+@class ToDoListTableViewController, ReminderViewController;
 
 @interface AddToDoItemViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -23,6 +24,7 @@ typedef NS_ENUM(NSInteger, SaveMode)
 @property NSInteger mode;
 @property (strong, nonatomic) ToDoItem *toDoItem;
 @property (strong, nonatomic) ToDoListTableViewController *delegate;
+@property (strong, nonatomic) ReminderViewController *reminderVC;
 @property (strong, nonatomic) IBOutlet UIScrollView *mainScrollView;
 @property (strong, nonatomic) IBOutlet UITextView *itemTxtField;
 @property (strong, nonatomic) IBOutlet UITextView *itemNotesField;
@@ -35,6 +37,9 @@ typedef NS_ENUM(NSInteger, SaveMode)
 
 - (IBAction)takePicture:(id)sender;
 - (IBAction)resetFields:(id)sender;
+- (IBAction)addReminder:(id)sender;
 
 - (void)clearTemps;
+- (void)setTempDate:(NSDate *)date;
+
 @end

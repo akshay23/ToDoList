@@ -11,7 +11,7 @@
 
 @interface CreateListViewController ()
 
-@property (strong, nonatomic) ToDoListTableViewController *toDoListVC;
+@property (strong, nonatomic) NSMutableDictionary *listToViewDict;
 
 @end
 
@@ -21,11 +21,19 @@
 {
     [super viewDidLoad];
     
+    self.listToViewDict = [[NSMutableDictionary alloc] init];
+    
     if (![GlobalData getInstance].mainStoryboard)
     {
         // Instantiate new main storyboard instance
         [GlobalData getInstance].mainStoryboard = self.storyboard;
         NSLog(@"mainStoryboard instantiated");
+    }
+    
+    // Make sure list has unique id
+    for (ListItem *lItem in self.lists)
+    {
+        [lItem checkId];
     }
     
     // Load existing to-do lists (if any)
@@ -56,6 +64,7 @@
     [self saveLists];
 }
 
+// Save all the lists using NSUserDefaults
 - (void)saveLists
 {
     // Clear all data first
@@ -78,6 +87,7 @@
     NSLog(@"Lists saved");
 }
 
+// Read from NSUserDefaults and decode lists
 - (void)loadLists
 {
     // Get the stored data before the view loads
@@ -111,6 +121,7 @@
     return decoded;
 }
 
+// Show alertview where user can enter new list name
 - (IBAction)addList:(id)sender
 {
     UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Create New List" message:@"Please enter list name" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
@@ -120,6 +131,7 @@
     [alert show];
 }
 
+// Take action based on which button in alert view was pressed
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 1 && ![GlobalData stringIsNilOrEmpty:[[alertView textFieldAtIndex:0] text]])
@@ -134,22 +146,24 @@
         }
 
         [self.lists addObject:item];
-        [self.tableView reloadData];
 
         // Initialize new toDoList view controller instance
-        self.toDoListVC = [[GlobalData getInstance].mainStoryboard instantiateViewControllerWithIdentifier:@"todoListVC"];
-        self.toDoListVC.delegate = self;
-        self.toDoListVC.list = item;
-        [self.toDoListVC initializeView];
+        ToDoListTableViewController *newVC = [[GlobalData getInstance].mainStoryboard instantiateViewControllerWithIdentifier:@"todoListVC"];
+        newVC.delegate = self;
+        newVC.list = item;
+        [newVC initializeView];
+        [self.listToViewDict setObject:newVC forKey:item.listId];
 
         // Save array of lists
         [self saveLists];
 
         // Navigate to view
-        [self.navigationController pushViewController:self.toDoListVC animated:YES];
+        [self.navigationController pushViewController:newVC animated:YES];
     }
 }
 
+// Go into edit mode and add UITextViews into each cell so
+// user can edit list name
 - (IBAction)editList:(id)sender
 {
     if (![self.tableView isEditing])
@@ -243,6 +257,7 @@
     }
 }
 
+// Add new textview into given tableview cell
 - (void)addTextViewIntoCell:(UITableViewCell *)cell itemBeingAdded:(ListItem *)item
 {
     // Create new UITxtView subvew to allow user to edit list nam
@@ -262,6 +277,8 @@
     // Add UITextView to contentView
     [cell.contentView addSubview:txtField];
 }
+
+#pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -293,12 +310,22 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ListItem *item = [self.lists objectAtIndex:indexPath.row];
-    self.toDoListVC = [[GlobalData getInstance].mainStoryboard instantiateViewControllerWithIdentifier:@"todoListVC"];
-    self.toDoListVC.delegate = self;
-    self.toDoListVC.list = item;
+    
+    if (!self.listToViewDict[item.listId])
+    {
+        ToDoListTableViewController *newVC = [[GlobalData getInstance].mainStoryboard instantiateViewControllerWithIdentifier:@"todoListVC"];
+        newVC.delegate = self;
+        newVC.list = item;
 
-    [self.toDoListVC initializeView];
-    [self.navigationController pushViewController:self.toDoListVC animated:YES];
+        [newVC initializeView];
+        [self.listToViewDict setObject:newVC forKey:item.listId];
+
+        [self.navigationController pushViewController:newVC animated:YES];
+    }
+    else
+    {
+        [self.navigationController pushViewController:[self.listToViewDict objectForKey:item.listId] animated:YES];
+    }
 }
 
 // Override to support conditional editing of the table view.
@@ -313,6 +340,14 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
+        ListItem *removed = [self.lists objectAtIndex:indexPath.row];
+        for (ToDoItem *item in removed.toDoItems)
+        {
+            [item deleteReminder];
+            [item setItemImage:NULL];
+        }
+        removed = NULL;
+
         [self.lists removeObjectAtIndex:indexPath.row];
         [self saveLists];
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
