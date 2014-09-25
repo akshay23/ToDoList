@@ -278,6 +278,8 @@
     [cell.contentView addSubview:txtField];
 }
 
+#pragma mark - Table view data source
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
@@ -338,6 +340,14 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
+        ListItem *removed = [self.lists objectAtIndex:indexPath.row];
+        for (ToDoItem *item in removed.toDoItems)
+        {
+            [item deleteReminder];
+            [item setItemImage:NULL];
+        }
+        removed = NULL;
+
         [self.lists removeObjectAtIndex:indexPath.row];
         [self saveLists];
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];

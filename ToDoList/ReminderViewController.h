@@ -16,6 +16,7 @@
 
 @property BOOL accessGranted;
 @property (strong, nonatomic) ToDoItem *toDoItem;
+@property (strong, nonatomic) AddToDoItemViewController *delegate;
 @property (strong, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (strong, nonatomic) IBOutlet UITextView *txtMessage;
 @property (strong, nonatomic) IBOutlet UIButton *btnDeleteReminder;

@@ -193,6 +193,8 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
+        [[self.toDoItems objectAtIndex:indexPath.row] deleteReminder];
+        [[self.toDoItems objectAtIndex:indexPath.row] setItemImage:NULL];
         [self.toDoItems removeObjectAtIndex:indexPath.row];
         [self.delegate saveLists];
         [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];

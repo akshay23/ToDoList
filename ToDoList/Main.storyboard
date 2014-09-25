@@ -154,7 +154,7 @@
                                         <rect key="frame" x="183" y="291" width="127" height="30"/>
                                         <color key="backgroundColor" red="1" green="0.85383207400000005" blue="0.60816975549999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                        <state key="normal" title="Reset">
+                                        <state key="normal" title="Clear All">
                                             <color key="titleColor" red="0.38193161949999999" green="0.52412881680000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" red="1" green="0.76806693722195396" blue="0.81852069282005513" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>

@@ -122,6 +122,7 @@
     {
         [self.txtMessage setTextColor:[UIColor redColor]];
         [self.txtMessage setText:@"The reminder has to be for some time in the future!"];
+        [self.delegate setTempDate:NULL];
     }
     else if (!self.toDoItem.reminderDate && ([self.datePicker.date compare:[NSDate date]] == NSOrderedDescending))
     {
@@ -141,6 +142,7 @@
     [self.txtMessage setTextColor:[UIColor purpleColor]];
     [self.txtMessage setText:formatted];
     [self.btnDeleteReminder setHidden:NO];
+    [self.delegate setTempDate:self.toDoItem.reminderDate];
 }
 
 // Delete reminder from calendar (if possible)

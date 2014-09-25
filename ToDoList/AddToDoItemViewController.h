@@ -40,4 +40,6 @@ typedef NS_ENUM(NSInteger, SaveMode)
 - (IBAction)addReminder:(id)sender;
 
 - (void)clearTemps;
+- (void)setTempDate:(NSDate *)date;
+
 @end
