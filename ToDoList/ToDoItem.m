@@ -19,17 +19,6 @@
     self.reminderDate = NULL;
     self.reminderChanged = NO;
     
-    return self;
-}
-
-- (id)initWithNameAndCompleted:(NSString *)name isCompleted:(BOOL)completedd
-{
-    self.itemName = name;
-    self.completed = completedd;
-    self.notes = @"";
-    self.itemImage = NULL;
-    self.reminderDate = NULL;
-    self.reminderChanged = NO;
     
     return self;
 }

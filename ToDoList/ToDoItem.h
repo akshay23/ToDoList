@@ -22,7 +22,6 @@
 @property (strong, nonatomic) NSString *reminderId;
 
 - (id)init;
-- (id)initWithNameAndCompleted:(NSString *)name isCompleted:(BOOL)completedd;
 - (id)initWithNameNotesAndCompleted:(NSString *)name notes:(NSString *)theNotes image:(UIImage *)theImage isCompleted:(BOOL)completedd;
 
 - (BOOL)createReminder;

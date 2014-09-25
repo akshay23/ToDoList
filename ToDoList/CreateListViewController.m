@@ -11,7 +11,7 @@
 
 @interface CreateListViewController ()
 
-@property (strong, nonatomic) ToDoListTableViewController *toDoListVC;
+@property (strong, nonatomic) NSMutableDictionary *listToViewDict;
 
 @end
 
@@ -21,11 +21,19 @@
 {
     [super viewDidLoad];
     
+    self.listToViewDict = [[NSMutableDictionary alloc] init];
+    
     if (![GlobalData getInstance].mainStoryboard)
     {
         // Instantiate new main storyboard instance
         [GlobalData getInstance].mainStoryboard = self.storyboard;
         NSLog(@"mainStoryboard instantiated");
+    }
+    
+    // Make sure list has unique id
+    for (ListItem *lItem in self.lists)
+    {
+        [lItem checkId];
     }
     
     // Load existing to-do lists (if any)
@@ -140,16 +148,17 @@
         [self.lists addObject:item];
 
         // Initialize new toDoList view controller instance
-        self.toDoListVC = [[GlobalData getInstance].mainStoryboard instantiateViewControllerWithIdentifier:@"todoListVC"];
-        self.toDoListVC.delegate = self;
-        self.toDoListVC.list = item;
-        [self.toDoListVC initializeView];
+        ToDoListTableViewController *newVC = [[GlobalData getInstance].mainStoryboard instantiateViewControllerWithIdentifier:@"todoListVC"];
+        newVC.delegate = self;
+        newVC.list = item;
+        [newVC initializeView];
+        [self.listToViewDict setObject:newVC forKey:item.listId];
 
         // Save array of lists
         [self saveLists];
 
         // Navigate to view
-        [self.navigationController pushViewController:self.toDoListVC animated:YES];
+        [self.navigationController pushViewController:newVC animated:YES];
     }
 }
 
@@ -299,12 +308,22 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ListItem *item = [self.lists objectAtIndex:indexPath.row];
-    self.toDoListVC = [[GlobalData getInstance].mainStoryboard instantiateViewControllerWithIdentifier:@"todoListVC"];
-    self.toDoListVC.delegate = self;
-    self.toDoListVC.list = item;
+    
+    if (!self.listToViewDict[item.listId])
+    {
+        ToDoListTableViewController *newVC = [[GlobalData getInstance].mainStoryboard instantiateViewControllerWithIdentifier:@"todoListVC"];
+        newVC.delegate = self;
+        newVC.list = item;
 
-    [self.toDoListVC initializeView];
-    [self.navigationController pushViewController:self.toDoListVC animated:YES];
+        [newVC initializeView];
+        [self.listToViewDict setObject:newVC forKey:item.listId];
+
+        [self.navigationController pushViewController:newVC animated:YES];
+    }
+    else
+    {
+        [self.navigationController pushViewController:[self.listToViewDict objectForKey:item.listId] animated:YES];
+    }
 }
 
 // Override to support conditional editing of the table view.
