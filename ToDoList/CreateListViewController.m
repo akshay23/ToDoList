@@ -56,6 +56,7 @@
     [self saveLists];
 }
 
+// Save all the lists using NSUserDefaults
 - (void)saveLists
 {
     // Clear all data first
@@ -78,6 +79,7 @@
     NSLog(@"Lists saved");
 }
 
+// Read from NSUserDefaults and decode lists
 - (void)loadLists
 {
     // Get the stored data before the view loads
@@ -111,6 +113,7 @@
     return decoded;
 }
 
+// Show alertview where user can enter new list name
 - (IBAction)addList:(id)sender
 {
     UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Create New List" message:@"Please enter list name" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
@@ -120,6 +123,7 @@
     [alert show];
 }
 
+// Take action based on which button in alert view was pressed
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 1 && ![GlobalData stringIsNilOrEmpty:[[alertView textFieldAtIndex:0] text]])
@@ -149,6 +153,8 @@
     }
 }
 
+// Go into edit mode and add UITextViews into each cell so
+// user can edit list name
 - (IBAction)editList:(id)sender
 {
     if (![self.tableView isEditing])
@@ -242,6 +248,7 @@
     }
 }
 
+// Add new textview into given tableview cell
 - (void)addTextViewIntoCell:(UITableViewCell *)cell itemBeingAdded:(ListItem *)item
 {
     // Create new UITxtView subvew to allow user to edit list nam

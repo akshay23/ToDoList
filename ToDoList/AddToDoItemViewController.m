@@ -100,7 +100,7 @@
 
 - (void)viewDidLayoutSubviews
 {
-    [self.mainScrollView setContentSize:CGSizeMake(self.mainScrollView.bounds.size.width, self.mainScrollView.bounds.size.height)];
+    [self.mainScrollView setContentSize:CGSizeMake(self.mainScrollView.bounds.size.width, self.mainScrollView.bounds.size.height + 50)];
 }
 
 - (BOOL)canBecomeFirstResponder
@@ -175,14 +175,31 @@
 // Method that gets called when camera button is tapped
 - (IBAction)takePicture:(id)sender
 {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Import Picture" message:@"Please pick where to import from" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Camera", @"Photo Library", nil];
+    [alert show];
+}
+
+// Redirect based on which button in alertview was pressed
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1)
+    {
+        NSLog(@"User wants to import from Camera");
+        [self getPicFromCamera];
+    }
+    else if (buttonIndex == 2)
+    {
+        NSLog(@"User wants to import from Photo Library");
+        [self getPicFromPhotoLibrary];
+    }
+}
+
+// Use camera to take picture
+- (void)getPicFromCamera
+{
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
     {
-        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                              message:@"Device has no camera"
-                                                             delegate:nil
-                                                    cancelButtonTitle:@"OK"
-                                                    otherButtonTitles: nil];
-        
+        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Device has no camera" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [myAlertView show];
     }
     else
@@ -191,13 +208,28 @@
         picker.delegate = self;
         picker.allowsEditing = YES;
         picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-        
+
         // Save all text from text boxes
         self.tmpItemName = self.itemTxtField.text;
         self.tmpNotes = self.itemNotesField.text;
-        
+
         [self presentViewController:picker animated:YES completion:NULL];
     }
+}
+
+// Get picture from photo library
+- (void)getPicFromPhotoLibrary
+{
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = YES;
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+
+    // Save all text from text boxes
+    self.tmpItemName = self.itemTxtField.text;
+    self.tmpNotes = self.itemNotesField.text;
+
+    [self presentViewController:picker animated:YES completion:NULL];
 }
 
 // Reset all fields
@@ -208,6 +240,7 @@
     self.itemImage.image = NULL;
 }
 
+// Show the ReminderVC
 - (IBAction)addReminder:(id)sender
 {
     if (!self.reminderVC)
@@ -238,6 +271,7 @@
     }
 }
 
+// User finished picking image from image picker
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {    
     UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
@@ -249,6 +283,7 @@
     [picker dismissViewControllerAnimated:YES completion:NULL];
 }
 
+// User cancelled image pick process
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
     [picker dismissViewControllerAnimated:YES completion:NULL];

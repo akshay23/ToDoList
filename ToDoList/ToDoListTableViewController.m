@@ -75,6 +75,7 @@
     [self.navigationController pushViewController:self.addToDoItemVC animated:YES];
 }
 
+// Add item to list of to-do items
 - (void)addToArray:(ToDoItem *)item
 {
     [self.toDoItems addObject:item];
@@ -88,6 +89,7 @@
     [self.delegate saveLists];
 }
 
+// Make sure user does indeed want to clear finished items
 - (void)confirmRefreshData
 {
     UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Confirm"
@@ -109,6 +111,7 @@
     [self.refreshControl endRefreshing];
 }
 
+// Refresh the data and reload table
 - (void)refreshData
 {
     // Find the things to remove
@@ -122,8 +125,11 @@
     
     [self.delegate saveLists];
     [self.tableView reloadData];
+    
+    NSLog(@"Data has been refreshed");
 }
 
+// Shake to go back to previous view
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
 {
     if (event.subtype == UIEventSubtypeMotionShake)

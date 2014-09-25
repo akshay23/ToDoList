@@ -159,4 +159,14 @@
         [myAlertView show];
     }
 }
+
+// Allows user to shake phone to go back to previous view
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    if (event.subtype == UIEventSubtypeMotionShake)
+    {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
 @end
