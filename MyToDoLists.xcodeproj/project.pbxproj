@@ -14,6 +14,7 @@
 		1930DD2F19D5CD020045CA06 /* camera_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1930DD2E19D5CD020045CA06 /* camera_icon.png */; };
 		1930DD3119D5CD080045CA06 /* camera_icon_press.png in Resources */ = {isa = PBXBuildFile; fileRef = 1930DD3019D5CD080045CA06 /* camera_icon_press.png */; };
 		1930DD3319D5E7800045CA06 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1930DD3219D5E7800045CA06 /* CloudKit.framework */; };
+		1930DD3619D5EB220045CA06 /* BVReorderTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1930DD3519D5EB220045CA06 /* BVReorderTableView.m */; };
 		19516284196E22E700CF4440 /* GlobalData.m in Sources */ = {isa = PBXBuildFile; fileRef = 19516283196E22E700CF4440 /* GlobalData.m */; };
 		195E27B519CB315500D93A16 /* ReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 195E27B419CB315500D93A16 /* ReminderViewController.m */; };
 		1964B8C3193D2027000C48E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1964B8C2193D2027000C48E9 /* Main.storyboard */; };
@@ -59,6 +60,8 @@
 		1930DD2E19D5CD020045CA06 /* camera_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera_icon.png; sourceTree = "<group>"; };
 		1930DD3019D5CD080045CA06 /* camera_icon_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera_icon_press.png; sourceTree = "<group>"; };
 		1930DD3219D5E7800045CA06 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		1930DD3419D5EB220045CA06 /* BVReorderTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BVReorderTableView.h; sourceTree = "<group>"; };
+		1930DD3519D5EB220045CA06 /* BVReorderTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BVReorderTableView.m; sourceTree = "<group>"; };
 		19516282196E22E700CF4440 /* GlobalData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalData.h; sourceTree = "<group>"; };
 		19516283196E22E700CF4440 /* GlobalData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalData.m; sourceTree = "<group>"; };
 		195E27B319CB315500D93A16 /* ReminderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReminderViewController.h; sourceTree = "<group>"; };
@@ -201,6 +204,8 @@
 				198933E4193D1B320018C167 /* main.m */,
 				198933E6193D1B320018C167 /* MyToDoLists-Prefix.pch */,
 				198C241E19C1043600D22DB7 /* MyLists.plist */,
+				1930DD3419D5EB220045CA06 /* BVReorderTableView.h */,
+				1930DD3519D5EB220045CA06 /* BVReorderTableView.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -343,6 +348,7 @@
 				1964B8C9193D7500000C48E9 /* ToDoListTableViewController.m in Sources */,
 				198933E5193D1B320018C167 /* main.m in Sources */,
 				1964B8C6193D7449000C48E9 /* AddToDoItemViewController.m in Sources */,
+				1930DD3619D5EB220045CA06 /* BVReorderTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

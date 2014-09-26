@@ -163,11 +163,24 @@
     }
     
     ToDoItem *toDoItem = [self.toDoItems objectAtIndex:indexPath.row];
-    cell.item = toDoItem;
-    cell.cellLabel.text = toDoItem.itemName;
-    cell.delegate = self;
     
-    [cell setSelected:toDoItem.completed animated:YES];
+    if ([[self.toDoItems objectAtIndex:indexPath.row] isKindOfClass:[ToDoItem class]] &&
+        [GlobalData stringIsNilOrEmpty:[[self.toDoItems objectAtIndex:indexPath.row] itemName]])
+    {
+        cell.cellLabel.text = @"";
+        [cell.tickBoxImage setHidden:YES];
+        [cell.infoButton setHidden:YES];
+    }
+    else
+    {
+        cell.item = toDoItem;
+        cell.cellLabel.text = toDoItem.itemName;
+        cell.delegate = self;
+        [cell.tickBoxImage setHidden:NO];
+        [cell.infoButton setHidden:NO];
+        
+        [cell setSelected:toDoItem.completed animated:YES];
+    }
     
     return cell;
 }
@@ -189,6 +202,13 @@
     return YES;
 }
 
+// Override to support conditional rearranging of the table view.
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Return NO if you do not want the item to be re-orderable.
+    return YES;
+}
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -203,15 +223,31 @@
 }
 
 // Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+- (void)moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
 {
+    ToDoItem *object = [self.toDoItems objectAtIndex:fromIndexPath.row];
+    [self.toDoItems removeObjectAtIndex:fromIndexPath.row];
+    [self.toDoItems insertObject:object atIndex:toIndexPath.row];
 }
 
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+// This method is called when the long press gesture is triggered starting the re-ording process.
+// You insert a blank row object into your data source and return the object you want to save for
+// later. This method is only called once.
+- (ToDoItem *)saveObjectAndInsertBlankRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
+    ToDoItem *object = [self.toDoItems objectAtIndex:indexPath.row];
+    [self.toDoItems replaceObjectAtIndex:indexPath.row withObject:[[ToDoItem alloc] init]];
+    return object;
+}
+
+// This method is called when the selected row is released to its new position. The object is the same
+// object you returned in saveObjectAndInsertBlankRowAtIndexPath:. Simply update the data source so the
+// object is in its new position. You should do any saving/cleanup here.
+- (void)finishReorderingWithObject:(id)object atIndexPath:(NSIndexPath *)indexPath; {
+    [self.toDoItems replaceObjectAtIndex:indexPath.row withObject:object];
+    
+    // Save list
+    [self.delegate saveLists];
 }
 
 @end
