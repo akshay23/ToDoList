@@ -72,6 +72,7 @@
 - (void)addToDoItem:(id)sender
 {
     self.addToDoItemVC.mode = Add;
+    self.addToDoItemVC.toDoItem = NULL;
     [self.navigationController pushViewController:self.addToDoItemVC animated:YES];
 }
 
