@@ -13,6 +13,7 @@
 #import "ToDoItem.h"
 #import "AddToDoItemViewController.h"
 #import "CustomTableViewCell.h"
+#import "BVReorderTableView.h"
 
 @class AddToDoItemViewController;
 @class CreateListViewController;
