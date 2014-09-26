@@ -45,6 +45,10 @@
     // Round the corners of the button
     self.btnDeleteReminder.layer.cornerRadius = 5;
     self.btnDeleteReminder.clipsToBounds = YES;
+    
+    // Add custom left navi button
+    UIBarButtonItem *left = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(goBack:)];
+    [self.navigationItem setLeftBarButtonItem:left];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -132,6 +136,13 @@
     }
 }
 
+// Pops controller with custom animation
+- (void)goBack:(id)sender
+{
+    [self doCustomViewTransition];
+    
+}
+
 // Format the reminder date into MM-dd-yyyy at HH:mm a format
 - (void)setTextViewMessage
 {
@@ -167,8 +178,20 @@
 {
     if (event.subtype == UIEventSubtypeMotionShake)
     {
-        [self.navigationController popViewControllerAnimated:YES];
+        [self doCustomViewTransition];
     }
+}
+
+// Custom transition
+- (void)doCustomViewTransition
+{
+    [UIView animateWithDuration:0.75
+                     animations:^{
+                         [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+                         [UIView setAnimationTransition:UIViewAnimationTransitionCurlUp forView:self.navigationController.view cache:NO];
+                     }];
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

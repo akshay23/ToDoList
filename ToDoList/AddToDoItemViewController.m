@@ -63,6 +63,10 @@
     self.btnReminders.layer.cornerRadius = 5;
     self.btnReset.clipsToBounds = YES;
     self.btnReminders.clipsToBounds = YES;
+    
+    // Set camera button icon
+    [self.btnCamera setImage:[UIImage imageNamed:@"camera_icon.png"] forState:UIControlStateNormal];
+    [self.btnCamera setImage:[UIImage imageNamed:@"camera_icon_press.png"] forState:UIControlStateSelected];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -310,7 +314,13 @@
     self.tmpNotes = self.itemNotesField.text;
     self.tmpImage = self.itemImage.image;
     
-    [self.navigationController pushViewController:self.reminderVC animated:YES];
+    // Custom view transition
+    [UIView animateWithDuration:0.75
+                     animations:^{
+                         [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+                         [self.navigationController pushViewController:self.reminderVC animated:NO];
+                         [UIView setAnimationTransition:UIViewAnimationTransitionCurlDown forView:self.navigationController.view cache:NO];
+                     }];
     
 }
 
