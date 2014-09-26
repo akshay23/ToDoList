@@ -65,6 +65,7 @@
 }
 
 // Save all the lists using NSUserDefaults
+// TODO: Use CoreData
 - (void)saveLists
 {
     // Clear all data first
@@ -83,11 +84,25 @@
     // Step 2: Actually save the new array
     [defaults setObject:archiveArray forKey:@"MyToDoLists"];
     [defaults synchronize];
+    
+//    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+//    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+//    
+//    for (ListItem *item in self.lists)
+//    {
+//        NSManagedObject *newList = [NSEntityDescription insertNewObjectForEntityForName:@"Lists" inManagedObjectContext:context];
+//        [newList setValue:item.name forKey:@"name"];
+//        [newList setValue:item.listId forKey:@"listId"];
+//    }
+//    
+//    NSError *error;
+//    [context save:&error];
 
     NSLog(@"Lists saved");
 }
 
 // Read from NSUserDefaults and decode lists
+// TODO: Use CoreData
 - (void)loadLists
 {
     // Get the stored data before the view loads
@@ -104,6 +119,15 @@
         self.lists = [[NSMutableArray alloc] init];
         NSLog(@"List of ListItems is nil");
     }
+    
+//    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+//    
+//    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+//    NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"Lists" inManagedObjectContext:context];
+//    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+//    [request setEntity:entityDesc];
+//    NSError *error;
+//    NSArray *objects = [context executeFetchRequest:request error:&error];
 }
 
 // Decodes each item in the input array using NSKeyedUnarchiver
