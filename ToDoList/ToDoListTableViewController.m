@@ -13,8 +13,6 @@
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSMutableArray *toDoItems;
 
-- (void)refreshData;
-
 @end
 
 @implementation ToDoListTableViewController
@@ -72,7 +70,7 @@
 - (void)addToDoItem:(id)sender
 {
     self.addToDoItemVC.mode = Add;
-    self.addToDoItemVC.toDoItem = NULL;
+    self.addToDoItemVC.toDoItem = nil;
     [self.navigationController pushViewController:self.addToDoItemVC animated:YES];
 }
 
@@ -87,7 +85,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
     
-    [self.delegate saveLists];
+    [self.delegate saveAllLists];
 }
 
 // Make sure user does indeed want to clear finished items
@@ -124,7 +122,7 @@
     // Remove the completed items from local array
     [self.toDoItems removeObjectsInArray:toDelete];
     
-    [self.delegate saveLists];
+    [self.delegate saveAllLists];
     [self.tableView reloadData];
     
     NSLog(@"Data has been refreshed");
@@ -192,7 +190,7 @@
     
     [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     
-    [self.delegate saveLists];   // Save list
+    [self.delegate saveAllLists];   // Save list
 }
 
 // Override to support conditional editing of the table view.
@@ -215,9 +213,9 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
         [[self.toDoItems objectAtIndex:indexPath.row] deleteReminder];
-        [[self.toDoItems objectAtIndex:indexPath.row] setItemImage:NULL];
+        [[self.toDoItems objectAtIndex:indexPath.row] setItemImage:nil];
         [self.toDoItems removeObjectAtIndex:indexPath.row];
-        [self.delegate saveLists];
+        [self.delegate saveAllLists];
         [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
@@ -243,11 +241,12 @@
 // This method is called when the selected row is released to its new position. The object is the same
 // object you returned in saveObjectAndInsertBlankRowAtIndexPath:. Simply update the data source so the
 // object is in its new position. You should do any saving/cleanup here.
-- (void)finishReorderingWithObject:(id)object atIndexPath:(NSIndexPath *)indexPath; {
+- (void)finishReorderingWithObject:(id)object atIndexPath:(NSIndexPath *)indexPath
+{
     [self.toDoItems replaceObjectAtIndex:indexPath.row withObject:object];
     
     // Save list
-    [self.delegate saveLists];
+    [self.delegate saveAllLists];
 }
 
 @end

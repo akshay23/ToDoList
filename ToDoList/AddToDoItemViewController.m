@@ -99,15 +99,15 @@
         }
         else
         {
-            [self.itemImage setImage:NULL];
+            [self.itemImage setImage:nil];
         }
         
         // Reminder date is in the past, so delete it
         if ([self.toDoItem.reminderDate compare:[NSDate date]] == NSOrderedAscending)
         {
             [self.toDoItem deleteReminder];
-            self.toDoItem.reminderDate = NULL;
-            self.toDoItem.reminderId = NULL;
+            self.toDoItem.reminderDate = nil;
+            self.toDoItem.reminderId = nil;
         }
     }
     else
@@ -131,7 +131,7 @@
         }
     }
     
-    // Set button text if reminder date is not null
+    // Set button text if reminder date is not nil
     if (self.toDoItem.reminderDate)
     {
         [self.btnReminders setTitle:@"Edit Reminder" forState:UIControlStateNormal];
@@ -193,12 +193,12 @@
         [self saveReminder];
 
         [self.navigationController popViewControllerAnimated:YES];
-        [self.delegate.delegate saveLists];
+        [self.delegate.delegate saveAllLists];
         [self.delegate.tableView reloadData];
         
         if (self.mode == Add)
         {
-            self.toDoItem = NULL;
+            self.toDoItem = nil;
         }
     }
 }
@@ -230,9 +230,9 @@
 {
     self.tmpNotes = @"";
     self.tmpItemName = @"";
-    self.tmpReminder = NULL;
-    self.tmpImage = NULL;
-    self.itemImage.image = NULL;
+    self.tmpReminder = nil;
+    self.tmpImage = nil;
+    self.itemImage.image = nil;
 }
 
 // Set the temp date
@@ -283,7 +283,7 @@
         self.tmpNotes = self.itemNotesField.text;
         self.tmpReminder = self.toDoItem.reminderDate;
 
-        [self presentViewController:picker animated:YES completion:NULL];
+        [self presentViewController:picker animated:YES completion:nil];
     }
 }
 
@@ -300,7 +300,7 @@
     self.tmpNotes = self.itemNotesField.text;
     self.tmpReminder = self.toDoItem.reminderDate;
 
-    [self presentViewController:picker animated:YES completion:NULL];
+    [self presentViewController:picker animated:YES completion:nil];
 }
 
 // Reset all fields
@@ -308,7 +308,7 @@
 {
     self.itemTxtField.text = @"";
     self.itemNotesField.text = @"";
-    self.itemImage.image = NULL;
+    self.itemImage.image = nil;
 }
 
 // Show the ReminderVC
@@ -358,13 +358,13 @@
     self.itemImage.hidden = NO;
     self.tmpImage = chosenImage;
     
-    [picker dismissViewControllerAnimated:YES completion:NULL];
+    [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 // User cancelled image pick process
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
-    [picker dismissViewControllerAnimated:YES completion:NULL];
+    [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

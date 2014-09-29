@@ -14,6 +14,8 @@
 
 @property BOOL completed;
 @property BOOL reminderChanged;
+@property NSInteger order;
+@property (strong, nonatomic) NSString *itemId;
 @property (strong, nonatomic) NSString *itemName;
 @property (strong, nonatomic) NSString *notes;
 @property (strong, nonatomic) UIImage *itemImage;
