@@ -164,6 +164,12 @@
     return YES;
 }
 
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
 // Either add new item or save changes to existing item
 - (void)saveItem:(id)sender
 {
@@ -178,23 +184,21 @@
             else
             {
                 self.toDoItem.itemName = self.itemTxtField.text;
-                self.toDoItem.itemImage = UIImagePNGRepresentation(self.itemImage.image);
+                self.toDoItem.itemImage = [NSData dataWithData:UIImagePNGRepresentation(self.itemImage.image)];
                 self.toDoItem.notes = self.itemNotesField.text;
             }
-
-            [self.delegate addToArray:self.toDoItem];
         }
         else
         {
             self.toDoItem.itemName = self.itemTxtField.text;
             self.toDoItem.notes = self.itemNotesField.text;
-            self.toDoItem.itemImage = UIImagePNGRepresentation(self.itemImage.image);
+            self.toDoItem.itemImage = [NSData dataWithData:UIImagePNGRepresentation(self.itemImage.image)];
         }
         
         [self saveReminder];
 
         [self.navigationController popViewControllerAnimated:YES];
-        [self.delegate.delegate saveAllLists];
+        [self.delegate saveItem:self.toDoItem];
         [self.delegate.tableView reloadData];
         
         if (self.mode == Add)
@@ -202,12 +206,6 @@
             self.toDoItem = nil;
         }
     }
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 // Allows user to shake phone to go back to previous view
@@ -326,7 +324,7 @@
     // Save all text from text boxes
     self.tmpItemName = self.itemTxtField.text;
     self.tmpNotes = self.itemNotesField.text;
-    self.tmpImage = UIImagePNGRepresentation(self.itemImage.image);
+    self.tmpImage = [NSData dataWithData:UIImagePNGRepresentation(self.itemImage.image)];
     
     // Custom view transition
     [UIView animateWithDuration:0.75
@@ -357,7 +355,7 @@
     UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
     self.itemImage.image = chosenImage;
     self.itemImage.hidden = NO;
-    self.tmpImage = UIImagePNGRepresentation(chosenImage);
+    self.tmpImage = [NSData dataWithData:UIImagePNGRepresentation(chosenImage)];
     
     [picker dismissViewControllerAnimated:YES completion:nil];
 }

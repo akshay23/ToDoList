@@ -20,8 +20,6 @@
 
 - (IBAction)addList:(id)sender;
 - (IBAction)editList:(id)sender;
-- (void)saveAllLists;
-- (void)saveList:(ListItem *)list;
-- (void)loadAllLists;
+- (NSArray *)findlist:(ListItem *)listItem;
 
 @end

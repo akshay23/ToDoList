@@ -36,9 +36,6 @@
         [lItem checkId];
     }
     
-    // Load existing to-do lists (if any)
-    [self loadAllLists];
-    
     // Create tap recognizer to detect taps on view
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
     // prevents the scroll view from swallowing up the touch event of child buttons
@@ -48,9 +45,9 @@
     [self.tableView addGestureRecognizer:tapGesture];
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidAppear:animated];
+    [super viewWillAppear:animated];
     
     // Load existing to-do lists (if any)
     [self loadAllLists];
@@ -64,52 +61,15 @@
     [self saveAllLists];
 }
 
-// Save all the lists using NSUserDefaults
-// TODO: Use CoreData
+// Save all the lists using CoreData
 - (void)saveAllLists
 {
-    // Clear all data first
-//    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    [defaults removePersistentDomainForName:appDomain];
-    
     // refresh list ordering
     [self refreshListOrdering];
     
-    // Save list (in two steps)
-    // Step 1: convert custom objects in array into NSData
-//    NSMutableArray *archiveArray = [NSMutableArray arrayWithCapacity:self.lists.count];
-//    for (ListItem *item in self.lists) {
-//        NSData *itemEncodedObject = [NSKeyedArchiver archivedDataWithRootObject:item];
-//        [archiveArray addObject:itemEncodedObject];
-//    }
-//
-//    // Step 2: Actually save the new array
-//    [defaults setObject:archiveArray forKey:@"MyToDoLists"];
-//    [defaults synchronize];
-    
+    // Save each list
     for (ListItem *item in self.lists)
     {
-//        NSEntityDescription *entityList = [NSEntityDescription entityForName:@"List" inManagedObjectContext:managedObjectContext];
-//        NSManagedObject *newList = [[NSManagedObject alloc] initWithEntity:entityList insertIntoManagedObjectContext:managedObjectContext];
-//        [newList setValue:item.name forKey:@"name"];
-//        [newList setValue:item.listId forKey:@"listId"];
-//        
-//        // Save each to-do item
-//        for (ToDoItem *todo in item.toDoItems)
-//        {
-//            NSManagedObject *newToDoItem = [[NSManagedObject alloc] initWithEntity:entityList insertIntoManagedObjectContext:managedObjectContext];
-//            [newToDoItem setValue:todo.notes forKey:@"notes"];
-//            [newToDoItem setValue:todo.itemName forKey:@"name"];
-//            [newToDoItem setValue:todo.reminderDate forKey:@"reminderDate"];
-//            [newToDoItem setValue:todo.reminderId forKey:@"reminderId"];
-//            [newToDoItem setValue:[NSNumber numberWithBool:todo.completed] forKey:@"completed"];
-//            
-//            // create relationship
-//            NSMutableSet *todos = [newList mutableSetValueForKey:@"todos"];
-//            [todos addObject:newToDoItem];
-//        }
-        
         [self saveList:item];
     }
 

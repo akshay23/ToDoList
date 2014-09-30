@@ -30,7 +30,7 @@
     self.itemName = name;
     self.notes = theNotes;
     self.completed = completedd;
-    self.itemImage = UIImagePNGRepresentation(theImage);
+    self.itemImage = [NSData dataWithData:UIImagePNGRepresentation(theImage)];
     self.reminderDate = nil;
     self.reminderChanged = NO;
     self.order = 0;
