@@ -13,7 +13,7 @@
 @property NSString *tmpItemName;
 @property NSString *tmpNotes;
 @property NSDate *tmpReminder;
-@property UIImage *tmpImage;
+@property NSData *tmpImage;
 
 @end
 
@@ -91,13 +91,14 @@
 
         if (self.toDoItem.itemImage)
         {
-            [self.itemImage setImage:self.toDoItem.itemImage];
+            [self.itemImage setImage:[UIImage imageWithData:self.toDoItem.itemImage]];
         }
-        else if (self.tmpImage)
+        
+        if (self.tmpImage)
         {
-            [self.itemImage setImage:self.tmpImage];
+            [self.itemImage setImage:[UIImage imageWithData:self.tmpImage]];
         }
-        else
+        else if (!self.tmpImage && !self.toDoItem.itemImage)
         {
             [self.itemImage setImage:nil];
         }
@@ -122,7 +123,7 @@
         
         if (self.tmpImage)
         {
-           self.itemImage.image = self.tmpImage;
+           self.itemImage.image = [UIImage imageWithData:self.tmpImage];
         }
 
         if (self.tmpReminder)
@@ -177,7 +178,7 @@
             else
             {
                 self.toDoItem.itemName = self.itemTxtField.text;
-                self.toDoItem.itemImage = self.itemImage.image;
+                self.toDoItem.itemImage = UIImagePNGRepresentation(self.itemImage.image);
                 self.toDoItem.notes = self.itemNotesField.text;
             }
 
@@ -187,7 +188,7 @@
         {
             self.toDoItem.itemName = self.itemTxtField.text;
             self.toDoItem.notes = self.itemNotesField.text;
-            self.toDoItem.itemImage = self.itemImage.image;
+            self.toDoItem.itemImage = UIImagePNGRepresentation(self.itemImage.image);
         }
         
         [self saveReminder];
@@ -325,7 +326,7 @@
     // Save all text from text boxes
     self.tmpItemName = self.itemTxtField.text;
     self.tmpNotes = self.itemNotesField.text;
-    self.tmpImage = self.itemImage.image;
+    self.tmpImage = UIImagePNGRepresentation(self.itemImage.image);
     
     // Custom view transition
     [UIView animateWithDuration:0.75
@@ -356,7 +357,7 @@
     UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
     self.itemImage.image = chosenImage;
     self.itemImage.hidden = NO;
-    self.tmpImage = chosenImage;
+    self.tmpImage = UIImagePNGRepresentation(chosenImage);
     
     [picker dismissViewControllerAnimated:YES completion:nil];
 }

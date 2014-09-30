@@ -122,7 +122,7 @@
     NSError *error = nil;
     NSArray *result = [self findlist:list];
     
-    if (result.count == 0)  // List does not exist
+    if (!result || result.count == 0)  // List does not exist
     {
         AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
         NSManagedObjectContext *managedObjectContext = [appDelegate managedObjectContext];

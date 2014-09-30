@@ -67,6 +67,7 @@
     [self.addToDoItemVC clearTemps];
 }
 
+// Push to the AddToDoItemVC to Add new item
 - (void)addToDoItem:(id)sender
 {
     self.addToDoItemVC.mode = Add;

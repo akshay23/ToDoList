@@ -18,7 +18,7 @@
 @property (strong, nonatomic) NSString *itemId;
 @property (strong, nonatomic) NSString *itemName;
 @property (strong, nonatomic) NSString *notes;
-@property (strong, nonatomic) UIImage *itemImage;
+@property (strong, nonatomic) NSData *itemImage;
 @property (readonly) NSDate *creationDate;
 @property (strong, nonatomic) NSDate *reminderDate;
 @property (strong, nonatomic) NSString *reminderId;
