@@ -368,7 +368,7 @@
 }
 
 // Override to support editing the table view.
-// TODO: Delete from Core Data
+// Delete from Core Data
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
