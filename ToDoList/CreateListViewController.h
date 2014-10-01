@@ -10,6 +10,7 @@
 #import "GlobalData.h"
 #import "ToDoListTableViewController.h"
 #import "ListItem.h"
+#import "AppDelegate.h"
 
 @interface CreateListViewController : UITableViewController
 
@@ -19,7 +20,6 @@
 
 - (IBAction)addList:(id)sender;
 - (IBAction)editList:(id)sender;
-- (void)saveLists;
-- (void)loadLists;
+- (NSArray *)findlist:(ListItem *)listItem;
 
 @end

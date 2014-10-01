@@ -11,6 +11,7 @@
 
 @interface ListItem : NSObject
 
+@property NSInteger order;
 @property (strong, nonatomic) NSString *listId;
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSMutableArray *toDoItems;

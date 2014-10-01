@@ -13,8 +13,6 @@
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSMutableArray *toDoItems;
 
-- (void)refreshData;
-
 @end
 
 @implementation ToDoListTableViewController
@@ -69,17 +67,12 @@
     [self.addToDoItemVC clearTemps];
 }
 
-- (void)addToDoItem:(id)sender
+- (void)viewWillAppear:(BOOL)animated
 {
-    self.addToDoItemVC.mode = Add;
-    self.addToDoItemVC.toDoItem = NULL;
-    [self.navigationController pushViewController:self.addToDoItemVC animated:YES];
-}
-
-// Add item to list of to-do items
-- (void)addToArray:(ToDoItem *)item
-{
-    [self.toDoItems addObject:item];
+    [super viewWillAppear:animated];
+    
+    // Load all items for list
+    [self loadAllItems];
 }
 
 - (void)didReceiveMemoryWarning
@@ -87,7 +80,131 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
     
-    [self.delegate saveLists];
+    [self saveAllItems];
+}
+
+// Push to the AddToDoItemVC to Add new item
+- (void)addToDoItem:(id)sender
+{
+    self.addToDoItemVC.mode = Add;
+    self.addToDoItemVC.toDoItem = nil;
+    [self.navigationController pushViewController:self.addToDoItemVC animated:YES];
+}
+
+// Save to Core Data.
+- (void)saveItem:(ToDoItem *)item
+{
+    NSError *error = nil;
+    NSManagedObject *managedItem = nil;
+    NSArray *result = [self findItem:item];
+    
+    if (!result || result.count == 0)  // New item
+    {
+        AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+        NSManagedObjectContext *managedObjectContext = [appDelegate managedObjectContext];
+        NSEntityDescription *entityItem = [NSEntityDescription entityForName:@"ToDo" inManagedObjectContext:managedObjectContext];
+        managedItem = [[NSManagedObject alloc] initWithEntity:entityItem insertIntoManagedObjectContext:managedObjectContext];
+        
+        // Add item to array of items
+        [item setOrder:self.toDoItems.count];
+        [self.toDoItems addObject:item];
+    }
+    else  // Existing item
+    {
+        managedItem = (NSManagedObject *)[result objectAtIndex:0];
+    }
+    
+    NSNumber *nn = [NSNumber numberWithInteger:item.order];
+    [managedItem setValue:item.itemId forKey:@"itemId"];
+    [managedItem setValue:self.list.listId forKey:@"listId"];
+    [managedItem setValue:item.itemName forKey:@"name"];
+    [managedItem setValue:item.notes forKey:@"notes"];
+    [managedItem setValue:[NSNumber numberWithBool:item.completed] forKey:@"completed"];
+    [managedItem setValue:nn forKey:@"order"];
+    [managedItem setValue:item.reminderDate forKey:@"reminderDate"];
+    [managedItem setValue:item.reminderId forKey:@"reminderId"];
+    [managedItem setValue:item.itemImage forKey:@"image"];
+    
+    if (![managedItem.managedObjectContext save:&error])
+    {
+        NSLog(@"Unable to save to-do item.");
+        NSLog(@"%@, %@", error, error.localizedDescription);
+    }
+}
+
+// TODO: Delete to-do item from Core Data
+- (void)deleteItem:(ToDoItem *)item
+{
+    NSArray *result = [self findItem:item];
+    
+    if (result && result.count == 1)
+    {
+        NSError *error;
+        NSManagedObject *itemObject = (NSManagedObject *)[result objectAtIndex:0];
+        [itemObject.managedObjectContext deleteObject:itemObject];
+        
+        if (![itemObject.managedObjectContext save:&error])
+        {
+            NSLog(@"Unable to delete item.");
+            NSLog(@"%@, %@", error, error.localizedDescription);
+        }
+    }
+    else
+    {
+        NSLog(@"Could not find item in Core Data");
+    }
+}
+
+// Save all to-do items to CoreData
+- (void)saveAllItems
+{
+    // Refresh list ordering
+    [self refreshListOrdering];
+    
+    // Save each item
+    for (ToDoItem *item in self.toDoItems)
+    {
+        [self saveItem:item];
+    }
+}
+
+// Load all to-do items from CoreData
+- (void)loadAllItems
+{
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *managedObjectContext = [appDelegate managedObjectContext];
+    NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"ToDo" inManagedObjectContext:managedObjectContext];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"listId like[c] %@",self.list.listId];
+    [request setEntity:entityDesc];
+    [request setSortDescriptors:@[sortDescriptor]];
+    [request setPredicate:predicate];
+    
+    NSError *error;
+    NSArray *objects = [managedObjectContext executeFetchRequest:request error:&error];
+    NSMutableArray *itemObjects = [NSMutableArray arrayWithCapacity:objects.count];
+    for (NSManagedObject *item in objects)
+    {
+        ToDoItem *i = [[ToDoItem alloc] initWithNameNotesAndCompleted:[item valueForKey:@"name"] notes:[item valueForKey:@"notes"] image:[UIImage imageWithData:[item valueForKey:@"image"]] isCompleted:[[item valueForKey:@"completed"] boolValue]];
+        NSNumber *n = [item valueForKey:@"order"];
+        [i setOrder:[n integerValue]];
+        [i setItemId:[item valueForKey:@"itemId"]];
+        [i setReminderDate:[item valueForKey:@"reminderDate"]];
+        [i setReminderId:[item valueForKey:@"reminderId"]];
+        [itemObjects addObject:i];
+    }
+    
+    if (itemObjects)
+    {
+        self.toDoItems = itemObjects;
+        NSLog(@"Items count is: %d", (int) itemObjects.count);
+    }
+    else
+    {
+        self.toDoItems = [[NSMutableArray alloc] init];
+        NSLog(@"List of TodoItems is nil");
+    }
 }
 
 // Make sure user does indeed want to clear finished items
@@ -118,15 +235,20 @@
     // Find the things to remove
     NSMutableArray *toDelete = [NSMutableArray array];
     for (ToDoItem *item in self.toDoItems)
+    {
         if (item.completed)
+        {
             [toDelete addObject:item];
+            [self deleteItem:item];
+        }
+    }
 
     // Remove the completed items from local array
     [self.toDoItems removeObjectsInArray:toDelete];
-    
-    [self.delegate saveLists];
+
+    [self saveAllItems];
     [self.tableView reloadData];
-    
+
     NSLog(@"Data has been refreshed");
 }
 
@@ -137,6 +259,42 @@
     {
         [self.navigationController popViewControllerAnimated:YES];
     }
+}
+
+// Make sure the to-do item ordering is correct
+- (void)refreshListOrdering
+{
+    NSInteger listOrder = 0;
+    for (ToDoItem *item in self.toDoItems)
+    {
+        [item setOrder:listOrder];
+        listOrder++;
+    }
+}
+
+// Find a tod-do item in Core Data
+- (NSArray *)findItem:(ToDoItem *)item
+{
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *managedObjectContext = [appDelegate managedObjectContext];
+    
+    // Check to see if list exists, else create new entry
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"ToDo" inManagedObjectContext:managedObjectContext];
+    [fetchRequest setEntity:entity];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"itemId like[c] %@", item.itemId];
+    [fetchRequest setPredicate:predicate];
+    
+    NSError *error;
+    NSArray *retList = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    if (!retList)
+    {
+        NSLog(@"Error when trying to find to-do item!");
+        NSLog(@"%@, %@", error, error.localizedDescription);
+    }
+    
+    return retList;
 }
 
 #pragma mark - Table view data source
@@ -192,7 +350,7 @@
     
     [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     
-    [self.delegate saveLists];   // Save list
+    [self saveAllItems];   // Save list
 }
 
 // Override to support conditional editing of the table view.
@@ -210,15 +368,19 @@
 }
 
 // Override to support editing the table view.
+// Delete from Core Data
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
+        // Delete the row from the data source and from Core Data
         [[self.toDoItems objectAtIndex:indexPath.row] deleteReminder];
-        [[self.toDoItems objectAtIndex:indexPath.row] setItemImage:NULL];
+        [[self.toDoItems objectAtIndex:indexPath.row] setItemImage:nil];
+        [self deleteItem:[self.toDoItems objectAtIndex:indexPath.row]];
         [self.toDoItems removeObjectAtIndex:indexPath.row];
-        [self.delegate saveLists];
         [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        // Save list
+        [self saveAllItems];
     }
 }
 
@@ -243,11 +405,12 @@
 // This method is called when the selected row is released to its new position. The object is the same
 // object you returned in saveObjectAndInsertBlankRowAtIndexPath:. Simply update the data source so the
 // object is in its new position. You should do any saving/cleanup here.
-- (void)finishReorderingWithObject:(id)object atIndexPath:(NSIndexPath *)indexPath; {
+- (void)finishReorderingWithObject:(id)object atIndexPath:(NSIndexPath *)indexPath
+{
     [self.toDoItems replaceObjectAtIndex:indexPath.row withObject:object];
     
     // Save list
-    [self.delegate saveLists];
+    [self saveAllItems];
 }
 
 @end

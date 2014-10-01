@@ -15,6 +15,7 @@
     self.listId = [[NSUUID UUID] UUIDString];
     self.name = name;
     self.toDoItems = [[NSMutableArray alloc] init];
+    self.order = 0;
     
     return [self init];
 }
@@ -26,14 +27,17 @@
         self.listId = [coder decodeObjectForKey:@"ItemId"];
         self.name = [coder decodeObjectForKey:@"ItemName"];
         self.toDoItems = [coder decodeObjectForKey:@"ToDoItems"];
+        self.order = [coder decodeIntegerForKey:@"ItemOrder"];
     }
     return self;
 }
 
-- (void)encodeWithCoder:(NSCoder *)coder {
+- (void)encodeWithCoder:(NSCoder *)coder
+{
     [coder encodeObject:self.listId forKey:@"ItemId"];
     [coder encodeObject:self.name forKey:@"ItemName"];
     [coder encodeObject:self.toDoItems forKey:@"ToDoItems"];
+    [coder encodeInteger:self.order forKey:@"ItemOrder"];
 }
 
 - (void)checkId

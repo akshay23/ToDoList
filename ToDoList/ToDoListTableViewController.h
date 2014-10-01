@@ -26,7 +26,6 @@
 @property (strong, nonatomic) AddToDoItemViewController *addToDoItemVC;
 
 - (void)initializeView;
-- (void)addToArray:(ToDoItem *)item;
-- (void)confirmRefreshData;
+- (void)saveItem:(ToDoItem *)item;
 
 @end

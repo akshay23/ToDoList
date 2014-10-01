@@ -36,9 +36,6 @@
         [lItem checkId];
     }
     
-    // Load existing to-do lists (if any)
-    [self loadLists];
-    
     // Create tap recognizer to detect taps on view
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
     // prevents the scroll view from swallowing up the touch event of child buttons
@@ -48,12 +45,12 @@
     [self.tableView addGestureRecognizer:tapGesture];
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidAppear:animated];
+    [super viewWillAppear:animated];
     
     // Load existing to-do lists (if any)
-    [self loadLists];
+    [self loadAllLists];
 }
 
 - (void)didReceiveMemoryWarning
@@ -61,49 +58,160 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
     
-    [self saveLists];
+    [self saveAllLists];
 }
 
-// Save all the lists using NSUserDefaults
-- (void)saveLists
+// Save all the lists using CoreData
+- (void)saveAllLists
 {
-    // Clear all data first
-    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults removePersistentDomainForName:appDomain];
+    // refresh list ordering
+    [self refreshListOrdering];
     
-    // Save list (in two steps)
-    // Step 1: convert custom objects in array into NSData
-    NSMutableArray *archiveArray = [NSMutableArray arrayWithCapacity:self.lists.count];
-    for (ListItem *item in self.lists) {
-        NSData *itemEncodedObject = [NSKeyedArchiver archivedDataWithRootObject:item];
-        [archiveArray addObject:itemEncodedObject];
+    // Save each list
+    for (ListItem *item in self.lists)
+    {
+        [self saveList:item];
     }
-
-    // Step 2: Actually save the new array
-    [defaults setObject:archiveArray forKey:@"MyToDoLists"];
-    [defaults synchronize];
 
     NSLog(@"Lists saved");
 }
 
-// Read from NSUserDefaults and decode lists
-- (void)loadLists
+// Save a particular list
+- (void)saveList:(ListItem *)list
 {
-    // Get the stored data before the view loads
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSMutableArray *listt = [self decodeMyArray:[defaults objectForKey:@"MyToDoLists"]];
-
-    if (listt)
+    NSError *error = nil;
+    NSArray *result = [self findlist:list];
+    
+    if (!result || result.count == 0)  // List does not exist
     {
-        self.lists = listt;
-        NSLog(@"List size is: %d", (int) listt.count);
+        AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+        NSManagedObjectContext *managedObjectContext = [appDelegate managedObjectContext];
+        NSEntityDescription *entityList = [NSEntityDescription entityForName:@"List" inManagedObjectContext:managedObjectContext];
+        NSManagedObject *newList = [[NSManagedObject alloc] initWithEntity:entityList insertIntoManagedObjectContext:managedObjectContext];
+        NSNumber *nn = [NSNumber numberWithInteger:list.order];
+        [newList setValue:list.name forKey:@"name"];
+        [newList setValue:list.listId forKey:@"listId"];
+        [newList setValue:nn forKey:@"order"];
+        
+        if (![newList.managedObjectContext save:&error])
+        {
+            NSLog(@"Unable to save new list.");
+            NSLog(@"%@, %@", error, error.localizedDescription);
+        }
+    }
+    else  // List exists
+    {
+        NSManagedObject *listObject = (NSManagedObject *)[result objectAtIndex:0];
+        NSNumber *nn = [NSNumber numberWithInteger:list.order];
+        [listObject setValue:list.name forKey:@"name"];
+        [listObject setValue:nn forKey:@"order"];
+        
+        if (![listObject.managedObjectContext save:&error]) {
+            NSLog(@"Unable to update existing list.");
+            NSLog(@"%@, %@", error, error.localizedDescription);
+        }
+    }
+}
+
+// Read from CoreData
+- (void)loadAllLists
+{
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *managedObjectContext = [appDelegate managedObjectContext];
+    NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"List" inManagedObjectContext:managedObjectContext];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES];
+    [request setEntity:entityDesc];
+    [request setSortDescriptors:@[sortDescriptor]];
+    
+    NSError *error;
+    NSArray *objects = [managedObjectContext executeFetchRequest:request error:&error];
+    NSMutableArray *listObjects = [NSMutableArray arrayWithCapacity:objects.count];
+    for (NSManagedObject *item in objects)
+    {
+        ListItem *i = [[ListItem alloc] initWithName:[item valueForKey:@"name"]];
+        NSNumber *n = [item valueForKey:@"order"];
+        [i setOrder:[n integerValue]];
+        [i setListId:[item valueForKey:@"listId"]];
+        [listObjects addObject:i];
+    }
+    
+    if (listObjects)
+    {
+        self.lists = listObjects;
+        NSLog(@"List size is: %d", (int) listObjects.count);
     }
     else
     {
         self.lists = [[NSMutableArray alloc] init];
         NSLog(@"List of ListItems is nil");
     }
+}
+
+// Delete all lits from store (core data)
+- (void)deleteAllLists
+{
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *managedObjectContext = [appDelegate managedObjectContext];
+    
+    NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"List" inManagedObjectContext:managedObjectContext];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entityDesc];
+    NSError *error;
+    NSArray *objects = [managedObjectContext executeFetchRequest:request error:&error];
+    
+    for (id listItem in objects)
+    {
+        [managedObjectContext deleteObject:listItem];
+    }
+}
+
+// Delete list
+- (void)deleteList:(ListItem *)listItem
+{
+    NSArray *result = [self findlist:listItem];
+    
+    if (result && result.count == 1)
+    {
+        NSError *error;
+        NSManagedObject *listObject = (NSManagedObject *)[result objectAtIndex:0];
+        [listObject.managedObjectContext deleteObject:listObject];
+        
+        if (![listObject.managedObjectContext save:&error])
+        {
+            NSLog(@"Unable to delete list.");
+            NSLog(@"%@, %@", error, error.localizedDescription);
+        }
+    }
+    else
+    {
+        NSLog(@"Could not find list in Core Data");
+    }
+}
+
+// Find a list in Core Data
+- (NSArray *)findlist:(ListItem *)listItem
+{
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *managedObjectContext = [appDelegate managedObjectContext];
+    
+    // Check to see if list exists, else create new entry
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"List" inManagedObjectContext:managedObjectContext];
+    [fetchRequest setEntity:entity];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"listId like[c] %@", listItem.listId];
+    [fetchRequest setPredicate:predicate];
+
+    NSError *error;
+    NSArray *retList = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    if (!retList)
+    {
+        NSLog(@"Error when trying to find list!");
+        NSLog(@"%@, %@", error, error.localizedDescription);
+    }
+
+    return retList;
 }
 
 // Decodes each item in the input array using NSKeyedUnarchiver
@@ -138,6 +246,7 @@
     {
         NSString *listName = [[alertView textFieldAtIndex:0] text];
         ListItem *item = [[ListItem alloc] initWithName:listName];
+        [item setOrder:self.lists.count];
 
         if (self.lists == nil)
         {
@@ -155,7 +264,7 @@
         [self.listToViewDict setObject:newVC forKey:item.listId];
 
         // Save array of lists
-        [self saveLists];
+        [self saveList:item];
 
         // Navigate to view
         [self.navigationController pushViewController:newVC animated:YES];
@@ -187,7 +296,7 @@
         [[self.navigationItem rightBarButtonItem] setEnabled:YES];
         
         // Save array of lists
-        [self saveLists];
+        [self saveAllLists];
     }
 }
 
@@ -278,6 +387,17 @@
     [cell.contentView addSubview:txtField];
 }
 
+// Make sure the list ordering is correct
+- (void)refreshListOrdering
+{
+    NSInteger listOrder = 0;
+    for (ListItem *item in self.lists)
+    {
+        [item setOrder:listOrder];
+        listOrder++;
+    }
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -344,13 +464,14 @@
         for (ToDoItem *item in removed.toDoItems)
         {
             [item deleteReminder];
-            [item setItemImage:NULL];
+            [item setItemImage:nil];
         }
-        removed = NULL;
 
         [self.lists removeObjectAtIndex:indexPath.row];
-        [self saveLists];
+        [self deleteList:removed];
+        removed = nil;
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+
     }
 }
 

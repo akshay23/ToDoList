@@ -100,8 +100,8 @@
             if (self.toDoItem.reminderDate)
             {
                 [self.toDoItem deleteReminder];
-                self.toDoItem.reminderDate = NULL;
-                self.toDoItem.reminderId = NULL;
+                self.toDoItem.reminderDate = nil;
+                self.toDoItem.reminderId = nil;
             }
             
             [self.datePicker setDate:[NSDate date]];
@@ -126,7 +126,7 @@
     {
         [self.txtMessage setTextColor:[UIColor redColor]];
         [self.txtMessage setText:@"The reminder has to be for some time in the future!"];
-        [self.delegate setTempDate:NULL];
+        [self.delegate setTempDate:nil];
     }
     else if (!self.toDoItem.reminderDate && ([self.datePicker.date compare:[NSDate date]] == NSOrderedDescending))
     {
@@ -161,8 +161,8 @@
 {
     if ([self.toDoItem deleteReminder])
     {
-        self.toDoItem.reminderDate = NULL;
-        self.toDoItem.reminderId = NULL;
+        self.toDoItem.reminderDate = nil;
+        self.toDoItem.reminderId = nil;
         [self setupInitialStates];
         [self.btnDeleteReminder setHidden:YES];
     }

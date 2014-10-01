@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1915FF1F19D61353001CE381 /* MyToDoListsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1915FF1D19D61353001CE381 /* MyToDoListsModel.xcdatamodeld */; };
+		1915FF2119D618C1001CE381 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1915FF2019D618C1001CE381 /* CoreData.framework */; };
 		1923AA7E1964DAFC0034C05B /* CreateListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1923AA7D1964DAFC0034C05B /* CreateListViewController.m */; };
 		1928CEA919A167E400D6C805 /* checkbox_empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 1928CEA719A167E400D6C805 /* checkbox_empty.png */; };
 		1928CEAA19A167E400D6C805 /* checkbox_full.png in Resources */ = {isa = PBXBuildFile; fileRef = 1928CEA819A167E400D6C805 /* checkbox_full.png */; };
@@ -50,6 +52,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1915FF1E19D61353001CE381 /* MyToDoListsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyToDoListsModel.xcdatamodel; sourceTree = "<group>"; };
+		1915FF2019D618C1001CE381 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		19239A06193EA02D00E9ABB2 /* ToDoList.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ToDoList.entitlements; sourceTree = "<group>"; };
 		1923AA7C1964DAFC0034C05B /* CreateListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateListViewController.h; sourceTree = "<group>"; };
 		1923AA7D1964DAFC0034C05B /* CreateListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateListViewController.m; sourceTree = "<group>"; };
@@ -101,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1915FF2119D618C1001CE381 /* CoreData.framework in Frameworks */,
 				1930DD3319D5E7800045CA06 /* CloudKit.framework in Frameworks */,
 				1972EC1119C9FDA500611F12 /* EventKit.framework in Frameworks */,
 				198933DB193D1B320018C167 /* CoreGraphics.framework in Frameworks */,
@@ -156,6 +161,7 @@
 		198933D7193D1B320018C167 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1915FF2019D618C1001CE381 /* CoreData.framework */,
 				1930DD3219D5E7800045CA06 /* CloudKit.framework */,
 				1972EC1019C9FDA500611F12 /* EventKit.framework */,
 				198933D8193D1B320018C167 /* Foundation.framework */,
@@ -192,6 +198,7 @@
 				1928CEAD19A169CF00D6C805 /* CustomTableViewCell.m */,
 				195E27B319CB315500D93A16 /* ReminderViewController.h */,
 				195E27B419CB315500D93A16 /* ReminderViewController.m */,
+				1915FF1D19D61353001CE381 /* MyToDoListsModel.xcdatamodeld */,
 			);
 			path = ToDoList;
 			sourceTree = "<group>";
@@ -343,6 +350,7 @@
 				19516284196E22E700CF4440 /* GlobalData.m in Sources */,
 				1923AA7E1964DAFC0034C05B /* CreateListViewController.m in Sources */,
 				19B8BAF91967330E00827AFB /* ListItem.m in Sources */,
+				1915FF1F19D61353001CE381 /* MyToDoListsModel.xcdatamodeld in Sources */,
 				195E27B519CB315500D93A16 /* ReminderViewController.m in Sources */,
 				1928CEAE19A169CF00D6C805 /* CustomTableViewCell.m in Sources */,
 				1964B8C9193D7500000C48E9 /* ToDoListTableViewController.m in Sources */,
@@ -567,6 +575,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1915FF1D19D61353001CE381 /* MyToDoListsModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1915FF1E19D61353001CE381 /* MyToDoListsModel.xcdatamodel */,
+			);
+			currentVersion = 1915FF1E19D61353001CE381 /* MyToDoListsModel.xcdatamodel */;
+			path = MyToDoListsModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 198933CD193D1B320018C167 /* Project object */;
 }
