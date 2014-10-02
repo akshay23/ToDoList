@@ -61,19 +61,29 @@
     [self saveAllLists];
 }
 
-// Save all the lists using CoreData
-- (void)saveAllLists
+// Find a list in Core Data
+- (NSArray *)findlist:(ListItem *)listItem
 {
-    // refresh list ordering
-    [self refreshListOrdering];
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *managedObjectContext = [appDelegate managedObjectContext];
     
-    // Save each list
-    for (ListItem *item in self.lists)
+    // Check to see if list exists, else create new entry
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"List" inManagedObjectContext:managedObjectContext];
+    [fetchRequest setEntity:entity];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"listId like[c] %@", listItem.listId];
+    [fetchRequest setPredicate:predicate];
+    
+    NSError *error;
+    NSArray *retList = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    if (!retList)
     {
-        [self saveList:item];
+        NSLog(@"Error when trying to find list!");
+        NSLog(@"%@, %@", error, error.localizedDescription);
     }
-
-    NSLog(@"Lists saved");
+    
+    return retList;
 }
 
 // Save a particular list
@@ -111,6 +121,44 @@
             NSLog(@"%@, %@", error, error.localizedDescription);
         }
     }
+}
+
+// Delete list
+- (void)deleteList:(ListItem *)listItem
+{
+    NSArray *result = [self findlist:listItem];
+    
+    if (result && result.count == 1)
+    {
+        NSError *error;
+        NSManagedObject *listObject = (NSManagedObject *)[result objectAtIndex:0];
+        [listObject.managedObjectContext deleteObject:listObject];
+        
+        if (![listObject.managedObjectContext save:&error])
+        {
+            NSLog(@"Unable to delete list.");
+            NSLog(@"%@, %@", error, error.localizedDescription);
+        }
+    }
+    else
+    {
+        NSLog(@"Could not find list in Core Data");
+    }
+}
+
+// Save all the lists using CoreData
+- (void)saveAllLists
+{
+    // refresh list ordering
+    [self refreshListOrdering];
+    
+    // Save each list
+    for (ListItem *item in self.lists)
+    {
+        [self saveList:item];
+    }
+    
+    NSLog(@"Lists saved");
 }
 
 // Read from CoreData
@@ -166,69 +214,6 @@
     }
 }
 
-// Delete list
-- (void)deleteList:(ListItem *)listItem
-{
-    NSArray *result = [self findlist:listItem];
-    
-    if (result && result.count == 1)
-    {
-        NSError *error;
-        NSManagedObject *listObject = (NSManagedObject *)[result objectAtIndex:0];
-        [listObject.managedObjectContext deleteObject:listObject];
-        
-        if (![listObject.managedObjectContext save:&error])
-        {
-            NSLog(@"Unable to delete list.");
-            NSLog(@"%@, %@", error, error.localizedDescription);
-        }
-    }
-    else
-    {
-        NSLog(@"Could not find list in Core Data");
-    }
-}
-
-// Find a list in Core Data
-- (NSArray *)findlist:(ListItem *)listItem
-{
-    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *managedObjectContext = [appDelegate managedObjectContext];
-    
-    // Check to see if list exists, else create new entry
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"List" inManagedObjectContext:managedObjectContext];
-    [fetchRequest setEntity:entity];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"listId like[c] %@", listItem.listId];
-    [fetchRequest setPredicate:predicate];
-
-    NSError *error;
-    NSArray *retList = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    
-    if (!retList)
-    {
-        NSLog(@"Error when trying to find list!");
-        NSLog(@"%@, %@", error, error.localizedDescription);
-    }
-
-    return retList;
-}
-
-// Decodes each item in the input array using NSKeyedUnarchiver
-// into a ListItem
-- (NSMutableArray *)decodeMyArray:(NSMutableArray *)encodedArray
-{
-    if (!encodedArray) return nil;
-
-    NSMutableArray *decoded = [NSMutableArray arrayWithCapacity:encodedArray.count];
-    for (NSData *item in encodedArray) {
-        ListItem *decodedObject = [NSKeyedUnarchiver unarchiveObjectWithData:item];
-        [decoded addObject:decodedObject];
-    }
-
-    return decoded;
-}
-
 // Show alertview where user can enter new list name
 - (IBAction)addList:(id)sender
 {
@@ -260,7 +245,6 @@
         ToDoListTableViewController *newVC = [[GlobalData getInstance].mainStoryboard instantiateViewControllerWithIdentifier:@"todoListVC"];
         newVC.delegate = self;
         newVC.list = item;
-        [newVC initializeView];
         [self.listToViewDict setObject:newVC forKey:item.listId];
 
         // Save array of lists
@@ -437,7 +421,6 @@
         newVC.delegate = self;
         newVC.list = item;
 
-        [newVC initializeView];
         [self.listToViewDict setObject:newVC forKey:item.listId];
 
         [self.navigationController pushViewController:newVC animated:YES];

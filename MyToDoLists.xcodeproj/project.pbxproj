@@ -15,7 +15,6 @@
 		1928CEAE19A169CF00D6C805 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1928CEAD19A169CF00D6C805 /* CustomTableViewCell.m */; };
 		1930DD2F19D5CD020045CA06 /* camera_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1930DD2E19D5CD020045CA06 /* camera_icon.png */; };
 		1930DD3119D5CD080045CA06 /* camera_icon_press.png in Resources */ = {isa = PBXBuildFile; fileRef = 1930DD3019D5CD080045CA06 /* camera_icon_press.png */; };
-		1930DD3319D5E7800045CA06 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1930DD3219D5E7800045CA06 /* CloudKit.framework */; };
 		1930DD3619D5EB220045CA06 /* BVReorderTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1930DD3519D5EB220045CA06 /* BVReorderTableView.m */; };
 		19516284196E22E700CF4440 /* GlobalData.m in Sources */ = {isa = PBXBuildFile; fileRef = 19516283196E22E700CF4440 /* GlobalData.m */; };
 		195E27B519CB315500D93A16 /* ReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 195E27B419CB315500D93A16 /* ReminderViewController.m */; };
@@ -35,10 +34,11 @@
 		198933F3193D1B320018C167 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 198933D8193D1B320018C167 /* Foundation.framework */; };
 		198933F4193D1B320018C167 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 198933DC193D1B320018C167 /* UIKit.framework */; };
 		198933FC193D1B320018C167 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 198933FA193D1B320018C167 /* InfoPlist.strings */; };
-		198933FE193D1B320018C167 /* ToDoListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 198933FD193D1B320018C167 /* ToDoListTests.m */; };
 		198C241D19C0E5B100D22DB7 /* takepicture.png in Resources */ = {isa = PBXBuildFile; fileRef = 198C241C19C0E5B100D22DB7 /* takepicture.png */; };
 		198C241F19C1043600D22DB7 /* MyLists.plist in Resources */ = {isa = PBXBuildFile; fileRef = 198C241E19C1043600D22DB7 /* MyLists.plist */; };
 		19B8BAF91967330E00827AFB /* ListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B8BAF81967330E00827AFB /* ListItem.m */; };
+		19C0198519DDE73C00BE845F /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19C0198419DDE73C00BE845F /* iTunesArtwork@2x.png */; };
+		19C0198619DDE8D500BE845F /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19C0198819DDE8D500BE845F /* Launch Screen.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +63,6 @@
 		1928CEAD19A169CF00D6C805 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 		1930DD2E19D5CD020045CA06 /* camera_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera_icon.png; sourceTree = "<group>"; };
 		1930DD3019D5CD080045CA06 /* camera_icon_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera_icon_press.png; sourceTree = "<group>"; };
-		1930DD3219D5E7800045CA06 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		1930DD3419D5EB220045CA06 /* BVReorderTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BVReorderTableView.h; sourceTree = "<group>"; };
 		1930DD3519D5EB220045CA06 /* BVReorderTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BVReorderTableView.m; sourceTree = "<group>"; };
 		19516282196E22E700CF4440 /* GlobalData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalData.h; sourceTree = "<group>"; };
@@ -93,11 +92,12 @@
 		198933F1193D1B320018C167 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		198933F9193D1B320018C167 /* MyToDoListsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MyToDoListsTests-Info.plist"; sourceTree = "<group>"; };
 		198933FB193D1B320018C167 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		198933FD193D1B320018C167 /* ToDoListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToDoListTests.m; sourceTree = "<group>"; };
 		198C241C19C0E5B100D22DB7 /* takepicture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = takepicture.png; sourceTree = "<group>"; };
 		198C241E19C1043600D22DB7 /* MyLists.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MyLists.plist; sourceTree = "<group>"; };
 		19B8BAF71967330E00827AFB /* ListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListItem.h; sourceTree = "<group>"; };
 		19B8BAF81967330E00827AFB /* ListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListItem.m; sourceTree = "<group>"; };
+		19C0198419DDE73C00BE845F /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iTunesArtwork@2x.png"; path = "../../../../Desktop/iTunesArtwork@2x.png"; sourceTree = "<group>"; };
+		19C0198719DDE8D500BE845F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "en.lproj/Launch Screen.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +106,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1915FF2119D618C1001CE381 /* CoreData.framework in Frameworks */,
-				1930DD3319D5E7800045CA06 /* CloudKit.framework in Frameworks */,
 				1972EC1119C9FDA500611F12 /* EventKit.framework in Frameworks */,
 				198933DB193D1B320018C167 /* CoreGraphics.framework in Frameworks */,
 				198933DD193D1B320018C167 /* UIKit.framework in Frameworks */,
@@ -130,6 +129,7 @@
 		1928CEAB19A167EC00D6C805 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				19C0198419DDE73C00BE845F /* iTunesArtwork@2x.png */,
 				1930DD2E19D5CD020045CA06 /* camera_icon.png */,
 				1930DD3019D5CD080045CA06 /* camera_icon_press.png */,
 				1928CEA819A167E400D6C805 /* checkbox_full.png */,
@@ -162,7 +162,6 @@
 			isa = PBXGroup;
 			children = (
 				1915FF2019D618C1001CE381 /* CoreData.framework */,
-				1930DD3219D5E7800045CA06 /* CloudKit.framework */,
 				1972EC1019C9FDA500611F12 /* EventKit.framework */,
 				198933D8193D1B320018C167 /* Foundation.framework */,
 				198933DA193D1B320018C167 /* CoreGraphics.framework */,
@@ -199,6 +198,7 @@
 				195E27B319CB315500D93A16 /* ReminderViewController.h */,
 				195E27B419CB315500D93A16 /* ReminderViewController.m */,
 				1915FF1D19D61353001CE381 /* MyToDoListsModel.xcdatamodeld */,
+				19C0198819DDE8D500BE845F /* Launch Screen.xib */,
 			);
 			path = ToDoList;
 			sourceTree = "<group>";
@@ -220,7 +220,6 @@
 		198933F7193D1B320018C167 /* ToDoListTests */ = {
 			isa = PBXGroup;
 			children = (
-				198933FD193D1B320018C167 /* ToDoListTests.m */,
 				198933F8193D1B320018C167 /* Supporting Files */,
 			);
 			path = ToDoListTests;
@@ -286,7 +285,7 @@
 						DevelopmentTeam = VRYW4TD62Q;
 						SystemCapabilities = {
 							com.apple.iCloud = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -320,6 +319,7 @@
 			files = (
 				1964B8C3193D2027000C48E9 /* Main.storyboard in Resources */,
 				1930DD3119D5CD080045CA06 /* camera_icon_press.png in Resources */,
+				19C0198519DDE73C00BE845F /* iTunesArtwork@2x.png in Resources */,
 				198C241D19C0E5B100D22DB7 /* takepicture.png in Resources */,
 				198933E3193D1B320018C167 /* InfoPlist.strings in Resources */,
 				1930DD2F19D5CD020045CA06 /* camera_icon.png in Resources */,
@@ -327,6 +327,7 @@
 				198C241F19C1043600D22DB7 /* MyLists.plist in Resources */,
 				198933EB193D1B320018C167 /* Images.xcassets in Resources */,
 				1928CEAA19A167E400D6C805 /* checkbox_full.png in Resources */,
+				19C0198619DDE8D500BE845F /* Launch Screen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,7 +365,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				198933FE193D1B320018C167 /* ToDoListTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +393,14 @@
 				198933FB193D1B320018C167 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		19C0198819DDE8D500BE845F /* Launch Screen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				19C0198719DDE8D500BE845F /* en */,
+			);
+			name = "Launch Screen.xib";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -472,8 +480,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = ToDoList/ToDoList.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -490,8 +496,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = ToDoList/ToDoList.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

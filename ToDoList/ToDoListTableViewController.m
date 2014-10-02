@@ -42,6 +42,8 @@
 {
     [super viewDidLoad];
     
+    [self initializeView];
+    
     // Create and add the 'Add' button to navigation bar
     UIBarButtonItem *add = [[UIBarButtonItem alloc] initWithTitle:@"Add" style:UIBarButtonItemStylePlain target:self action:@selector(addToDoItem:)];
     [self.navigationItem setRightBarButtonItem:add];
@@ -89,6 +91,31 @@
     self.addToDoItemVC.mode = Add;
     self.addToDoItemVC.toDoItem = nil;
     [self.navigationController pushViewController:self.addToDoItemVC animated:YES];
+}
+
+// Find a tod-do item in Core Data
+- (NSArray *)findItem:(ToDoItem *)item
+{
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *managedObjectContext = [appDelegate managedObjectContext];
+    
+    // Check to see if list exists, else create new entry
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"ToDo" inManagedObjectContext:managedObjectContext];
+    [fetchRequest setEntity:entity];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"itemId like[c] %@", item.itemId];
+    [fetchRequest setPredicate:predicate];
+    
+    NSError *error;
+    NSArray *retList = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    if (!retList)
+    {
+        NSLog(@"Error when trying to find to-do item!");
+        NSLog(@"%@, %@", error, error.localizedDescription);
+    }
+    
+    return retList;
 }
 
 // Save to Core Data.
@@ -270,31 +297,6 @@
         [item setOrder:listOrder];
         listOrder++;
     }
-}
-
-// Find a tod-do item in Core Data
-- (NSArray *)findItem:(ToDoItem *)item
-{
-    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *managedObjectContext = [appDelegate managedObjectContext];
-    
-    // Check to see if list exists, else create new entry
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"ToDo" inManagedObjectContext:managedObjectContext];
-    [fetchRequest setEntity:entity];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"itemId like[c] %@", item.itemId];
-    [fetchRequest setPredicate:predicate];
-    
-    NSError *error;
-    NSArray *retList = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    
-    if (!retList)
-    {
-        NSLog(@"Error when trying to find to-do item!");
-        NSLog(@"%@, %@", error, error.localizedDescription);
-    }
-    
-    return retList;
 }
 
 #pragma mark - Table view data source
