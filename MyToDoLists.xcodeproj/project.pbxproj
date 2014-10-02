@@ -35,7 +35,6 @@
 		198933F3193D1B320018C167 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 198933D8193D1B320018C167 /* Foundation.framework */; };
 		198933F4193D1B320018C167 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 198933DC193D1B320018C167 /* UIKit.framework */; };
 		198933FC193D1B320018C167 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 198933FA193D1B320018C167 /* InfoPlist.strings */; };
-		198933FE193D1B320018C167 /* ToDoListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 198933FD193D1B320018C167 /* ToDoListTests.m */; };
 		198C241D19C0E5B100D22DB7 /* takepicture.png in Resources */ = {isa = PBXBuildFile; fileRef = 198C241C19C0E5B100D22DB7 /* takepicture.png */; };
 		198C241F19C1043600D22DB7 /* MyLists.plist in Resources */ = {isa = PBXBuildFile; fileRef = 198C241E19C1043600D22DB7 /* MyLists.plist */; };
 		19B8BAF91967330E00827AFB /* ListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B8BAF81967330E00827AFB /* ListItem.m */; };
@@ -93,7 +92,6 @@
 		198933F1193D1B320018C167 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		198933F9193D1B320018C167 /* MyToDoListsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MyToDoListsTests-Info.plist"; sourceTree = "<group>"; };
 		198933FB193D1B320018C167 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		198933FD193D1B320018C167 /* ToDoListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToDoListTests.m; sourceTree = "<group>"; };
 		198C241C19C0E5B100D22DB7 /* takepicture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = takepicture.png; sourceTree = "<group>"; };
 		198C241E19C1043600D22DB7 /* MyLists.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MyLists.plist; sourceTree = "<group>"; };
 		19B8BAF71967330E00827AFB /* ListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListItem.h; sourceTree = "<group>"; };
@@ -220,7 +218,6 @@
 		198933F7193D1B320018C167 /* ToDoListTests */ = {
 			isa = PBXGroup;
 			children = (
-				198933FD193D1B320018C167 /* ToDoListTests.m */,
 				198933F8193D1B320018C167 /* Supporting Files */,
 			);
 			path = ToDoListTests;
@@ -364,7 +361,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				198933FE193D1B320018C167 /* ToDoListTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
