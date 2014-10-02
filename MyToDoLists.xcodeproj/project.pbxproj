@@ -15,7 +15,6 @@
 		1928CEAE19A169CF00D6C805 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1928CEAD19A169CF00D6C805 /* CustomTableViewCell.m */; };
 		1930DD2F19D5CD020045CA06 /* camera_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1930DD2E19D5CD020045CA06 /* camera_icon.png */; };
 		1930DD3119D5CD080045CA06 /* camera_icon_press.png in Resources */ = {isa = PBXBuildFile; fileRef = 1930DD3019D5CD080045CA06 /* camera_icon_press.png */; };
-		1930DD3319D5E7800045CA06 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1930DD3219D5E7800045CA06 /* CloudKit.framework */; };
 		1930DD3619D5EB220045CA06 /* BVReorderTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1930DD3519D5EB220045CA06 /* BVReorderTableView.m */; };
 		19516284196E22E700CF4440 /* GlobalData.m in Sources */ = {isa = PBXBuildFile; fileRef = 19516283196E22E700CF4440 /* GlobalData.m */; };
 		195E27B519CB315500D93A16 /* ReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 195E27B419CB315500D93A16 /* ReminderViewController.m */; };
@@ -64,7 +63,6 @@
 		1928CEAD19A169CF00D6C805 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 		1930DD2E19D5CD020045CA06 /* camera_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera_icon.png; sourceTree = "<group>"; };
 		1930DD3019D5CD080045CA06 /* camera_icon_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera_icon_press.png; sourceTree = "<group>"; };
-		1930DD3219D5E7800045CA06 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		1930DD3419D5EB220045CA06 /* BVReorderTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BVReorderTableView.h; sourceTree = "<group>"; };
 		1930DD3519D5EB220045CA06 /* BVReorderTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BVReorderTableView.m; sourceTree = "<group>"; };
 		19516282196E22E700CF4440 /* GlobalData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalData.h; sourceTree = "<group>"; };
@@ -108,7 +106,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1915FF2119D618C1001CE381 /* CoreData.framework in Frameworks */,
-				1930DD3319D5E7800045CA06 /* CloudKit.framework in Frameworks */,
 				1972EC1119C9FDA500611F12 /* EventKit.framework in Frameworks */,
 				198933DB193D1B320018C167 /* CoreGraphics.framework in Frameworks */,
 				198933DD193D1B320018C167 /* UIKit.framework in Frameworks */,
@@ -165,7 +162,6 @@
 			isa = PBXGroup;
 			children = (
 				1915FF2019D618C1001CE381 /* CoreData.framework */,
-				1930DD3219D5E7800045CA06 /* CloudKit.framework */,
 				1972EC1019C9FDA500611F12 /* EventKit.framework */,
 				198933D8193D1B320018C167 /* Foundation.framework */,
 				198933DA193D1B320018C167 /* CoreGraphics.framework */,
@@ -289,7 +285,7 @@
 						DevelopmentTeam = VRYW4TD62Q;
 						SystemCapabilities = {
 							com.apple.iCloud = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -484,7 +480,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = ToDoList/ToDoList.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -501,7 +496,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = ToDoList/ToDoList.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
