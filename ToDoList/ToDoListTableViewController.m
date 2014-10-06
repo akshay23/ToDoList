@@ -240,7 +240,7 @@
     if ([self isRefreshNeeded])
     {
         UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Confirm"
-                                                   message:@"Are you sure you want to clear the checked items ?"
+                                                   message:@"Are you sure you want to clear the checked items?"
                                                    delegate:self
                                                    cancelButtonTitle:@"No"
                                                    otherButtonTitles:@"Yes", nil];
