@@ -7,7 +7,6 @@
 //
 
 #import "CreateListViewController.h"
-#import <QuartzCore/QuartzCore.h>
 
 @interface CreateListViewController ()
 
@@ -61,89 +60,75 @@
     [self saveAllLists];
 }
 
-// Find a list in Core Data
-- (NSArray *)findlist:(ListItem *)listItem
-{
-    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *managedObjectContext = [appDelegate managedObjectContext];
-    
-    // Check to see if list exists, else create new entry
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"List" inManagedObjectContext:managedObjectContext];
-    [fetchRequest setEntity:entity];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"listId like[c] %@", listItem.listId];
-    [fetchRequest setPredicate:predicate];
-    
-    NSError *error;
-    NSArray *retList = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    
-    if (!retList)
-    {
-        NSLog(@"Error when trying to find list!");
-        NSLog(@"%@, %@", error, error.localizedDescription);
-    }
-    
-    return retList;
-}
-
 // Save a particular list
 - (void)saveList:(ListItem *)list
 {
-    NSError *error = nil;
-    NSArray *result = [self findlist:list];
+    PFQuery *query = [PFQuery queryWithClassName:@"ListItem"];
+    [query whereKey:@"listId" equalTo:list.listId];
+    [query orderByAscending:@"order"];
     
-    if (!result || result.count == 0)  // List does not exist
-    {
-        AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-        NSManagedObjectContext *managedObjectContext = [appDelegate managedObjectContext];
-        NSEntityDescription *entityList = [NSEntityDescription entityForName:@"List" inManagedObjectContext:managedObjectContext];
-        NSManagedObject *newList = [[NSManagedObject alloc] initWithEntity:entityList insertIntoManagedObjectContext:managedObjectContext];
-        NSNumber *nn = [NSNumber numberWithInteger:list.order];
-        [newList setValue:list.name forKey:@"name"];
-        [newList setValue:list.listId forKey:@"listId"];
-        [newList setValue:nn forKey:@"order"];
-        
-        if (![newList.managedObjectContext save:&error])
-        {
-            NSLog(@"Unable to save new list.");
-            NSLog(@"%@, %@", error, error.localizedDescription);
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully completed query.");
+            
+            PFObject *listItem;
+            if (objects.count == 0)
+            {
+                // Create new entry in Parse
+                listItem = [PFObject objectWithClassName:@"ListItem"];
+                NSLog(@"New list.");
+            }
+            else
+            {
+                // Existing item
+                listItem = (PFObject *)[objects objectAtIndex:0];
+                NSLog(@"Existing list.");
+            }
+            
+            listItem[@"name"] = list.name;
+            listItem[@"listId"] = list.listId;
+            listItem[@"order"] = [NSNumber numberWithInteger:list.order];
+            
+            // Save
+            [listItem saveInBackground];
+            NSLog(@"Saved to Parse");
+
+        } else {
+            // Log details of the failure
+            NSLog(@"Error when trying to find list: %@ %@", error, [error userInfo]);
         }
-    }
-    else  // List exists
-    {
-        NSManagedObject *listObject = (NSManagedObject *)[result objectAtIndex:0];
-        NSNumber *nn = [NSNumber numberWithInteger:list.order];
-        [listObject setValue:list.name forKey:@"name"];
-        [listObject setValue:nn forKey:@"order"];
-        
-        if (![listObject.managedObjectContext save:&error]) {
-            NSLog(@"Unable to update existing list.");
-            NSLog(@"%@, %@", error, error.localizedDescription);
-        }
-    }
+    }];
 }
 
 // Delete list
 - (void)deleteList:(ListItem *)listItem
 {
-    NSArray *result = [self findlist:listItem];
+    PFQuery *query = [PFQuery queryWithClassName:@"ListItem"];
+    [query whereKey:@"listId" equalTo:listItem.listId];
+    [query orderByAscending:@"order"];
     
-    if (result && result.count == 1)
-    {
-        NSError *error;
-        NSManagedObject *listObject = (NSManagedObject *)[result objectAtIndex:0];
-        [listObject.managedObjectContext deleteObject:listObject];
-        
-        if (![listObject.managedObjectContext save:&error])
-        {
-            NSLog(@"Unable to delete list.");
-            NSLog(@"%@, %@", error, error.localizedDescription);
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully completed query.");
+            
+            if (objects.count != 0)
+            {
+                // Delete list
+                PFObject *listItem = (PFObject *)[objects objectAtIndex:0];
+                
+                // Save
+                [listItem deleteInBackground];
+                NSLog(@"Deleted from Parse");
+            }
+            
+        } else {
+            // Log details of the failure
+            NSLog(@"Error when trying to find list: %@ %@", error, [error userInfo]);
         }
-    }
-    else
-    {
-        NSLog(@"Could not find list in Core Data");
-    }
+    }];
+
 }
 
 // Save all the lists using CoreData
@@ -164,18 +149,12 @@
 // Read from CoreData
 - (void)loadAllLists
 {
-    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *managedObjectContext = [appDelegate managedObjectContext];
-    NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"List" inManagedObjectContext:managedObjectContext];
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES];
-    [request setEntity:entityDesc];
-    [request setSortDescriptors:@[sortDescriptor]];
+    PFQuery *query = [PFQuery queryWithClassName:@"ListItem"];
+    [query orderByAscending:@"order"];
     
-    NSError *error;
-    NSArray *objects = [managedObjectContext executeFetchRequest:request error:&error];
+    NSArray *objects = [query findObjects];
     NSMutableArray *listObjects = [NSMutableArray arrayWithCapacity:objects.count];
-    for (NSManagedObject *item in objects)
+    for (PFObject *item in objects)
     {
         ListItem *i = [[ListItem alloc] initWithName:[item valueForKey:@"name"]];
         NSNumber *n = [item valueForKey:@"order"];
@@ -199,19 +178,23 @@
 // Delete all lits from store (core data)
 - (void)deleteAllLists
 {
-    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *managedObjectContext = [appDelegate managedObjectContext];
+    PFQuery *query = [PFQuery queryWithClassName:@"ListItem"];
+    [query orderByAscending:@"order"];
     
-    NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"List" inManagedObjectContext:managedObjectContext];
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    [request setEntity:entityDesc];
-    NSError *error;
-    NSArray *objects = [managedObjectContext executeFetchRequest:request error:&error];
-    
-    for (id listItem in objects)
-    {
-        [managedObjectContext deleteObject:listItem];
-    }
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully completed query.");
+
+            for (PFObject *obj in objects)
+            {
+                [obj deleteInBackground];
+            }
+        } else {
+            // Log details of the failure
+            NSLog(@"Error when trying to find list: %@ %@", error, [error userInfo]);
+        }
+    }];
 }
 
 // Show alertview where user can enter new list name

@@ -93,93 +93,90 @@
     [self.navigationController pushViewController:self.addToDoItemVC animated:YES];
 }
 
-// Find a tod-do item in Core Data
-- (NSArray *)findItem:(ToDoItem *)item
-{
-    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *managedObjectContext = [appDelegate managedObjectContext];
-    
-    // Check to see if list exists, else create new entry
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"ToDo" inManagedObjectContext:managedObjectContext];
-    [fetchRequest setEntity:entity];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"itemId like[c] %@", item.itemId];
-    [fetchRequest setPredicate:predicate];
-    
-    NSError *error;
-    NSArray *retList = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    
-    if (!retList)
-    {
-        NSLog(@"Error when trying to find to-do item!");
-        NSLog(@"%@, %@", error, error.localizedDescription);
-    }
-    
-    return retList;
-}
-
 // Save to Core Data.
 - (void)saveItem:(ToDoItem *)item
 {
-    NSError *error = nil;
-    NSManagedObject *managedItem = nil;
-    NSArray *result = [self findItem:item];
+    PFQuery *query = [PFQuery queryWithClassName:@"ToDoItem"];
+    [query whereKey:@"itemId" equalTo:item.itemId];
+    [query orderByAscending:@"order"];
     
-    if (!result || result.count == 0)  // New item
+    NSArray *objects = [query findObjects];
+    NSLog(@"Successfully completed query.");
+    
+    PFObject *listItem;
+    if (objects.count == 0)
     {
-        AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-        NSManagedObjectContext *managedObjectContext = [appDelegate managedObjectContext];
-        NSEntityDescription *entityItem = [NSEntityDescription entityForName:@"ToDo" inManagedObjectContext:managedObjectContext];
-        managedItem = [[NSManagedObject alloc] initWithEntity:entityItem insertIntoManagedObjectContext:managedObjectContext];
-        
-        // Add item to array of items
+        // Create new entry in Parse
+        listItem = [PFObject objectWithClassName:@"ToDoItem"];
         [item setOrder:self.toDoItems.count];
         [self.toDoItems addObject:item];
-    }
-    else  // Existing item
-    {
-        managedItem = (NSManagedObject *)[result objectAtIndex:0];
-    }
-    
-    NSNumber *nn = [NSNumber numberWithInteger:item.order];
-    [managedItem setValue:item.itemId forKey:@"itemId"];
-    [managedItem setValue:self.list.listId forKey:@"listId"];
-    [managedItem setValue:item.itemName forKey:@"name"];
-    [managedItem setValue:item.notes forKey:@"notes"];
-    [managedItem setValue:[NSNumber numberWithBool:item.completed] forKey:@"completed"];
-    [managedItem setValue:nn forKey:@"order"];
-    [managedItem setValue:item.reminderDate forKey:@"reminderDate"];
-    [managedItem setValue:item.reminderId forKey:@"reminderId"];
-    [managedItem setValue:item.itemImage forKey:@"image"];
-    
-    if (![managedItem.managedObjectContext save:&error])
-    {
-        NSLog(@"Unable to save to-do item.");
-        NSLog(@"%@, %@", error, error.localizedDescription);
-    }
-}
-
-// TODO: Delete to-do item from Core Data
-- (void)deleteItem:(ToDoItem *)item
-{
-    NSArray *result = [self findItem:item];
-    
-    if (result && result.count == 1)
-    {
-        NSError *error;
-        NSManagedObject *itemObject = (NSManagedObject *)[result objectAtIndex:0];
-        [itemObject.managedObjectContext deleteObject:itemObject];
-        
-        if (![itemObject.managedObjectContext save:&error])
-        {
-            NSLog(@"Unable to delete item.");
-            NSLog(@"%@, %@", error, error.localizedDescription);
-        }
+        NSLog(@"New to-do item created.");
     }
     else
     {
-        NSLog(@"Could not find item in Core Data");
+        // Update item
+        listItem = (PFObject *)[objects objectAtIndex:0];
+        NSLog(@"Existing to-do item retrieved.");
     }
+    
+    // Add the details
+    NSNumber *nn = [NSNumber numberWithInteger:item.order];
+    listItem[@"itemId"] = item.itemId;
+    listItem[@"listId"] = self.list.listId;
+    listItem[@"name"] = item.itemName;
+    listItem[@"notes"] = item.notes;
+    listItem[@"completed"] = [NSNumber numberWithBool:item.completed];
+    listItem[@"order"] = nn;
+    
+    if (item.reminderDate)
+    {
+        listItem[@"reminderDate"] = item.reminderDate;
+    }
+    
+    if (item.reminderId)
+    {
+        listItem[@"reminderId"] = item.reminderId;
+    }
+    
+    if (item.itemImage.length != 0)
+    {
+        listItem[@"image"] = item.itemImage;
+    }
+    
+    // Save
+    [listItem saveInBackground];
+    NSLog(@"Saved to Parse");
+
+}
+
+// Delete to-do item from Core Data
+- (void)deleteItem:(ToDoItem *)item
+{
+    PFQuery *query = [PFQuery queryWithClassName:@"ToDoItem"];
+    [query whereKey:@"itemId" equalTo:item.itemId];
+    [query orderByAscending:@"order"];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully completed query.");
+            
+            if (objects.count != 0)
+            {
+                // Delete list
+                PFObject *todoItem = (PFObject *)[objects objectAtIndex:0];
+                
+                // Save
+                [todoItem deleteInBackground];
+                NSLog(@"Deleted from Parse");
+            }
+            
+        } else {
+            // Log details of the failure
+            NSLog(@"Error when trying to find item: %@ %@", error, [error userInfo]);
+        }
+    }];
+
 }
 
 // Save all to-do items to CoreData
@@ -198,20 +195,13 @@
 // Load all to-do items from CoreData
 - (void)loadAllItems
 {
-    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *managedObjectContext = [appDelegate managedObjectContext];
-    NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"ToDo" inManagedObjectContext:managedObjectContext];
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"listId like[c] %@",self.list.listId];
-    [request setEntity:entityDesc];
-    [request setSortDescriptors:@[sortDescriptor]];
-    [request setPredicate:predicate];
+    PFQuery *query = [PFQuery queryWithClassName:@"ToDoitem"];
+    [query whereKey:@"listId" equalTo:self.list.listId];
+    [query orderByAscending:@"order"];
     
-    NSError *error;
-    NSArray *objects = [managedObjectContext executeFetchRequest:request error:&error];
+    NSArray *objects = [query findObjects];
     NSMutableArray *itemObjects = [NSMutableArray arrayWithCapacity:objects.count];
-    for (NSManagedObject *item in objects)
+    for (PFObject *item in objects)
     {
         ToDoItem *i = [[ToDoItem alloc] initWithNameNotesAndCompleted:[item valueForKey:@"name"] notes:[item valueForKey:@"notes"] image:[UIImage imageWithData:[item valueForKey:@"image"]] isCompleted:[[item valueForKey:@"completed"] boolValue]];
         NSNumber *n = [item valueForKey:@"order"];
