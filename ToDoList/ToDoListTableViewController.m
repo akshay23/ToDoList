@@ -227,13 +227,20 @@
 // Make sure user does indeed want to clear finished items
 - (void)confirmRefreshData
 {
-    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Confirm"
-                                               message:@"Are you sure you want to clear the checked items ?"
-                                               delegate:self
-                                               cancelButtonTitle:@"No"
-                                               otherButtonTitles:@"Yes", nil];
-    
-    [alert show];
+    if ([self isRefreshNeeded])
+    {
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Confirm"
+                                                   message:@"Are you sure you want to clear the checked items?"
+                                                   delegate:self
+                                                   cancelButtonTitle:@"No"
+                                                   otherButtonTitles:@"Yes", nil];
+        
+        [alert show];
+    }
+    else
+    {
+        [self.refreshControl endRefreshing];
+    }
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -244,6 +251,23 @@
     }
     
     [self.refreshControl endRefreshing];
+}
+
+// Return YES if refresh is needed
+-(BOOL)isRefreshNeeded
+{
+    if ([self.toDoItems count] > 0)
+    {
+        for (ToDoItem *item in self.toDoItems)
+        {
+            if (item.completed)
+            {
+                return true;
+            }
+        }
+    }
+    
+    return false;
 }
 
 // Refresh the data and reload table
