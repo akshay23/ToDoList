@@ -93,7 +93,7 @@
     [self.navigationController pushViewController:self.addToDoItemVC animated:YES];
 }
 
-// Save to Core Data.
+// Save to Parse
 - (void)saveItem:(ToDoItem *)item
 {
     PFQuery *query = [PFQuery queryWithClassName:@"ToDoItem"];
@@ -101,10 +101,8 @@
     [query orderByAscending:@"order"];
     
     NSArray *objects = [query findObjects];
-    NSLog(@"Successfully completed query.");
-    
     PFObject *listItem;
-    if (objects.count == 0)
+    if (objects && objects.count == 0)
     {
         // Create new entry in Parse
         listItem = [PFObject objectWithClassName:@"ToDoItem"];
@@ -144,12 +142,12 @@
     }
     
     // Save
-    [listItem saveInBackground];
+    [listItem saveEventually];
     NSLog(@"Saved to Parse");
 
 }
 
-// Delete to-do item from Core Data
+// Delete to-do item from Parse
 - (void)deleteItem:(ToDoItem *)item
 {
     PFQuery *query = [PFQuery queryWithClassName:@"ToDoItem"];
@@ -167,7 +165,7 @@
                 PFObject *todoItem = (PFObject *)[objects objectAtIndex:0];
                 
                 // Save
-                [todoItem deleteInBackground];
+                [todoItem deleteEventually];
                 NSLog(@"Deleted from Parse");
             }
             
@@ -179,7 +177,7 @@
 
 }
 
-// Save all to-do items to CoreData
+// Save all to-do items to Parse
 - (void)saveAllItems
 {
     // Refresh list ordering
@@ -192,10 +190,10 @@
     }
 }
 
-// Load all to-do items from CoreData
+// Load all to-do items from Parse
 - (void)loadAllItems
 {
-    PFQuery *query = [PFQuery queryWithClassName:@"ToDoitem"];
+    PFQuery *query = [PFQuery queryWithClassName:@"ToDoItem"];
     [query whereKey:@"listId" equalTo:self.list.listId];
     [query orderByAscending:@"order"];
     
@@ -222,6 +220,8 @@
         self.toDoItems = [[NSMutableArray alloc] init];
         NSLog(@"List of TodoItems is nil");
     }
+    
+    [self.tableView reloadData];
 }
 
 // Make sure user does indeed want to clear finished items

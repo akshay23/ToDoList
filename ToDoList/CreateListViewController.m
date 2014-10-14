@@ -42,6 +42,12 @@
     
     // Add tap recognizer to scrollview, then
     [self.tableView addGestureRecognizer:tapGesture];
+    
+    // Used for the pull-down refresh
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    refreshControl.tintColor = [UIColor purpleColor];
+    [refreshControl addTarget:self action:@selector(loadAllLists) forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refreshControl;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -91,7 +97,7 @@
             listItem[@"order"] = [NSNumber numberWithInteger:list.order];
             
             // Save
-            [listItem saveInBackground];
+            [listItem saveEventually];
             NSLog(@"Saved to Parse");
 
         } else {
@@ -119,7 +125,7 @@
                 PFObject *listItem = (PFObject *)[objects objectAtIndex:0];
                 
                 // Save
-                [listItem deleteInBackground];
+                [listItem deleteEventually];
                 NSLog(@"Deleted from Parse");
             }
             
@@ -173,6 +179,10 @@
         self.lists = [[NSMutableArray alloc] init];
         NSLog(@"List of ListItems is nil");
     }
+    
+    [self.tableView reloadData];
+    
+    [self.refreshControl endRefreshing];
 }
 
 // Delete all lits from store (core data)
@@ -188,7 +198,7 @@
 
             for (PFObject *obj in objects)
             {
-                [obj deleteInBackground];
+                [obj deleteEventually];
             }
         } else {
             // Log details of the failure

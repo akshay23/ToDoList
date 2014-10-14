@@ -31,10 +31,8 @@
     [Parse setApplicationId:@"k1vpRK72cyrPsBf7zZkP5WULxnQZwkzspsRk7y8x"
                   clientKey:@"86LiRsikpI9SBhN68LQvtkhW9iwkKdV3RIN7iTh8"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-    
+
     [PFUser enableAutomaticUser];
-    PFACL *defaultACL = [PFACL ACL];
-    [PFACL setDefaultACL:defaultACL withAccessForCurrentUser:YES];
     
     return YES;
 }
