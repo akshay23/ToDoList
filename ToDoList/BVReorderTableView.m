@@ -153,6 +153,11 @@
             [UIView commitAnimations];
         }
         
+        if (!indexPath)
+        {
+            indexPath = [NSIndexPath indexPathWithIndex:0];
+        }
+        
         [self beginUpdates];
         [self deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationNone];
         [self insertRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationNone];
