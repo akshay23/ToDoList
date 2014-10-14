@@ -10,7 +10,7 @@
 #import "GlobalData.h"
 #import "ToDoListTableViewController.h"
 #import "ListItem.h"
-#import "AppDelegate.h"
+#import <Parse/Parse.h>
 
 @interface CreateListViewController : UITableViewController
 
@@ -20,6 +20,5 @@
 
 - (IBAction)addList:(id)sender;
 - (IBAction)editList:(id)sender;
-- (NSArray *)findlist:(ListItem *)listItem;
 
 @end

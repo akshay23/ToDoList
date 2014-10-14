@@ -196,15 +196,15 @@
         }
         
         [self saveReminder];
-
-        [self.navigationController popViewControllerAnimated:YES];
+        
         [self.delegate saveItem:self.toDoItem];
-        [self.delegate.tableView reloadData];
         
         if (self.mode == Add)
         {
             self.toDoItem = nil;
         }
+        
+        [self.navigationController popViewControllerAnimated:YES];
     }
 }
 

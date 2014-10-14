@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AppDelegate.h"
 #import "CreateListViewController.h"
 #import "ListItem.h"
 #import "ToDoItem.h"
 #import "AddToDoItemViewController.h"
 #import "CustomTableViewCell.h"
 #import "BVReorderTableView.h"
+#import <Parse/Parse.h>
 
 @class AddToDoItemViewController;
 @class CreateListViewController;
