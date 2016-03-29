@@ -14,7 +14,7 @@
 		<string>https://github.com/akshay23/ToDoList.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>MyToDoLists.xcodeproj/project.xcworkspace</string>
+	<string>MyToDoLists.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>ACAC9BB79A0D8CC1CBD20DC8B486BB807F3B0B93</key>
